@@ -1490,20 +1490,34 @@ p {
     .top-bar {
         overflow: hidden;
         width: 100%;
-        font-size: 0.78rem;
+        padding: 5px 0;
+        font-size: 0.75rem;
     }
 
     .top-bar-content {
-        flex-direction: column;
-        gap: 6px;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
+        gap: 8px;
     }
 
     .top-bar-left {
-        flex-direction: column;
-        gap: 3px;
-        text-align: center;
-        word-break: break-all;
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    .top-bar-left span:last-child {
+        display: none;
+    }
+
+    .top-bar-right {
+        gap: 6px;
+    }
+
+    .top-bar-right a {
+        width: 24px;
+        height: 24px;
+        font-size: 0.7rem;
     }
 
     .hero-slider {
