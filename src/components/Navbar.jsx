@@ -15,7 +15,10 @@ const Navbar = () => {
     };
 
     return (
-        <>
+        <div className="site-header-wrapper">
+            {mobileMenuOpen && (
+                <div className="menu-backdrop" onClick={toggleMobileMenu}></div>
+            )}
             {/* Top Bar */}
             <div className="top-bar">
                 <div className="container">
@@ -98,7 +101,7 @@ const Navbar = () => {
                     </div>
                 </div>
             </header>
-        </>
+        </div>
     );
 };
 

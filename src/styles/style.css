@@ -33,7 +33,7 @@
 
 html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 body {
@@ -42,7 +42,7 @@ body {
     line-height: 1.7;
     color: var(--text-color);
     background-color: var(--bg-white);
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 a {
@@ -214,12 +214,28 @@ p {
 /* ===================================
    Header
    =================================== */
-.header {
-    background-color: var(--bg-white);
-    box-shadow: var(--shadow);
+.site-header-wrapper {
     position: sticky;
     top: 0;
     z-index: 1000;
+}
+
+.menu-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 998;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.header {
+    background-color: var(--bg-white);
+    box-shadow: var(--shadow);
 }
 
 .header-content {
@@ -1351,7 +1367,7 @@ p {
     }
 
     .header-content {
-        padding: 8px 0;
+        padding: 14px 0;
         position: relative;
         gap: 0;
         justify-content: flex-start;
@@ -1442,12 +1458,13 @@ p {
         position: absolute;
         top: 100%;
         left: 0;
-        right: 0;
+        width: 260px;
         background-color: #fff;
         padding: 0;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-        z-index: 999;
+        box-shadow: 4px 8px 24px rgba(0,0,0,0.15);
+        z-index: 1001;
         border-top: 3px solid var(--primary-color);
+        border-radius: 0 0 8px 0;
     }
 
     .main-nav.active .nav-menu > li {
@@ -1479,8 +1496,6 @@ p {
 
     .main-nav.active .nav-buttons {
         display: flex;
-        padding: 12px 20px;
-        border-top: 1px solid #f0f0f0;
     }
 
     .dropdown-menu {
