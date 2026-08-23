@@ -39,6 +39,11 @@ const Navbar = () => {
             <header className="header">
                 <div className="container">
                     <div className="header-content">
+                        <div className="mobile-menu-toggle" onClick={toggleMobileMenu}>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
                         <div className="logo">
                             <Link to="/">
                                 <img src="/images/logo.png" alt="Kingdom Enlightenment Missions Team" className="logo-img" />
@@ -62,7 +67,7 @@ const Navbar = () => {
                                     </ul>
                                 </li>
                                 <li className={`dropdown ${openDropdown === 'ministries' ? 'active' : ''}`}>
-                                    <NavLink to="/ministries" onClick={() => toggleDropdown('ministries')}>Ministries <i className="fas fa-chevron-down"></i></NavLink>
+                                    <NavLink to="/ministries" onClick={() => toggleDropdown('ministries')}>Departments <i className="fas fa-chevron-down"></i></NavLink>
                                     <ul className="dropdown-menu">
                                         <li><Link to="/ministries#evangelism" onClick={() => setMobileMenuOpen(false)}>Evangelism</Link></li>
                                         <li><Link to="/ministries#discipleship" onClick={() => setMobileMenuOpen(false)}>Discipleship</Link></li>
@@ -84,15 +89,10 @@ const Navbar = () => {
                                 </li>
                                 <li><NavLink to="/events" onClick={() => setMobileMenuOpen(false)}>Events</NavLink></li>
                                 <li><NavLink to="/gallery" onClick={() => setMobileMenuOpen(false)}>Gallery</NavLink></li>
-                                <li><NavLink to="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</NavLink></li>
+                                <li><NavLink to="/contact" onClick={() => setMobileMenuOpen(false)}>Contact Us</NavLink></li>
                             </ul>
                             <div className="nav-buttons">
                                 <Link to="/donate" className="btn btn-primary">Donate</Link>
-                            </div>
-                            <div className="mobile-menu-toggle" onClick={toggleMobileMenu}>
-                                <span></span>
-                                <span></span>
-                                <span></span>
                             </div>
                         </nav>
                     </div>

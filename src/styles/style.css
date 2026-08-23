@@ -1351,38 +1351,49 @@ p {
     }
 
     .header-content {
-        padding: 10px 0;
+        padding: 8px 0;
         position: relative;
+        gap: 0;
+        justify-content: flex-start;
+    }
+
+    .mobile-menu-toggle {
+        margin-right: 14px;
     }
 
     .logo {
         flex: 1;
+        min-width: 0;
     }
 
     .logo a {
-        gap: 10px;
+        gap: 8px;
     }
 
     .logo-img {
-        height: 54px;
-        width: 54px;
+        height: 48px;
+        width: 48px;
+        flex-shrink: 0;
     }
 
     .logo-name {
         align-items: flex-start;
-        gap: 2px;
+        gap: 1px;
+        min-width: 0;
     }
 
     .logo-name-top {
-        font-size: 1.05rem;
-        letter-spacing: 1.5px;
+        font-size: 0.95rem;
+        letter-spacing: 1.2px;
         white-space: nowrap;
         line-height: 1.1;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .logo-name-bottom {
-        font-size: 0.6rem;
-        letter-spacing: 3px;
+        font-size: 0.55rem;
+        letter-spacing: 2.5px;
         white-space: nowrap;
         align-self: flex-start;
     }
@@ -1392,16 +1403,26 @@ p {
     }
 
     .nav-buttons {
-        display: none;
+        display: flex;
+        flex-shrink: 0;
+        margin-left: 12px;
+    }
+
+    .nav-buttons .btn {
+        padding: 7px 14px;
+        font-size: 0.82rem;
+        white-space: nowrap;
     }
 
     .mobile-menu-toggle {
         display: flex;
         flex-direction: column;
         gap: 5px;
-        padding: 8px;
+        padding: 8px 10px;
         background-color: var(--primary-color);
         border-radius: 6px;
+        cursor: pointer;
+        flex-shrink: 0;
     }
 
     .mobile-menu-toggle span {
@@ -1409,6 +1430,10 @@ p {
         height: 2px;
         background-color: #fff;
         border-radius: 2px;
+    }
+
+    .main-nav {
+        margin-left: 0;
     }
 
     .main-nav.active .nav-menu {
