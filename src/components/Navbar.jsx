@@ -36,6 +36,10 @@ const Navbar = () => {
                         <div className="logo">
                             <Link to="/">
                                 <img src="/images/logo.png" alt="Kingdom Enlightenment Missions Team" className="logo-img" />
+                                <div className="logo-name">
+                                    <span className="logo-name-top">Kingdom Enlightenment</span>
+                                    <span className="logo-name-bottom">Missions Team</span>
+                                </div>
                             </Link>
                         </div>
                         <nav className={`main-nav ${mobileMenuOpen ? 'active' : ''}`}>

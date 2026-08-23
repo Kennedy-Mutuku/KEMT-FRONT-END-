@@ -225,7 +225,11 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
+    padding: 2px 0;
+}
+
+.logo {
+    flex-shrink: 0;
 }
 
 .logo a {
@@ -235,8 +239,42 @@ p {
 }
 
 .logo-img {
-    height: 70px;
-    width: auto;
+    height: 74px;
+    width: 74px;
+    object-fit: contain;
+    object-position: center;
+    flex-shrink: 0;
+    display: block;
+}
+
+.logo-name {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1px;
+}
+
+.logo-name-top {
+    font-family: 'Arial Black', 'Impact', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: #111111;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.1;
+    white-space: nowrap;
+}
+
+.logo-name-bottom {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #c0392b;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    line-height: 1.3;
+    align-self: center;
+    white-space: nowrap;
 }
 
 .logo-icon {
@@ -273,20 +311,21 @@ p {
 .main-nav {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
 }
 
 .nav-menu {
     display: flex;
-    gap: 5px;
+    gap: 0;
 }
 
 .nav-menu > li > a {
     display: block;
-    padding: 10px 15px;
+    padding: 10px 10px;
     font-weight: 500;
     color: var(--text-color);
     position: relative;
+    white-space: nowrap;
 }
 
 .nav-menu > li > a:hover,
@@ -350,9 +389,9 @@ p {
 
 .dropdown-menu li a {
     display: block;
-    padding: 10px 20px;
+    padding: 6px 20px;
     color: var(--text-color);
-    font-size: 0.9375rem;
+    font-size: 0.875rem;
 }
 
 .dropdown-menu li a:hover {
