@@ -3,9 +3,15 @@ import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [openDropdown, setOpenDropdown] = useState(null);
 
     const toggleMobileMenu = () => {
         setMobileMenuOpen(!mobileMenuOpen);
+        setOpenDropdown(null);
+    };
+
+    const toggleDropdown = (name) => {
+        setOpenDropdown(openDropdown === name ? null : name);
     };
 
     return (
@@ -44,41 +50,41 @@ const Navbar = () => {
                         </div>
                         <nav className={`main-nav ${mobileMenuOpen ? 'active' : ''}`}>
                             <ul className="nav-menu">
-                                <li><NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>Home</NavLink></li>
-                                <li className="dropdown">
-                                    <NavLink to="/about">About Us <i className="fas fa-chevron-down"></i></NavLink>
+                                <li><NavLink to="/" className={({ isActive }) => isActive ? "active" : ""} onClick={() => setMobileMenuOpen(false)}>Home</NavLink></li>
+                                <li className={`dropdown ${openDropdown === 'about' ? 'active' : ''}`}>
+                                    <NavLink to="/about" onClick={() => toggleDropdown('about')}>About Us <i className="fas fa-chevron-down"></i></NavLink>
                                     <ul className="dropdown-menu">
-                                        <li><Link to="/about#who-we-are">Who We Are</Link></li>
-                                        <li><Link to="/about#our-history">Our History</Link></li>
-                                        <li><Link to="/about#vision-mission">Vision & Mission</Link></li>
-                                        <li><Link to="/about#leadership">Leadership Team</Link></li>
-                                        <li><Link to="/about#statement-of-faith">Statement of Faith</Link></li>
+                                        <li><Link to="/about#who-we-are" onClick={() => setMobileMenuOpen(false)}>Who We Are</Link></li>
+                                        <li><Link to="/about#our-history" onClick={() => setMobileMenuOpen(false)}>Our History</Link></li>
+                                        <li><Link to="/about#vision-mission" onClick={() => setMobileMenuOpen(false)}>Vision & Mission</Link></li>
+                                        <li><Link to="/about#leadership" onClick={() => setMobileMenuOpen(false)}>Leadership Team</Link></li>
+                                        <li><Link to="/about#statement-of-faith" onClick={() => setMobileMenuOpen(false)}>Statement of Faith</Link></li>
                                     </ul>
                                 </li>
-                                <li className="dropdown">
-                                    <NavLink to="/ministries">Ministries <i className="fas fa-chevron-down"></i></NavLink>
+                                <li className={`dropdown ${openDropdown === 'ministries' ? 'active' : ''}`}>
+                                    <NavLink to="/ministries" onClick={() => toggleDropdown('ministries')}>Ministries <i className="fas fa-chevron-down"></i></NavLink>
                                     <ul className="dropdown-menu">
-                                        <li><Link to="/ministries#evangelism">Evangelism</Link></li>
-                                        <li><Link to="/ministries#discipleship">Discipleship</Link></li>
-                                        <li><Link to="/ministries#youth-ministry">Youth Ministry</Link></li>
-                                        <li><Link to="/ministries#women-ministry">Women Ministry</Link></li>
-                                        <li><Link to="/ministries#men-ministry">Men Ministry</Link></li>
-                                        <li><Link to="/ministries#children-ministry">Children Ministry</Link></li>
-                                        <li><Link to="/ministries#community-outreach">Community Outreach</Link></li>
+                                        <li><Link to="/ministries#evangelism" onClick={() => setMobileMenuOpen(false)}>Evangelism</Link></li>
+                                        <li><Link to="/ministries#discipleship" onClick={() => setMobileMenuOpen(false)}>Discipleship</Link></li>
+                                        <li><Link to="/ministries#youth-ministry" onClick={() => setMobileMenuOpen(false)}>Youth Ministry</Link></li>
+                                        <li><Link to="/ministries#women-ministry" onClick={() => setMobileMenuOpen(false)}>Women Ministry</Link></li>
+                                        <li><Link to="/ministries#men-ministry" onClick={() => setMobileMenuOpen(false)}>Men Ministry</Link></li>
+                                        <li><Link to="/ministries#children-ministry" onClick={() => setMobileMenuOpen(false)}>Children Ministry</Link></li>
+                                        <li><Link to="/ministries#community-outreach" onClick={() => setMobileMenuOpen(false)}>Community Outreach</Link></li>
                                     </ul>
                                 </li>
-                                <li className="dropdown">
-                                    <NavLink to="/programs">Programs <i className="fas fa-chevron-down"></i></NavLink>
+                                <li className={`dropdown ${openDropdown === 'programs' ? 'active' : ''}`}>
+                                    <NavLink to="/programs" onClick={() => toggleDropdown('programs')}>Programs <i className="fas fa-chevron-down"></i></NavLink>
                                     <ul className="dropdown-menu">
-                                        <li><Link to="/programs#missions">Mission Trips</Link></li>
-                                        <li><Link to="/programs#bible-study">Bible Study</Link></li>
-                                        <li><Link to="/programs#prayer">Prayer Programs</Link></li>
-                                        <li><Link to="/programs#training">Leadership Training</Link></li>
+                                        <li><Link to="/programs#missions" onClick={() => setMobileMenuOpen(false)}>Mission Trips</Link></li>
+                                        <li><Link to="/programs#bible-study" onClick={() => setMobileMenuOpen(false)}>Bible Study</Link></li>
+                                        <li><Link to="/programs#prayer" onClick={() => setMobileMenuOpen(false)}>Prayer Programs</Link></li>
+                                        <li><Link to="/programs#training" onClick={() => setMobileMenuOpen(false)}>Leadership Training</Link></li>
                                     </ul>
                                 </li>
-                                <li><NavLink to="/events">Events</NavLink></li>
-                                <li><NavLink to="/gallery">Gallery</NavLink></li>
-                                <li><NavLink to="/contact">Contact</NavLink></li>
+                                <li><NavLink to="/events" onClick={() => setMobileMenuOpen(false)}>Events</NavLink></li>
+                                <li><NavLink to="/gallery" onClick={() => setMobileMenuOpen(false)}>Gallery</NavLink></li>
+                                <li><NavLink to="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</NavLink></li>
                             </ul>
                             <div className="nav-buttons">
                                 <Link to="/donate" className="btn btn-primary">Donate</Link>
