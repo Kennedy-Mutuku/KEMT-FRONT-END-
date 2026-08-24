@@ -6,16 +6,6 @@ import storyPhoto1 from '../assets/Tala mission6.jpg';
 import storyPhoto2 from '../assets/Emali mission6.jpg';
 import storyPhoto3 from '../assets/Ruanyage7.jpg';
 
-const leadership = [
-  { name: 'Vincent Mwendwa',   role: 'Director',            initials: 'VM', color: '#e67e22' },
-  { name: 'Morice Mutharimi',  role: 'Chairperson',         initials: 'MM', color: '#2980b9' },
-  { name: 'Mwanzia David',     role: 'Outreach Incharge',   initials: 'MD', color: '#27ae60' },
-  { name: 'Kennedy Mutuku',    role: 'Media Director',      initials: 'KM', color: '#8e44ad' },
-  { name: 'Evaline Mukami',    role: 'Secretary',           initials: 'EM', color: '#16a085' },
-  { name: 'Raymond Ewoi',      role: 'Prayer Coordinator',  initials: 'RE', color: '#c0392b' },
-  { name: 'Victor Muriungi',   role: 'Worship Coordinator', initials: 'VM', color: '#d4ac0d' },
-];
-
 const values = [
   { icon: 'fas fa-bible',          label: 'Biblical Authority',    desc: 'Everything we do is rooted in and guided by the Word of God.' },
   { icon: 'fas fa-hands-praying',  label: 'Prayer',               desc: 'We seek God in prayer before and throughout every mission.' },
@@ -128,28 +118,6 @@ const About = () => (
               <div className="value-icon"><i className={v.icon}></i></div>
               <h4>{v.label}</h4>
               <p>{v.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    {/* Leadership Team */}
-    <section id="leadership" className="section leadership-section">
-      <div className="container">
-        <div className="section-header">
-          <span className="section-subtitle">The Team</span>
-          <h2 className="section-title">Leadership Team</h2>
-          <p className="section-description">Servant-leaders committed to advancing the Kingdom of God through humility, faith, and dedication.</p>
-        </div>
-        <div className="leadership-grid">
-          {leadership.map((person, i) => (
-            <div className="leader-card" key={i}>
-              <div className="leader-avatar" style={{ background: `linear-gradient(135deg, ${person.color}, ${person.color}cc)` }}>
-                <span>{person.initials}</span>
-              </div>
-              <h3 className="leader-name">{person.name}</h3>
-              <p className="leader-role">{person.role}</p>
             </div>
           ))}
         </div>

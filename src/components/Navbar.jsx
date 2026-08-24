@@ -63,9 +63,7 @@ const Navbar = () => {
                                     <NavLink to="/about" onClick={() => toggleDropdown('about')}>About Us <i className="fas fa-chevron-down"></i></NavLink>
                                     <ul className="dropdown-menu">
                                         <li><Link to="/about#who-we-are" onClick={() => setMobileMenuOpen(false)}>Who We Are</Link></li>
-                                        <li><Link to="/about#our-history" onClick={() => setMobileMenuOpen(false)}>Our History</Link></li>
                                         <li><Link to="/about#vision-mission" onClick={() => setMobileMenuOpen(false)}>Vision & Mission</Link></li>
-                                        <li><Link to="/about#leadership" onClick={() => setMobileMenuOpen(false)}>Leadership Team</Link></li>
                                         <li><Link to="/about#statement-of-faith" onClick={() => setMobileMenuOpen(false)}>Statement of Faith</Link></li>
                                     </ul>
                                 </li>
@@ -79,7 +77,7 @@ const Navbar = () => {
                                         <li><Link to="/programs" onClick={() => setMobileMenuOpen(false)}>Outreach</Link></li>
                                     </ul>
                                 </li>
-                                <li><NavLink to="/about#leadership" onClick={() => setMobileMenuOpen(false)}>Leadership</NavLink></li>
+                                <li><NavLink to="/leadership" onClick={() => setMobileMenuOpen(false)}>Leadership</NavLink></li>
                                 <li><NavLink to="/events" onClick={() => setMobileMenuOpen(false)}>Events</NavLink></li>
                                 <li><NavLink to="/gallery" onClick={() => setMobileMenuOpen(false)}>Gallery</NavLink></li>
                                 <li><NavLink to="/contact" onClick={() => setMobileMenuOpen(false)}>Contact Us</NavLink></li>
