@@ -70,11 +70,11 @@ const Navbar = () => {
                                 <li className={`dropdown ${openDropdown === 'ministries' ? 'active' : ''}`}>
                                     <NavLink to="/ministries" onClick={() => toggleDropdown('ministries')}>Departments <i className="fas fa-chevron-down"></i></NavLink>
                                     <ul className="dropdown-menu">
-                                        <li><Link to="/ministries#evangelism" onClick={() => setMobileMenuOpen(false)}>Evangelism &amp; Missions</Link></li>
-                                        <li><Link to="/ministries#prayer" onClick={() => setMobileMenuOpen(false)}>Prayer Department</Link></li>
-                                        <li><Link to="/ministries#compassion" onClick={() => setMobileMenuOpen(false)}>Compassion Ministry</Link></li>
-                                        <li><Link to="/ministries#highschool" onClick={() => setMobileMenuOpen(false)}>High School Ministry</Link></li>
-                                        <li><Link to="/programs" onClick={() => setMobileMenuOpen(false)}>Outreach</Link></li>
+                                        <li><Link to="/ministries#evangelism" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>Evangelism &amp; Missions</Link></li>
+                                        <li><Link to="/ministries#prayer" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>Prayer Department</Link></li>
+                                        <li><Link to="/ministries#compassion" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>Compassion Ministry</Link></li>
+                                        <li><Link to="/ministries#highschool" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>High School Ministry</Link></li>
+                                        <li><Link to="/programs" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>Outreach</Link></li>
                                     </ul>
                                 </li>
                                 <li><NavLink to="/leadership" onClick={() => setMobileMenuOpen(false)}>Leadership</NavLink></li>

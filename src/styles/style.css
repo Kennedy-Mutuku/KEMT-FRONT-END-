@@ -3378,6 +3378,8 @@ p {
     border: 1.5px solid var(--border-color);
     transition: var(--transition);
     text-decoration: none;
+    cursor: pointer;
+    font-family: var(--font-primary);
 }
 
 .dept-nav__pill:hover {

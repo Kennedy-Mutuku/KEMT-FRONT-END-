@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 // Evangelism dept photos (Rwanyange mission)
 import ev1 from '../assets/Ruanyage3.jpg';
@@ -80,7 +80,24 @@ const PhotoCollage = ({ photos, alt }) => (
   </div>
 );
 
+const scrollToHash = (hash) => {
+  if (!hash) return;
+  const el = document.querySelector(hash);
+  if (!el) return;
+  const headerHeight = document.querySelector('.site-header-wrapper')?.offsetHeight || 80;
+  const top = el.getBoundingClientRect().top + window.pageYOffset - headerHeight - 16;
+  window.scrollTo({ top, behavior: 'smooth' });
+};
+
 const Ministries = () => {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (!hash) return;
+    const timer = setTimeout(() => scrollToHash(hash), 120);
+    return () => clearTimeout(timer);
+  }, [hash]);
+
   return (
     <main className="ministries-page">
 
@@ -100,18 +117,20 @@ const Ministries = () => {
       <div className="dept-nav">
         <div className="container">
           <div className="dept-nav__inner">
-            <a href="#evangelism" className="dept-nav__pill">
-              <i className="fas fa-globe-africa"></i> Evangelism &amp; Missions
-            </a>
-            <a href="#prayer" className="dept-nav__pill">
-              <i className="fas fa-hands-praying"></i> Prayer Department
-            </a>
-            <a href="#compassion" className="dept-nav__pill">
-              <i className="fas fa-hand-holding-heart"></i> Compassion Ministry
-            </a>
-            <a href="#highschool" className="dept-nav__pill">
-              <i className="fas fa-graduation-cap"></i> High School Ministry
-            </a>
+            {[
+              { hash: '#evangelism', icon: 'fas fa-globe-africa',        label: 'Evangelism & Missions' },
+              { hash: '#prayer',     icon: 'fas fa-hands-praying',        label: 'Prayer Department' },
+              { hash: '#compassion', icon: 'fas fa-hand-holding-heart',   label: 'Compassion Ministry' },
+              { hash: '#highschool', icon: 'fas fa-graduation-cap',       label: 'High School Ministry' },
+            ].map(({ hash: h, icon, label }) => (
+              <button
+                key={h}
+                className="dept-nav__pill"
+                onClick={() => scrollToHash(h)}
+              >
+                <i className={icon}></i> {label}
+              </button>
+            ))}
           </div>
         </div>
       </div>
