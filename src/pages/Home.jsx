@@ -1,13 +1,23 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
+// Hero photos
+import hero1 from '../assets/Ruanyage1.jpg';
+import hero2 from '../assets/Tala mission1.jpg';
+import hero3 from '../assets/Emali mission1.jpg';
+
+// News card photos
+import newsNtakira from '../assets/Gaukene ntakira circuit mission1.jpg';
+import newsEmali from '../assets/Emali mission2.jpg';
+import newsTala from '../assets/Tala mission2.jpg';
+
 const Home = () => {
     // Hero Slider State
     const [currentSlide, setCurrentSlide] = useState(0);
     const slides = [
-        { image: '/images/hero-1.jpg', title: 'Welcome to Kingdom Enlightenment', text: 'Spreading the Gospel, Transforming Lives, Building God\'s Kingdom', btn1: { text: 'Learn More', link: '/about' }, btn2: { text: 'Join Us', link: '/contact' } },
-        { image: '/images/hero-2.jpg', title: 'Go Into All The World', text: 'And preach the gospel to every creature - Mark 16:15', btn1: { text: 'Our Ministries', link: '/ministries' }, btn2: { text: 'Support Us', link: '/donate' } },
-        { image: '/images/hero-3.jpg', title: 'Making Disciples of All Nations', text: 'Teaching them to observe all things - Matthew 28:19-20', btn1: { text: 'Our Programs', link: '/programs' }, btn2: { text: 'Upcoming Events', link: '/events' } }
+        { image: hero1, title: 'Welcome to Kingdom Enlightenment', text: 'Spreading the Gospel, Transforming Lives, Building God\'s Kingdom', btn1: { text: 'Learn More', link: '/about' }, btn2: { text: 'Join Us', link: '/contact' } },
+        { image: hero2, title: 'Go Into All The World', text: 'And preach the gospel to every creature — Mark 16:15', btn1: { text: 'Our Departments', link: '/ministries' }, btn2: { text: 'Support Us', link: '/donate' } },
+        { image: hero3, title: 'Making Disciples of All Nations', text: 'Teaching them to observe all things — Matthew 28:19-20', btn1: { text: 'Mission Outreach', link: '/programs' }, btn2: { text: 'Upcoming Events', link: '/events' } }
     ];
 
     useEffect(() => {
@@ -36,7 +46,7 @@ const Home = () => {
     }, [testimonials.length]);
 
     // Stats Counter logic (simplified for React)
-    const [stats, setStats] = useState({ churches: 0, lives: 0, counties: 0, leaders: 0 });
+    const [stats, setStats] = useState({ souls: 0, missions: 0, counties: 0, schools: 0 });
     const statsRef = useRef(null);
     const [statsVisible, setStatsVisible] = useState(false);
 
@@ -58,7 +68,7 @@ const Home = () => {
             const steps = 50;
             const stepTime = duration / steps;
 
-            const targets = { churches: 50, lives: 5000, counties: 20, leaders: 200 };
+            const targets = { souls: 445, missions: 5, counties: 4, schools: 3 };
             let currentStep = 0;
 
             const timer = setInterval(() => {
@@ -66,10 +76,10 @@ const Home = () => {
                 const progress = currentStep / steps;
 
                 setStats({
-                    churches: Math.floor(targets.churches * progress),
-                    lives: Math.floor(targets.lives * progress),
+                    souls: Math.floor(targets.souls * progress),
+                    missions: Math.floor(targets.missions * progress),
                     counties: Math.floor(targets.counties * progress),
-                    leaders: Math.floor(targets.leaders * progress)
+                    schools: Math.floor(targets.schools * progress)
                 });
 
                 if (currentStep >= steps) clearInterval(timer);
@@ -248,17 +258,20 @@ const Home = () => {
                     <div className="stats-grid">
                         <div className="stat-item">
                             <div className="stat-icon">
-                                <i className="fas fa-church"></i>
+                                <i className="fas fa-heart"></i>
                             </div>
-                            <div className="stat-number">{statsVisible ? stats.churches : 0}</div>
-                            <div className="stat-label">Churches Planted</div>
+                            <div className="stat-number">
+                                {statsVisible ? stats.souls : 0}
+                                {statsVisible && stats.souls >= 445 ? '+' : ''}
+                            </div>
+                            <div className="stat-label">Souls Won to Christ</div>
                         </div>
                         <div className="stat-item">
                             <div className="stat-icon">
-                                <i className="fas fa-users"></i>
+                                <i className="fas fa-globe-africa"></i>
                             </div>
-                            <div className="stat-number">{statsVisible ? stats.lives : 0}</div>
-                            <div className="stat-label">Lives Transformed</div>
+                            <div className="stat-number">{statsVisible ? stats.missions : 0}</div>
+                            <div className="stat-label">Mission Trips</div>
                         </div>
                         <div className="stat-item">
                             <div className="stat-icon">
@@ -271,8 +284,8 @@ const Home = () => {
                             <div className="stat-icon">
                                 <i className="fas fa-graduation-cap"></i>
                             </div>
-                            <div className="stat-number">{statsVisible ? stats.leaders : 0}</div>
-                            <div className="stat-label">Leaders Trained</div>
+                            <div className="stat-number">{statsVisible ? stats.schools : 0}</div>
+                            <div className="stat-label">Schools Ministered</div>
                         </div>
                     </div>
                 </div>
@@ -396,38 +409,38 @@ const Home = () => {
                     <div className="news-grid">
                         <div className="news-card">
                             <div className="news-image">
-                                <div className="image-placeholder"><i className="fas fa-image"></i></div>
+                                <img src={newsNtakira} alt="Ntakira Mission" />
                                 <div className="news-category">Missions</div>
                             </div>
                             <div className="news-content">
-                                <div className="news-date">December 10, 2024</div>
-                                <h3>Successful Mission Trip to Turkana County</h3>
-                                <p>Our team returned from a two-week mission trip to Turkana where over 500 people gave their lives to Christ...</p>
-                                <a href="#" className="news-link">Read More <i className="fas fa-arrow-right"></i></a>
+                                <div className="news-date">August 2026 — Meru</div>
+                                <h3>Ntakira Mission: Carrying the Gospel to Meru</h3>
+                                <p>The Ntakira mission brought the Gospel through crusades, revivals, street evangelism, and youth mentorship at Methodist Church of Kenya, Ntakira Parish.</p>
+                                <Link to="/programs" className="news-link">Read More <i className="fas fa-arrow-right"></i></Link>
                             </div>
                         </div>
                         <div className="news-card">
                             <div className="news-image">
-                                <div className="image-placeholder"><i className="fas fa-image"></i></div>
-                                <div className="news-category">Training</div>
-                            </div>
-                            <div className="news-content">
-                                <div className="news-date">December 5, 2024</div>
-                                <h3>Leadership Training Graduation Ceremony</h3>
-                                <p>50 new leaders graduated from our intensive leadership training program ready to serve in their communities...</p>
-                                <a href="#" className="news-link">Read More <i className="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                        <div className="news-card">
-                            <div className="news-image">
-                                <div className="image-placeholder"><i className="fas fa-image"></i></div>
+                                <img src={newsEmali} alt="Emali Mission" />
                                 <div className="news-category">Outreach</div>
                             </div>
                             <div className="news-content">
-                                <div className="news-date">November 28, 2024</div>
-                                <h3>Medical Camp Serves Over 1,000 People</h3>
-                                <p>Our community outreach team organized a free medical camp that served over 1,000 people in rural Kitui...</p>
-                                <a href="#" className="news-link">Read More <i className="fas fa-arrow-right"></i></a>
+                                <div className="news-date">August 2026 — Makueni &amp; Kajiado</div>
+                                <h3>Emali Mission: 76 Souls Give Their Lives to Christ</h3>
+                                <p>The Emali mission at Methodist Church of Kenya saw 76 people surrender their lives to Christ through evangelism, prayer walks, crusades, and compassion outreach.</p>
+                                <Link to="/programs" className="news-link">Read More <i className="fas fa-arrow-right"></i></Link>
+                            </div>
+                        </div>
+                        <div className="news-card">
+                            <div className="news-image">
+                                <img src={newsTala} alt="Tala Mission" />
+                                <div className="news-category">Missions</div>
+                            </div>
+                            <div className="news-content">
+                                <div className="news-date">April 2026 — Machakos</div>
+                                <h3>Tala Mission: 170 Souls Saved in Machakos</h3>
+                                <p>Liberty Church, Tala hosted a powerful week-long outreach that saw 170 people come to Christ through street evangelism, prayer walks, crusades, and youth workshops.</p>
+                                <Link to="/programs" className="news-link">Read More <i className="fas fa-arrow-right"></i></Link>
                             </div>
                         </div>
                     </div>
