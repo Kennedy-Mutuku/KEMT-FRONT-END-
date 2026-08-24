@@ -76,9 +76,10 @@ const Navbar = () => {
                                         <li><Link to="/ministries#prayer" onClick={() => setMobileMenuOpen(false)}>Prayer Department</Link></li>
                                         <li><Link to="/ministries#compassion" onClick={() => setMobileMenuOpen(false)}>Compassion Ministry</Link></li>
                                         <li><Link to="/ministries#highschool" onClick={() => setMobileMenuOpen(false)}>High School Ministry</Link></li>
+                                        <li><Link to="/programs" onClick={() => setMobileMenuOpen(false)}>Outreach</Link></li>
                                     </ul>
                                 </li>
-                                <li><NavLink to="/programs" onClick={() => setMobileMenuOpen(false)}>Outreach</NavLink></li>
+                                <li><NavLink to="/about#leadership" onClick={() => setMobileMenuOpen(false)}>Leadership</NavLink></li>
                                 <li><NavLink to="/events" onClick={() => setMobileMenuOpen(false)}>Events</NavLink></li>
                                 <li><NavLink to="/gallery" onClick={() => setMobileMenuOpen(false)}>Gallery</NavLink></li>
                                 <li><NavLink to="/contact" onClick={() => setMobileMenuOpen(false)}>Contact Us</NavLink></li>

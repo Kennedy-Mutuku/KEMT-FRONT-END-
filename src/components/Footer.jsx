@@ -39,7 +39,7 @@ const Footer = () => {
                                 <li><Link to="/ministries#prayer">Prayer Department</Link></li>
                                 <li><Link to="/ministries#compassion">Compassion Ministry</Link></li>
                                 <li><Link to="/ministries#highschool">High School Ministry</Link></li>
-                                <li><Link to="/programs">Mission Outreach</Link></li>
+                                <li><Link to="/programs">Outreach</Link></li>
                             </ul>
                         </div>
                         <div className="footer-col">
