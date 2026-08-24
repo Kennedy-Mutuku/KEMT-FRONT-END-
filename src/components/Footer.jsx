@@ -33,14 +33,13 @@ const Footer = () => {
                             </ul>
                         </div>
                         <div className="footer-col">
-                            <h4>Our Ministries</h4>
+                            <h4>Our Departments</h4>
                             <ul>
-                                <li><Link to="/ministries#evangelism">Evangelism & Missions</Link></li>
-                                <li><Link to="/ministries#discipleship">Discipleship</Link></li>
-                                <li><Link to="/ministries#youth-ministry">Youth Ministry</Link></li>
-                                <li><Link to="/ministries#women-ministry">Women Ministry</Link></li>
-                                <li><Link to="/ministries#men-ministry">Men Ministry</Link></li>
-                                <li><Link to="/ministries#community-outreach">Community Outreach</Link></li>
+                                <li><Link to="/ministries#evangelism">Evangelism &amp; Missions</Link></li>
+                                <li><Link to="/ministries#prayer">Prayer Department</Link></li>
+                                <li><Link to="/ministries#compassion">Compassion Ministry</Link></li>
+                                <li><Link to="/ministries#highschool">High School Ministry</Link></li>
+                                <li><Link to="/programs">Mission Outreach</Link></li>
                             </ul>
                         </div>
                         <div className="footer-col">
