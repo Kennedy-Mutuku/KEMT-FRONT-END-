@@ -62,9 +62,9 @@ const Navbar = () => {
                                 <li className={`dropdown ${openDropdown === 'about' ? 'active' : ''}`}>
                                     <NavLink to="/about" onClick={() => toggleDropdown('about')}>About Us <i className="fas fa-chevron-down"></i></NavLink>
                                     <ul className="dropdown-menu">
-                                        <li><Link to="/about#who-we-are" onClick={() => setMobileMenuOpen(false)}>Who We Are</Link></li>
-                                        <li><Link to="/about#vision-mission" onClick={() => setMobileMenuOpen(false)}>Vision & Mission</Link></li>
-                                        <li><Link to="/about#statement-of-faith" onClick={() => setMobileMenuOpen(false)}>Statement of Faith</Link></li>
+                                        <li><Link to="/about#who-we-are" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>Who We Are</Link></li>
+                                        <li><Link to="/about#vision-mission" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>Vision & Mission</Link></li>
+                                        <li><Link to="/about#statement-of-faith" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>Statement of Faith</Link></li>
                                     </ul>
                                 </li>
                                 <li className={`dropdown ${openDropdown === 'ministries' ? 'active' : ''}`}>

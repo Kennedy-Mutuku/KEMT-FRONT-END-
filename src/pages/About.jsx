@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 import bannerPhoto from '../assets/Ruanyage2.jpg';
 import storyPhoto1 from '../assets/Tala mission6.jpg';
@@ -25,7 +25,22 @@ const faith = [
   'We believe in the Great Commission — the call to make disciples of all nations.',
 ];
 
-const About = () => (
+const About = () => {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (!hash) return;
+    const timer = setTimeout(() => {
+      const el = document.querySelector(hash);
+      if (!el) return;
+      const headerHeight = document.querySelector('.site-header-wrapper')?.offsetHeight || 80;
+      const top = el.getBoundingClientRect().top + window.pageYOffset - headerHeight - 16;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }, 120);
+    return () => clearTimeout(timer);
+  }, [hash]);
+
+  return (
   <main className="about-page">
 
     {/* Banner */}
@@ -157,6 +172,7 @@ const About = () => (
     </section>
 
   </main>
-);
+  );
+};
 
 export default About;
