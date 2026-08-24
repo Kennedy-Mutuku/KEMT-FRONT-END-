@@ -4685,7 +4685,87 @@ p {
    LEADERSHIP PAGE
    ===================================================== */
 .leadership-banner {
+    min-height: 220px !important;
     background-image: linear-gradient(135deg, #0d1b2a 0%, #1a2e45 60%, #0d1b2a 100%) !important;
+}
+
+.leader-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.leader-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.leader-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Photo area — replace background with an <img> when photos arrive */
+.leader-photo {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.leader-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    position: absolute;
+    inset: 0;
+}
+
+.leader-initials {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: rgba(255,255,255,0.85);
+    font-family: var(--font-secondary);
+    letter-spacing: 2px;
+    user-select: none;
+}
+
+.leader-info {
+    padding: 1.25rem 1.25rem 1.5rem;
+    text-align: center;
+}
+
+.leader-info .leader-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 0.3rem;
+}
+
+.leader-info .leader-role {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+@media (max-width: 1000px) {
+    .leader-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 700px) {
+    .leader-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+}
+@media (max-width: 420px) {
+    .leader-grid { grid-template-columns: 1fr; }
 }
 
 /* =====================================================

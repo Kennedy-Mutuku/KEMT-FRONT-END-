@@ -29,14 +29,19 @@ const Leadership = () => (
     {/* Leadership Grid */}
     <section className="section">
       <div className="container">
-        <div className="leadership-grid">
+        <div className="leader-grid">
           {leadership.map((person, i) => (
             <div className="leader-card" key={i}>
-              <div className="leader-avatar" style={{ background: `linear-gradient(135deg, ${person.color}, ${person.color}cc)` }}>
-                <span>{person.initials}</span>
+              <div
+                className="leader-photo"
+                style={{ background: `linear-gradient(160deg, ${person.color}dd, ${person.color}88)` }}
+              >
+                <span className="leader-initials">{person.initials}</span>
               </div>
-              <h3 className="leader-name">{person.name}</h3>
-              <p className="leader-role">{person.role}</p>
+              <div className="leader-info">
+                <h3 className="leader-name">{person.name}</h3>
+                <p className="leader-role">{person.role}</p>
+              </div>
             </div>
           ))}
         </div>
