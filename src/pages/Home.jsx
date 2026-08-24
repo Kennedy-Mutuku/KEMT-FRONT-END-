@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 // Hero photos
 import hero1 from '../assets/Ruanyage1.jpg';
 import hero2 from '../assets/Tala mission1.jpg';
-import hero3 from '../assets/Emali mission1.jpg';
 
 // About section photos
 import aboutMain from '../assets/Emali mission3.jpg';
@@ -21,8 +20,7 @@ const Home = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const slides = [
         { image: hero1, title: 'Welcome to Kingdom Enlightenment', text: 'Spreading the Gospel, Transforming Lives, Building God\'s Kingdom', btn1: { text: 'Learn More', link: '/about' }, btn2: { text: 'Join Us', link: '/contact' } },
-        { image: hero2, title: 'Go Into All The World', text: 'And preach the gospel to every creature — Mark 16:15', btn1: { text: 'Our Departments', link: '/ministries' }, btn2: { text: 'Support Us', link: '/donate' } },
-        { image: hero3, title: 'Making Disciples of All Nations', text: 'Teaching them to observe all things — Matthew 28:19-20', btn1: { text: 'Mission Outreach', link: '/programs' }, btn2: { text: 'Upcoming Events', link: '/events' } }
+        { image: hero2, title: 'Go Into All The World', text: 'And preach the gospel to every creature — Mark 16:15', btn1: { text: 'Our Departments', link: '/ministries' }, btn2: { text: 'Support Us', link: '/donate' } }
     ];
 
     useEffect(() => {
