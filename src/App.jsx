@@ -6,16 +6,10 @@ import Home from './pages/Home';
 import Ministries from './pages/Ministries';
 import Programs from './pages/Programs';
 import Gallery from './pages/Gallery';
-
-// Placeholder components for pages not yet built
-const Placeholder = ({ title }) => (
-  <div className="container section">
-    <div className="section-header">
-      <h2 className="section-title">{title}</h2>
-      <p>Content coming soon...</p>
-    </div>
-  </div>
-);
+import About from './pages/About';
+import Events from './pages/Events';
+import Contact from './pages/Contact';
+import Donate from './pages/Donate';
 
 function App() {
   return (
@@ -24,13 +18,13 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<Placeholder title="About Us" />} />
+          <Route path="/about" element={<About />} />
           <Route path="/ministries" element={<Ministries />} />
           <Route path="/programs" element={<Programs />} />
-          <Route path="/events" element={<Placeholder title="Events" />} />
+          <Route path="/events" element={<Events />} />
           <Route path="/gallery" element={<Gallery />} />
-          <Route path="/contact" element={<Placeholder title="Contact Us" />} />
-          <Route path="/donate" element={<Placeholder title="Donate" />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/donate" element={<Donate />} />
         </Routes>
         <Footer />
         <BackToTop />
