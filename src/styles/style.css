@@ -3708,6 +3708,57 @@ p {
 
 
 /* ===================================================
+   HOME — About Section Photo Collage
+   =================================================== */
+.about-photo-collage {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 6px;
+    height: 420px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.about-photo-main {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.about-photo-collage:hover .about-photo-main {
+    transform: scale(1.03);
+}
+
+.about-photo-side {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.about-photo-side img {
+    flex: 1;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.about-photo-side img:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .about-photo-collage {
+        height: 280px;
+    }
+}
+
+/* ===================================================
    MISSION ENTRY — Photo Panel
    =================================================== */
 .mission-entry__image {

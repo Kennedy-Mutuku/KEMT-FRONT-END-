@@ -6,6 +6,11 @@ import hero1 from '../assets/Ruanyage1.jpg';
 import hero2 from '../assets/Tala mission1.jpg';
 import hero3 from '../assets/Emali mission1.jpg';
 
+// About section photos
+import aboutMain from '../assets/Emali mission3.jpg';
+import aboutThumb1 from '../assets/Tala mission3.jpg';
+import aboutThumb2 from '../assets/Ruanyage5.jpg';
+
 // News card photos
 import newsNtakira from '../assets/Gaukene ntakira circuit mission1.jpg';
 import newsEmali from '../assets/Emali mission2.jpg';
@@ -148,9 +153,12 @@ const Home = () => {
                             <Link to="/about" className="btn btn-primary">Read More About Us</Link>
                         </div>
                         <div className="about-image">
-                            <div className="image-placeholder">
-                                <i className="fas fa-image"></i>
-                                <span>About Image</span>
+                            <div className="about-photo-collage">
+                                <img src={aboutMain} alt="KEMT in the field" className="about-photo-main" />
+                                <div className="about-photo-side">
+                                    <img src={aboutThumb1} alt="Mission outreach" />
+                                    <img src={aboutThumb2} alt="Community ministry" />
+                                </div>
                             </div>
                         </div>
                     </div>
