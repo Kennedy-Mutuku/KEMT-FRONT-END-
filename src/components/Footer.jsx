@@ -70,6 +70,7 @@ const Footer = () => {
                         <div className="footer-links">
                             <a href="#">Privacy Policy</a>
                             <a href="#">Terms of Service</a>
+                            <Link to="/login">Admin</Link>
                         </div>
                     </div>
                 </div>
