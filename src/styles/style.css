@@ -4910,6 +4910,155 @@ p {
 
 
 /* =====================================================
+   ABOUT PAGE — Our History Timeline
+   ===================================================== */
+.history-section {
+    background: #fff;
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+.history-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--primary-color));
+}
+.history-intro {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 72px;
+}
+.history-intro p {
+    color: #5a5a6a;
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-top: 14px;
+}
+.history-timeline {
+    position: relative;
+    max-width: 920px;
+    margin: 0 auto;
+}
+.history-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--primary-color) 0%, rgba(230,126,34,0.15) 100%);
+    transform: translateX(-50%);
+}
+.tl-item {
+    display: grid;
+    grid-template-columns: 1fr 56px 1fr;
+    gap: 24px;
+    align-items: start;
+    margin-bottom: 52px;
+    position: relative;
+}
+.tl-item:last-child { margin-bottom: 0; }
+/* Odd: content left, empty right */
+.tl-item:nth-child(odd) .tl-card  { order: 1; text-align: right; }
+.tl-item:nth-child(odd) .tl-node  { order: 2; }
+.tl-item:nth-child(odd) .tl-empty { order: 3; }
+/* Even: empty left, content right */
+.tl-item:nth-child(even) .tl-empty { order: 1; }
+.tl-item:nth-child(even) .tl-node  { order: 2; }
+.tl-item:nth-child(even) .tl-card  { order: 3; text-align: left; }
+.tl-node {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 7px rgba(230,126,34,0.12), 0 6px 18px rgba(230,126,34,0.3);
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tl-item:hover .tl-node {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 10px rgba(230,126,34,0.14), 0 8px 24px rgba(230,126,34,0.4);
+}
+.tl-node i {
+    color: #fff;
+    font-size: 1.15rem;
+}
+.tl-card {
+    background: #fff;
+    border: 1px solid #eceef3;
+    border-radius: 18px;
+    padding: 26px 28px;
+    box-shadow: 0 4px 22px rgba(0,0,0,0.055);
+    transition: all 0.32s ease;
+}
+.tl-card:hover {
+    box-shadow: 0 10px 40px rgba(0,0,0,0.10);
+    border-color: rgba(230,126,34,0.22);
+    transform: translateY(-3px);
+}
+.tl-date-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(90deg, #fef6ec, #fdf0e0);
+    color: var(--primary-color);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 5px 13px;
+    border-radius: 50px;
+    margin-bottom: 12px;
+}
+.tl-card h4 {
+    font-family: var(--font-secondary);
+    font-size: 1.08rem;
+    color: #0d1b2a;
+    margin-bottom: 9px;
+    line-height: 1.3;
+}
+.tl-card p {
+    color: #666;
+    font-size: 0.87rem;
+    line-height: 1.74;
+}
+.tl-card .tl-souls {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    background: var(--primary-color);
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 50px;
+}
+.tl-empty { /* spacer — invisible */ }
+
+/* Responsive timeline */
+@media (max-width: 700px) {
+    .history-timeline::before { left: 27px; }
+    .tl-item,
+    .tl-item:nth-child(odd) .tl-card,
+    .tl-item:nth-child(even) .tl-card { grid-template-columns: 56px 1fr; text-align: left; }
+    .tl-item { grid-template-columns: 56px 1fr; gap: 16px; }
+    .tl-item:nth-child(odd) .tl-card  { order: 3; text-align: left; }
+    .tl-item:nth-child(odd) .tl-node  { order: 1; }
+    .tl-item:nth-child(odd) .tl-empty { display: none; }
+    .tl-item:nth-child(even) .tl-empty { display: none; }
+    .tl-item:nth-child(even) .tl-node  { order: 1; }
+    .tl-item:nth-child(even) .tl-card  { order: 2; text-align: left; }
+}
+
+/* =====================================================
    HOME REDESIGN — Impact Ticker
    ===================================================== */
 .impact-ticker {

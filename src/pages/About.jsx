@@ -7,12 +7,12 @@ import storyPhoto2 from '../assets/Emali mission6.jpg';
 import storyPhoto3 from '../assets/Ruanyage7.jpg';
 
 const values = [
-  { icon: 'fas fa-bible',          label: 'Biblical Authority',    desc: 'Everything we do is rooted in and guided by the Word of God.' },
-  { icon: 'fas fa-hands-praying',  label: 'Prayer',               desc: 'We seek God in prayer before and throughout every mission.' },
-  { icon: 'fas fa-heart',          label: 'Compassion',           desc: 'We meet people at their point of need with the love of Christ.' },
-  { icon: 'fas fa-star',           label: 'Excellence',           desc: 'We give our best to God in everything we do.' },
-  { icon: 'fas fa-handshake',      label: 'Integrity',            desc: 'We uphold honesty and transparency in all our dealings.' },
-  { icon: 'fas fa-users',          label: 'Unity',                desc: 'We work together as one body, honouring and serving one another.' },
+  { icon: 'fas fa-bible',          label: 'Biblical Authority',  desc: 'Everything we do is rooted in and guided by the Word of God.' },
+  { icon: 'fas fa-hands-praying',  label: 'Prayer',              desc: 'We seek God in prayer before and throughout every mission.' },
+  { icon: 'fas fa-heart',          label: 'Compassion',          desc: 'We meet people at their point of need with the love of Christ.' },
+  { icon: 'fas fa-star',           label: 'Excellence',          desc: 'We give our best to God in everything we do.' },
+  { icon: 'fas fa-handshake',      label: 'Integrity',           desc: 'We uphold honesty and transparency in all our dealings.' },
+  { icon: 'fas fa-users',          label: 'Unity',               desc: 'We work together as one body, honouring and serving one another.' },
 ];
 
 const faith = [
@@ -23,6 +23,67 @@ const faith = [
   'We believe in the present ministry of the Holy Spirit, by whose indwelling the Christian is enabled to live a godly life.',
   'We believe in the resurrection of the dead and the eternal life of believers with God.',
   'We believe in the Great Commission — the call to make disciples of all nations.',
+];
+
+const timeline = [
+  {
+    date: 'Late 2024',
+    icon: 'fas fa-users',
+    title: 'Commission 2024 Conference',
+    text: 'At the Commission 2024 Conference hosted by Focus Kenya at Kabarak University, the burden to reach the unreached and disciple nations was powerfully ignited in our hearts.',
+  },
+  {
+    date: '22nd January 2025',
+    icon: 'fas fa-cross',
+    title: 'KEMT is Founded',
+    text: 'Kingdom Enlightenment Missions Team was founded by Vincent Mwenda following a vision and divine command from the Lord to raise a generation dedicated to spreading the Gospel of Christ. The team began with fewer than 15 missionaries, united by faith and a shared passion for the Gospel.',
+  },
+  {
+    date: '15th March 2025',
+    icon: 'fas fa-mountain',
+    title: 'Vision Confirmed on the Mountain',
+    text: 'During a time of mountain prayer, seeking God and dedicating together with Kennedy Mutuku, the vision was fully confirmed. This became a significant spiritual milestone as the team committed itself fully to the Lord and the fulfilment of the Great Commission.',
+  },
+  {
+    date: 'Ongoing from 2025',
+    icon: 'fas fa-book-open',
+    title: 'Monday Online Bible Study Fellowships',
+    text: 'Regular Monday online Bible study fellowships nurtured spiritual growth, unity, prayer, and a passion for evangelism — becoming a training ground that prepared the team for active mission work.',
+  },
+  {
+    date: '18–24 August 2025',
+    icon: 'fas fa-globe-africa',
+    title: 'First Mission — Rwanyange, Meru County',
+    text: 'The Lord opened the way for our first mission outreach at East Africa Pentecostal Church, Rwanyange. This mission confirmed God\'s call upon the team and marked a powerful beginning to our ministry.',
+    souls: '145 Souls Won',
+  },
+  {
+    date: '29 Dec 2025 – 4 Jan 2026',
+    icon: 'fas fa-globe-africa',
+    title: 'Second Mission — Gikumene, Meru County',
+    text: 'At Deliverance Church International, Gikumene, we witnessed God\'s faithfulness through transformed lives, renewed faith, and the continued advancement of the Gospel.',
+    souls: '130 Souls Won',
+  },
+  {
+    date: '20–26 April 2026',
+    icon: 'fas fa-globe-africa',
+    title: 'Tala Mission — Machakos County',
+    text: 'The team ministered at Liberty Center, Tala, carrying the Gospel through evangelism, outreach, prayer, and community engagement.',
+    souls: '170 Souls Won',
+  },
+  {
+    date: '10–16 August 2026',
+    icon: 'fas fa-globe-africa',
+    title: 'Emali Mission — Makueni & Kajiado',
+    text: 'The team held a mission at Methodist Church of Kenya, Emali Town, reaching the community with the Gospel of Christ and demonstrating God\'s love through ministry and compassion.',
+    souls: '76 Souls Won',
+  },
+  {
+    date: '20–23 August 2026',
+    icon: 'fas fa-globe-africa',
+    title: 'Gaukene Mission — MCK Ntakira Circuit',
+    text: 'The team continued its mission journey in Gaukene under the Methodist Church of Kenya Ntakira Circuit, proclaiming Christ, reaching communities, and calling people to faith and transformation.',
+  },
 ];
 
 const About = () => {
@@ -41,137 +102,169 @@ const About = () => {
   }, [hash]);
 
   return (
-  <main className="about-page">
+    <main className="about-page">
 
-    {/* Banner */}
-    <section className="page-banner" style={{ backgroundImage: `url(${bannerPhoto})` }}>
-      <div className="banner-overlay"></div>
-      <div className="container">
-        <div className="banner-content">
-          <span className="banner-tag">Who We Are</span>
-          <h1>About KEMT</h1>
-          <p>A Christ-centred team carrying the light of the Gospel to every community we enter.</p>
-        </div>
-      </div>
-    </section>
-
-    {/* Who We Are */}
-    <section id="who-we-are" className="section about-intro-section">
-      <div className="container">
-        <div className="dept-grid">
-          <div className="dept-content">
-            <span className="section-subtitle">Who We Are</span>
-            <h2 className="section-title">Kingdom Enlightenment Missions Team</h2>
-            <p className="lead">
-              Kingdom Enlightenment Missions Team (KEMT) is a Christ-centred missions organisation
-              dedicated to spreading the Gospel of Jesus Christ across Kenya and beyond.
-            </p>
-            <p>
-              Founded on the Great Commission, we are committed to reaching the unreached,
-              discipling believers, and establishing vibrant Christian communities. Our team
-              comprises passionate men and women who have answered God's call to serve in various
-              capacities — through evangelism, prayer, compassion, and mentorship.
-            </p>
-            <p>
-              We believe in the power of the Gospel to transform lives and communities. Through our
-              various departments and mission outreaches, we seek to bring hope, healing, and the
-              light of Christ to every corner of the land.
-            </p>
-            <div className="about-quick-stats">
-              <div className="aq-stat"><strong>445+</strong><span>Souls Won</span></div>
-              <div className="aq-stat"><strong>5</strong><span>Mission Trips</span></div>
-              <div className="aq-stat"><strong>4</strong><span>Counties</span></div>
-              <div className="aq-stat"><strong>3</strong><span>Schools</span></div>
-            </div>
+      {/* Banner */}
+      <section className="page-banner" style={{ backgroundImage: `url(${bannerPhoto})` }}>
+        <div className="banner-overlay"></div>
+        <div className="container">
+          <div className="banner-content">
+            <span className="banner-tag">Who We Are</span>
+            <h1>About KEMT</h1>
+            <p>A Christ-centred team carrying the light of the Gospel to every community we enter.</p>
           </div>
-          <div className="dept-media">
-            <div className="dept-photo-collage">
-              <img src={storyPhoto1} alt="KEMT in the field" className="collage-main" />
-              <div className="collage-side">
-                <img src={storyPhoto2} alt="" />
-                <img src={storyPhoto3} alt="" />
+        </div>
+      </section>
+
+      {/* Who We Are */}
+      <section id="who-we-are" className="section about-intro-section">
+        <div className="container">
+          <div className="dept-grid">
+            <div className="dept-content">
+              <span className="section-subtitle">Who We Are</span>
+              <h2 className="section-title">Kingdom Enlightenment Missions Team</h2>
+              <p className="lead">
+                Kingdom Enlightenment Missions Team (KEMT) is a Christ-centred missions organisation
+                dedicated to spreading the Gospel of Jesus Christ across Kenya and beyond.
+              </p>
+              <p>
+                Founded on 22nd January 2025 by Vincent Mwenda following a divine calling to obey
+                the Great Commission, KEMT began with fewer than 15 missionaries united by faith and
+                a shared passion for the Gospel. From this small, humble beginning, the Lord has
+                continued to grow and strengthen the ministry.
+              </p>
+              <p>
+                We believe in the power of the Gospel to transform lives and communities. Through
+                our departments and mission outreaches, we bring hope, healing, and the light of
+                Christ — reaching schools, churches, towns, and villages across Kenya.
+              </p>
+              <div className="about-quick-stats">
+                <div className="aq-stat"><strong>445+</strong><span>Souls Won</span></div>
+                <div className="aq-stat"><strong>5</strong><span>Mission Trips</span></div>
+                <div className="aq-stat"><strong>4</strong><span>Counties</span></div>
+                <div className="aq-stat"><strong>3</strong><span>Schools</span></div>
+              </div>
+            </div>
+            <div className="dept-media">
+              <div className="dept-photo-collage">
+                <img src={storyPhoto1} alt="KEMT in the field" className="collage-main" />
+                <div className="collage-side">
+                  <img src={storyPhoto2} alt="" />
+                  <img src={storyPhoto3} alt="" />
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    {/* Vision Mission Values */}
-    <section id="vision-mission" className="vision-mission-section">
-      <div className="container">
-        <div className="vm-cards">
-          <div className="vm-card vision-card">
-            <div className="vm-icon"><i className="fas fa-eye"></i></div>
-            <h3>Our Vision</h3>
-            <p>To see every person in Kenya and beyond encounter the transforming love of Jesus Christ and become a committed disciple who impacts their world for God's Kingdom.</p>
-          </div>
-          <div className="vm-card mission-card">
-            <div className="vm-icon"><i className="fas fa-bullseye"></i></div>
-            <h3>Our Mission</h3>
-            <p>To glorify God by evangelizing the lost, discipling believers, equipping leaders, and establishing communities of faith that reproduce and multiply across nations.</p>
-          </div>
-          <div className="vm-card values-card">
-            <div className="vm-icon"><i className="fas fa-heart"></i></div>
-            <h3>Our Mandate</h3>
-            <p>The Great Commission — Go into all the world, preach the Gospel, make disciples of all nations, baptizing them and teaching them to observe all that Christ commanded. Matthew 28:19-20.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    {/* Our Values */}
-    <section className="section values-section">
-      <div className="container">
-        <div className="section-header">
-          <span className="section-subtitle">What Drives Us</span>
-          <h2 className="section-title">Our Core Values</h2>
-        </div>
-        <div className="values-grid">
-          {values.map((v, i) => (
-            <div className="value-card" key={i}>
-              <div className="value-icon"><i className={v.icon}></i></div>
-              <h4>{v.label}</h4>
-              <p>{v.desc}</p>
+      {/* Our History — Timeline */}
+      <section id="our-history" className="history-section">
+        <div className="container">
+          <div className="history-intro">
+            <div className="section-header">
+              <span className="section-subtitle">Our Story</span>
+              <h2 className="section-title">Our History</h2>
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
+            <p>
+              From a divine calling at a university conference to mission fields across Kenya —
+              this is the story of how God has led Kingdom Enlightenment Missions Team from humble
+              beginnings to a growing movement for His glory.
+            </p>
+          </div>
 
-    {/* Statement of Faith */}
-    <section id="statement-of-faith" className="section faith-section">
-      <div className="container">
-        <div className="section-header">
-          <span className="section-subtitle">What We Believe</span>
-          <h2 className="section-title">Statement of Faith</h2>
-        </div>
-        <div className="faith-list">
-          {faith.map((point, i) => (
-            <div className="faith-item" key={i}>
-              <div className="faith-num">{String(i + 1).padStart(2, '0')}</div>
-              <p>{point}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    {/* CTA */}
-    <section className="cta-section">
-      <div className="container">
-        <div className="cta-content">
-          <h2>Join Us in This Mission</h2>
-          <p>Whether through prayer, giving, or going — there is a place for you in what God is doing through KEMT.</p>
-          <div className="cta-buttons">
-            <Link to="/contact" className="btn btn-primary">Get in Touch</Link>
-            <Link to="/donate" className="btn btn-secondary">Support Us</Link>
+          <div className="history-timeline">
+            {timeline.map((item, i) => (
+              <div className="tl-item" key={i}>
+                <div className="tl-card">
+                  <div className="tl-date-tag"><i className="fas fa-calendar-alt"></i>{item.date}</div>
+                  <h4>{item.title}</h4>
+                  <p>{item.text}</p>
+                  {item.souls && <div className="tl-souls"><i className="fas fa-heart"></i>{item.souls}</div>}
+                </div>
+                <div className="tl-node"><i className={item.icon}></i></div>
+                <div className="tl-empty"></div>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-  </main>
+      {/* Vision Mission Values */}
+      <section id="vision-mission" className="vision-mission-section">
+        <div className="container">
+          <div className="vm-cards">
+            <div className="vm-card vision-card">
+              <div className="vm-icon"><i className="fas fa-eye"></i></div>
+              <h3>Our Vision</h3>
+              <p>To see every person in Kenya and beyond encounter the transforming love of Jesus Christ and become a committed disciple who impacts their world for God's Kingdom.</p>
+            </div>
+            <div className="vm-card mission-card">
+              <div className="vm-icon"><i className="fas fa-bullseye"></i></div>
+              <h3>Our Mission</h3>
+              <p>To glorify God by evangelizing the lost, discipling believers, equipping leaders, and establishing communities of faith that reproduce and multiply across nations.</p>
+            </div>
+            <div className="vm-card values-card">
+              <div className="vm-icon"><i className="fas fa-heart"></i></div>
+              <h3>Our Mandate</h3>
+              <p>The Great Commission — Go into all the world, preach the Gospel, make disciples of all nations, baptizing them and teaching them to observe all that Christ commanded. Matthew 28:19-20.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Values */}
+      <section className="section values-section">
+        <div className="container">
+          <div className="section-header">
+            <span className="section-subtitle">What Drives Us</span>
+            <h2 className="section-title">Our Core Values</h2>
+          </div>
+          <div className="values-grid">
+            {values.map((v, i) => (
+              <div className="value-card" key={i}>
+                <div className="value-icon"><i className={v.icon}></i></div>
+                <h4>{v.label}</h4>
+                <p>{v.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Statement of Faith */}
+      <section id="statement-of-faith" className="section faith-section">
+        <div className="container">
+          <div className="section-header">
+            <span className="section-subtitle">What We Believe</span>
+            <h2 className="section-title">Statement of Faith</h2>
+          </div>
+          <div className="faith-list">
+            {faith.map((point, i) => (
+              <div className="faith-item" key={i}>
+                <div className="faith-num">{String(i + 1).padStart(2, '0')}</div>
+                <p>{point}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="cta-section">
+        <div className="container">
+          <div className="cta-content">
+            <h2>Join Us in This Mission</h2>
+            <p>Whether through prayer, giving, or going — there is a place for you in what God is doing through KEMT.</p>
+            <div className="cta-buttons">
+              <Link to="/contact" className="btn btn-primary">Get in Touch</Link>
+              <Link to="/donate" className="btn btn-secondary">Support Us</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
   );
 };
 
