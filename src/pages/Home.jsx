@@ -122,133 +122,117 @@ const Home = () => {
             </section>
 
 
-            {/* About Section */}
-            <section className="about-section section">
-                <div className="container">
-                    <div className="section-header">
-                        <span className="section-subtitle">Who We Are</span>
-                        <h2 className="section-title">About Kingdom Enlightenment Missions Team</h2>
+            {/* Impact Ticker */}
+            <div className="impact-ticker">
+                <div className="ticker-wrap">
+                    <div className="ticker-label">KEMT IMPACT</div>
+                    <div className="ticker-track">
+                        {[0, 1].map(i => (
+                            <React.Fragment key={i}>
+                                <div className="ticker-item"><i className="fas fa-heart"></i><span className="ticker-num">445+</span> Souls Won to Christ</div>
+                                <div className="ticker-item"><i className="fas fa-globe-africa"></i><span className="ticker-num">5</span> Mission Trips Completed</div>
+                                <div className="ticker-item"><i className="fas fa-map-marked-alt"></i><span className="ticker-num">4</span> Counties Reached</div>
+                                <div className="ticker-item"><i className="fas fa-graduation-cap"></i><span className="ticker-num">3</span> Schools Ministered</div>
+                                <div className="ticker-item"><i className="fas fa-church"></i> Multiple Partner Churches</div>
+                                <div className="ticker-item"><i className="fas fa-hands-praying"></i> Thursday Prayer &amp; Fasting</div>
+                                <div className="ticker-item"><i className="fas fa-cross"></i> Spreading God's Kingdom in Kenya</div>
+                            </React.Fragment>
+                        ))}
                     </div>
-                    <div className="about-content">
-                        <div className="about-text">
-                            <p className="lead">Kingdom Enlightenment Missions Team is a Christ-centered missions organization dedicated to spreading the Gospel of Jesus Christ across Kenya and beyond.</p>
-                            <p>Founded on the Great Commission, we are committed to reaching the unreached, discipling believers, and establishing vibrant Christian communities. Our team comprises passionate men and women who have answered God's call to serve in various capacities.</p>
-                            <p>We believe in the power of the Gospel to transform lives and communities. Through our various ministries and programs, we seek to bring hope, healing, and the light of Christ to every corner of the land.</p>
-                            <div className="about-features">
-                                <div className="feature">
-                                    <i className="fas fa-bible"></i>
-                                    <span>Bible-Based Teaching</span>
-                                </div>
-                                <div className="feature">
-                                    <i className="fas fa-hands-praying"></i>
-                                    <span>Prayer Focused</span>
-                                </div>
-                                <div className="feature">
-                                    <i className="fas fa-users"></i>
-                                    <span>Community Driven</span>
-                                </div>
+                </div>
+            </div>
+
+            {/* About Section — Redesigned */}
+            <section className="about-section-v2">
+                <div className="container">
+                    <div className="about-v2-grid">
+                        <div className="about-v2-text-side">
+                            <div className="about-v2-eyebrow"><span>Who We Are</span></div>
+                            <h2 className="about-v2-heading">
+                                Carrying the <em>Light of Christ</em><br />Across Kenya &amp; Beyond
+                            </h2>
+                            <p className="about-v2-desc">
+                                Kingdom Enlightenment Missions Team is a Christ-centered missions organization dedicated to spreading the Gospel of Jesus Christ. Founded on the Great Commission, we reach the unreached, disciple believers, and establish vibrant Christian communities.
+                            </p>
+                            <p className="about-v2-desc">
+                                Our team comprises passionate men and women who have answered God's call — bringing hope, healing, and the light of Christ to every corner of the land through crusades, prayer walks, school missions, and compassion outreach.
+                            </p>
+                            <div className="about-v2-pills">
+                                <div className="about-v2-pill"><i className="fas fa-bible"></i> Bible-Based Teaching</div>
+                                <div className="about-v2-pill"><i className="fas fa-hands-praying"></i> Prayer Focused</div>
+                                <div className="about-v2-pill"><i className="fas fa-users"></i> Community Driven</div>
                             </div>
                             <Link to="/about" className="btn btn-primary">Read More About Us</Link>
                         </div>
-                        <div className="about-image">
-                            <div className="about-photo-collage">
-                                <img src={aboutMain} alt="KEMT in the field" className="about-photo-main" />
-                                <div className="about-photo-side">
-                                    <img src={aboutThumb1} alt="Mission outreach" />
-                                    <img src={aboutThumb2} alt="Community ministry" />
-                                </div>
+                        <div className="about-v2-photo-side">
+                            <div className="about-v2-photo-wrap">
+                                <div className="about-v2-badge"><strong>445+</strong>Souls<br />Saved</div>
+                                <img src={aboutMain} alt="KEMT in the field" className="about-v2-photo-main" />
+                                <img src={aboutThumb1} alt="Mission outreach" className="about-v2-photo-accent" />
+                                <div className="about-v2-deco-ring"></div>
+                                <div className="about-v2-deco-dot"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Vision Mission Section */}
-            <section className="vision-mission-section">
+            {/* Vision / Mission — Redesigned */}
+            <section className="vision-mission-v2">
                 <div className="container">
-                    <div className="vm-cards">
-                        <div className="vm-card vision-card">
-                            <div className="vm-icon">
-                                <i className="fas fa-eye"></i>
-                            </div>
+                    <div className="vm-v2-header">
+                        <p className="vm-v2-verse">"Go into all the world and preach the gospel to all creation." — Mark 16:15</p>
+                        <h2 className="vm-v2-title">Our <span>Purpose</span> &amp; Calling</h2>
+                    </div>
+                    <div className="vm-v2-cards">
+                        <div className="vm-v2-card">
+                            <span className="vm-v2-num">01</span>
+                            <div className="vm-v2-icon"><i className="fas fa-eye"></i></div>
                             <h3>Our Vision</h3>
                             <p>To see every person in Kenya and beyond encounter the transforming love of Jesus Christ and become a committed disciple who impacts their world for God's Kingdom.</p>
                         </div>
-                        <div className="vm-card mission-card">
-                            <div className="vm-icon">
-                                <i className="fas fa-bullseye"></i>
-                            </div>
+                        <div className="vm-v2-card">
+                            <span className="vm-v2-num">02</span>
+                            <div className="vm-v2-icon"><i className="fas fa-bullseye"></i></div>
                             <h3>Our Mission</h3>
                             <p>To glorify God by evangelizing the lost, discipling believers, equipping leaders, and planting churches that reproduce and multiply across nations.</p>
                         </div>
-                        <div className="vm-card values-card">
-                            <div className="vm-icon">
-                                <i className="fas fa-heart"></i>
-                            </div>
+                        <div className="vm-v2-card">
+                            <span className="vm-v2-num">03</span>
+                            <div className="vm-v2-icon"><i className="fas fa-heart"></i></div>
                             <h3>Our Values</h3>
-                            <p>Faith in God, Biblical Authority, Prayer, Excellence, Integrity, Unity, Compassion, and Servant Leadership guide everything we do.</p>
+                            <p>Faith in God, Biblical Authority, Prayer, Excellence, Integrity, Unity, Compassion, and Servant Leadership guide everything we do in every mission field.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Ministries Section */}
-            <section className="ministries-section section">
+            {/* Ministries — Redesigned */}
+            <section className="ministries-v2">
                 <div className="container">
                     <div className="section-header">
                         <span className="section-subtitle">What We Do</span>
                         <h2 className="section-title">Our Ministries</h2>
                         <p className="section-description">We serve through various ministries designed to meet the spiritual and physical needs of people at every stage of life.</p>
                     </div>
-                    <div className="ministries-grid">
-                        <div className="ministry-card">
-                            <div className="ministry-icon">
-                                <i className="fas fa-globe-africa"></i>
+                    <div className="ministry-v2-grid">
+                        {[
+                            { icon: 'globe-africa',       title: 'Evangelism & Missions',  desc: 'Reaching the unreached with the Gospel through crusades, door-to-door evangelism, and mission trips to remote areas.',                    link: '/ministries#evangelism' },
+                            { icon: 'book-open',          title: 'Discipleship',            desc: 'Building mature believers through systematic Bible study, mentorship programs, and spiritual growth initiatives.',                          link: '/ministries#discipleship' },
+                            { icon: 'child',              title: 'Youth Ministry',          desc: 'Empowering young people to know Christ and live purposefully through youth camps, conferences, and mentorship.',                            link: '/ministries#youth-ministry' },
+                            { icon: 'female',             title: 'Women Ministry',          desc: 'Equipping women to fulfill their God-given potential through fellowship, teaching, and empowerment programs.',                              link: '/ministries#women-ministry' },
+                            { icon: 'male',               title: 'Men Ministry',            desc: 'Building godly men who lead with integrity in their families, churches, and communities through targeted discipleship.',                    link: '/ministries#men-ministry' },
+                            { icon: 'hand-holding-heart', title: 'Community Outreach',      desc: 'Demonstrating Christ\'s love through feeding programs, medical camps, education support, and community development.',                      link: '/ministries#community-outreach' },
+                        ].map((m, i) => (
+                            <div className="ministry-v2-card" key={i}>
+                                <div className="ministry-v2-icon-wrap">
+                                    <i className={`fas fa-${m.icon}`}></i>
+                                </div>
+                                <h3>{m.title}</h3>
+                                <p>{m.desc}</p>
+                                <Link to={m.link} className="ministry-v2-link">Learn More <i className="fas fa-arrow-right"></i></Link>
                             </div>
-                            <h3>Evangelism & Missions</h3>
-                            <p>Reaching the unreached with the Gospel through crusades, door-to-door evangelism, and mission trips to remote areas.</p>
-                            <Link to="/ministries#evangelism" className="ministry-link">Learn More <i className="fas fa-arrow-right"></i></Link>
-                        </div>
-                        <div className="ministry-card">
-                            <div className="ministry-icon">
-                                <i className="fas fa-book-open"></i>
-                            </div>
-                            <h3>Discipleship</h3>
-                            <p>Building mature believers through systematic Bible study, mentorship programs, and spiritual growth initiatives.</p>
-                            <Link to="/ministries#discipleship" className="ministry-link">Learn More <i className="fas fa-arrow-right"></i></Link>
-                        </div>
-                        <div className="ministry-card">
-                            <div className="ministry-icon">
-                                <i className="fas fa-child"></i>
-                            </div>
-                            <h3>Youth Ministry</h3>
-                            <p>Empowering young people to know Christ and live purposefully through youth camps, conferences, and mentorship.</p>
-                            <Link to="/ministries#youth-ministry" className="ministry-link">Learn More <i className="fas fa-arrow-right"></i></Link>
-                        </div>
-                        <div className="ministry-card">
-                            <div className="ministry-icon">
-                                <i className="fas fa-female"></i>
-                            </div>
-                            <h3>Women Ministry</h3>
-                            <p>Equipping women to fulfill their God-given potential through fellowship, teaching, and empowerment programs.</p>
-                            <Link to="/ministries#women-ministry" className="ministry-link">Learn More <i className="fas fa-arrow-right"></i></Link>
-                        </div>
-                        <div className="ministry-card">
-                            <div className="ministry-icon">
-                                <i className="fas fa-male"></i>
-                            </div>
-                            <h3>Men Ministry</h3>
-                            <p>Building godly men who lead with integrity in their families, churches, and communities.</p>
-                            <Link to="/ministries#men-ministry" className="ministry-link">Learn More <i className="fas fa-arrow-right"></i></Link>
-                        </div>
-                        <div className="ministry-card">
-                            <div className="ministry-icon">
-                                <i className="fas fa-hand-holding-heart"></i>
-                            </div>
-                            <h3>Community Outreach</h3>
-                            <p>Demonstrating Christ's love through feeding programs, medical camps, education support, and community development.</p>
-                            <Link to="/ministries#community-outreach" className="ministry-link">Learn More <i className="fas fa-arrow-right"></i></Link>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </section>

@@ -4910,6 +4910,445 @@ p {
 
 
 /* =====================================================
+   HOME REDESIGN — Impact Ticker
+   ===================================================== */
+.impact-ticker {
+    background: #0d1b2a;
+    border-bottom: 3px solid var(--primary-color);
+    overflow: hidden;
+}
+.ticker-wrap {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    overflow: hidden;
+}
+.ticker-label {
+    background: var(--primary-color);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 14px 22px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+.ticker-track {
+    display: flex;
+    animation: tickerScroll 30s linear infinite;
+    white-space: nowrap;
+}
+.ticker-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: rgba(255,255,255,0.82);
+    font-size: 0.84rem;
+    font-weight: 500;
+    padding: 14px 40px;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    flex-shrink: 0;
+}
+.ticker-item i {
+    color: var(--secondary-color);
+    font-size: 0.85rem;
+}
+.ticker-num {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1rem;
+    margin-right: 2px;
+}
+@keyframes tickerScroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* =====================================================
+   HOME REDESIGN — About Section v2
+   ===================================================== */
+.about-section-v2 {
+    padding: 110px 0 100px;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+}
+.about-section-v2::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, rgba(230,126,34,0.06) 0%, transparent 68%);
+    pointer-events: none;
+}
+.about-v2-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+.about-v2-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+}
+.about-v2-eyebrow::before {
+    content: '';
+    display: block;
+    width: 44px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+.about-v2-eyebrow span {
+    color: var(--primary-color);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+.about-v2-heading {
+    font-size: clamp(1.9rem, 3.2vw, 2.7rem);
+    font-family: var(--font-secondary);
+    color: #0d1b2a;
+    line-height: 1.22;
+    margin-bottom: 26px;
+}
+.about-v2-heading em {
+    color: var(--primary-color);
+    font-style: normal;
+}
+.about-v2-desc {
+    color: #5a5a6a;
+    font-size: 0.97rem;
+    line-height: 1.82;
+    margin-bottom: 14px;
+}
+.about-v2-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 11px;
+    margin: 28px 0 34px;
+}
+.about-v2-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fef6ec;
+    border: 1.5px solid rgba(230,126,34,0.22);
+    border-radius: 50px;
+    padding: 9px 20px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #333;
+    transition: all 0.28s ease;
+}
+.about-v2-pill:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+}
+.about-v2-pill:hover i { color: #fff; }
+.about-v2-pill i {
+    color: var(--primary-color);
+    font-size: 0.82rem;
+    transition: color 0.28s ease;
+}
+/* Photo side */
+.about-v2-photo-side {
+    position: relative;
+}
+.about-v2-photo-wrap {
+    position: relative;
+    padding: 18px 18px 50px 0;
+}
+.about-v2-photo-main {
+    width: 100%;
+    height: 460px;
+    object-fit: cover;
+    border-radius: 22px;
+    display: block;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.16);
+}
+.about-v2-photo-accent {
+    position: absolute;
+    bottom: 0;
+    right: -16px;
+    width: 175px;
+    height: 175px;
+    border-radius: 18px;
+    object-fit: cover;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.22);
+    border: 5px solid #fff;
+    z-index: 2;
+}
+.about-v2-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: #fff;
+    border-radius: 50%;
+    width: 108px;
+    height: 108px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.3;
+    box-shadow: 0 10px 30px rgba(211,84,0,0.45);
+    z-index: 3;
+}
+.about-v2-badge strong {
+    font-size: 1.55rem;
+    display: block;
+    line-height: 1;
+    font-weight: 800;
+}
+.about-v2-deco-ring {
+    position: absolute;
+    bottom: 10px;
+    left: -28px;
+    width: 110px;
+    height: 110px;
+    border: 8px solid rgba(230,126,34,0.13);
+    border-radius: 50%;
+    z-index: 0;
+}
+.about-v2-deco-dot {
+    position: absolute;
+    top: 55px;
+    left: -14px;
+    width: 18px;
+    height: 18px;
+    background: var(--secondary-color);
+    border-radius: 50%;
+    opacity: 0.6;
+}
+
+/* =====================================================
+   HOME REDESIGN — Vision / Mission v2
+   ===================================================== */
+.vision-mission-v2 {
+    background: #0d1b2a;
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+.vision-mission-v2::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 55% 60% at 15% 50%, rgba(230,126,34,0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 45% 50% at 85% 20%, rgba(243,156,18,0.06) 0%, transparent 60%);
+    pointer-events: none;
+}
+.vm-v2-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+.vm-v2-verse {
+    font-family: var(--font-secondary);
+    font-size: clamp(1rem, 1.8vw, 1.25rem);
+    color: rgba(255,255,255,0.42);
+    font-style: italic;
+    margin-bottom: 14px;
+    letter-spacing: 0.3px;
+}
+.vm-v2-title {
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    color: #fff;
+    font-family: var(--font-secondary);
+    line-height: 1.2;
+}
+.vm-v2-title span { color: var(--primary-color); }
+.vm-v2-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    position: relative;
+    z-index: 1;
+}
+.vm-v2-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-top: 4px solid var(--primary-color);
+    border-radius: 18px;
+    padding: 46px 32px 40px;
+    transition: all 0.38s cubic-bezier(0.25,0.46,0.45,0.94);
+    position: relative;
+    overflow: hidden;
+}
+.vm-v2-card:nth-child(2) { border-top-color: var(--secondary-color); }
+.vm-v2-card:nth-child(3) { border-top-color: #2ecc71; }
+.vm-v2-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255,255,255,0.08);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+}
+.vm-v2-num {
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    font-size: 4.5rem;
+    font-weight: 900;
+    font-family: var(--font-secondary);
+    color: rgba(255,255,255,0.04);
+    line-height: 1;
+    user-select: none;
+}
+.vm-v2-icon {
+    width: 62px;
+    height: 62px;
+    background: rgba(230,126,34,0.15);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    transition: background 0.3s ease;
+}
+.vm-v2-card:nth-child(2) .vm-v2-icon { background: rgba(243,156,18,0.15); }
+.vm-v2-card:nth-child(3) .vm-v2-icon { background: rgba(46,204,113,0.13); }
+.vm-v2-card:hover .vm-v2-icon { background: rgba(230,126,34,0.25); }
+.vm-v2-card:nth-child(2):hover .vm-v2-icon { background: rgba(243,156,18,0.25); }
+.vm-v2-card:nth-child(3):hover .vm-v2-icon { background: rgba(46,204,113,0.2); }
+.vm-v2-icon i {
+    font-size: 1.55rem;
+    color: var(--primary-color);
+}
+.vm-v2-card:nth-child(2) .vm-v2-icon i { color: var(--secondary-color); }
+.vm-v2-card:nth-child(3) .vm-v2-icon i { color: #2ecc71; }
+.vm-v2-card h3 {
+    color: #fff;
+    font-size: 1.22rem;
+    font-family: var(--font-secondary);
+    margin-bottom: 14px;
+}
+.vm-v2-card p {
+    color: rgba(255,255,255,0.62);
+    font-size: 0.91rem;
+    line-height: 1.74;
+}
+
+/* =====================================================
+   HOME REDESIGN — Ministries v2
+   ===================================================== */
+.ministries-v2 {
+    background: #f7f8fb;
+    padding: 100px 0;
+}
+.ministry-v2-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+    margin-top: 50px;
+}
+.ministry-v2-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 38px 28px 32px;
+    border: 1px solid #ebebf0;
+    transition: all 0.35s cubic-bezier(0.25,0.46,0.45,0.94);
+    position: relative;
+    overflow: hidden;
+}
+.ministry-v2-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.38s ease;
+}
+.ministry-v2-card:hover::after { transform: scaleX(1); }
+.ministry-v2-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 22px 55px rgba(0,0,0,0.09);
+    border-color: rgba(230,126,34,0.18);
+}
+.ministry-v2-icon-wrap {
+    width: 68px;
+    height: 68px;
+    background: linear-gradient(135deg, rgba(230,126,34,0.11), rgba(243,156,18,0.07));
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+    transition: all 0.35s ease;
+}
+.ministry-v2-card:hover .ministry-v2-icon-wrap {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+.ministry-v2-icon-wrap i {
+    font-size: 1.55rem;
+    color: var(--primary-color);
+    transition: color 0.35s ease;
+}
+.ministry-v2-card:hover .ministry-v2-icon-wrap i { color: #fff; }
+.ministry-v2-card h3 {
+    font-size: 1.08rem;
+    color: #0d1b2a;
+    font-family: var(--font-secondary);
+    margin-bottom: 10px;
+}
+.ministry-v2-card p {
+    color: #666;
+    font-size: 0.87rem;
+    line-height: 1.72;
+    margin-bottom: 20px;
+}
+.ministry-v2-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--primary-color);
+    font-size: 0.83rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: gap 0.22s ease;
+}
+.ministry-v2-link:hover { gap: 12px; color: var(--primary-dark); }
+.ministry-v2-link i { font-size: 0.72rem; }
+
+/* =====================================================
+   HOME REDESIGN — Responsive
+   ===================================================== */
+@media (max-width: 1024px) {
+    .about-v2-grid { gap: 50px; }
+    .vm-v2-cards { grid-template-columns: 1fr 1fr; }
+    .vm-v2-card:nth-child(3) { grid-column: span 2; max-width: 480px; margin: 0 auto; width: 100%; }
+}
+@media (max-width: 768px) {
+    .about-v2-grid { grid-template-columns: 1fr; gap: 50px; }
+    .about-v2-photo-main { height: 320px; }
+    .vm-v2-cards { grid-template-columns: 1fr; }
+    .vm-v2-card:nth-child(3) { grid-column: span 1; max-width: 100%; }
+    .ministry-v2-grid { grid-template-columns: 1fr 1fr; }
+    .ticker-label { display: none; }
+}
+@media (max-width: 540px) {
+    .ministry-v2-grid { grid-template-columns: 1fr; }
+    .about-v2-photo-accent { width: 120px; height: 120px; }
+}
+
+/* =====================================================
    Responsive — New Pages
    ===================================================== */
 @media (max-width: 1100px) {
