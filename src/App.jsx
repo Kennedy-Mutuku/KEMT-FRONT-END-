@@ -3,7 +3,14 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
 import Home from './pages/Home';
+import Ministries from './pages/Ministries';
+import Programs from './pages/Programs';
+import Gallery from './pages/Gallery';
+import About from './pages/About';
 import Events from './pages/Events';
+import Contact from './pages/Contact';
+import Donate from './pages/Donate';
+import Leadership from './pages/Leadership';
 import Login from './pages/Login';
 
 // Admin imports
@@ -11,16 +18,6 @@ import AdminLayout from './components/admin/AdminLayout';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import AdminUsers from './pages/admin/AdminUsers';
 import AdminEvents from './pages/admin/AdminEvents';
-
-// Placeholder components for other pages
-const Placeholder = ({ title }) => (
-  <div className="container section">
-    <div className="section-header">
-      <h2 className="section-title">{title}</h2>
-      <p>Content coming soon...</p>
-    </div>
-  </div>
-);
 
 // Layout for the main website
 const MainLayout = () => (
@@ -51,13 +48,14 @@ function App() {
         {/* Main Site Routes */}
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<Placeholder title="About Us" />} />
-          <Route path="/ministries" element={<Placeholder title="Ministries" />} />
-          <Route path="/programs" element={<Placeholder title="Programs" />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/ministries" element={<Ministries />} />
+          <Route path="/programs" element={<Programs />} />
           <Route path="/events" element={<Events />} />
-          <Route path="/gallery" element={<Placeholder title="Gallery" />} />
-          <Route path="/contact" element={<Placeholder title="Contact Us" />} />
-          <Route path="/donate" element={<Placeholder title="Donate" />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/donate" element={<Donate />} />
+          <Route path="/leadership" element={<Leadership />} />
           <Route path="/login" element={<Login />} />
         </Route>
       </Routes>

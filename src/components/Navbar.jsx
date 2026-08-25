@@ -62,34 +62,23 @@ const Navbar = () => {
                                 <li className={`dropdown ${openDropdown === 'about' ? 'active' : ''}`}>
                                     <NavLink to="/about" onClick={() => toggleDropdown('about')}>About Us <i className="fas fa-chevron-down"></i></NavLink>
                                     <ul className="dropdown-menu">
-                                        <li><Link to="/about#who-we-are" onClick={() => setMobileMenuOpen(false)}>Who We Are</Link></li>
-                                        <li><Link to="/about#our-history" onClick={() => setMobileMenuOpen(false)}>Our History</Link></li>
-                                        <li><Link to="/about#vision-mission" onClick={() => setMobileMenuOpen(false)}>Vision & Mission</Link></li>
-                                        <li><Link to="/about#leadership" onClick={() => setMobileMenuOpen(false)}>Leadership Team</Link></li>
-                                        <li><Link to="/about#statement-of-faith" onClick={() => setMobileMenuOpen(false)}>Statement of Faith</Link></li>
+                                        <li><Link to="/about#who-we-are" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>Who We Are</Link></li>
+                                        <li><Link to="/about#our-history" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>Our History</Link></li>
+                                        <li><Link to="/about#vision-mission" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>Vision & Mission</Link></li>
+                                        <li><Link to="/about#statement-of-faith" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>Statement of Faith</Link></li>
                                     </ul>
                                 </li>
                                 <li className={`dropdown ${openDropdown === 'ministries' ? 'active' : ''}`}>
                                     <NavLink to="/ministries" onClick={() => toggleDropdown('ministries')}>Departments <i className="fas fa-chevron-down"></i></NavLink>
                                     <ul className="dropdown-menu">
-                                        <li><Link to="/ministries#evangelism" onClick={() => setMobileMenuOpen(false)}>Evangelism</Link></li>
-                                        <li><Link to="/ministries#discipleship" onClick={() => setMobileMenuOpen(false)}>Discipleship</Link></li>
-                                        <li><Link to="/ministries#youth-ministry" onClick={() => setMobileMenuOpen(false)}>Youth Ministry</Link></li>
-                                        <li><Link to="/ministries#women-ministry" onClick={() => setMobileMenuOpen(false)}>Women Ministry</Link></li>
-                                        <li><Link to="/ministries#men-ministry" onClick={() => setMobileMenuOpen(false)}>Men Ministry</Link></li>
-                                        <li><Link to="/ministries#children-ministry" onClick={() => setMobileMenuOpen(false)}>Children Ministry</Link></li>
-                                        <li><Link to="/ministries#community-outreach" onClick={() => setMobileMenuOpen(false)}>Community Outreach</Link></li>
+                                        <li><Link to="/ministries#evangelism" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>Evangelism &amp; Missions</Link></li>
+                                        <li><Link to="/ministries#prayer" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>Prayer Department</Link></li>
+                                        <li><Link to="/ministries#compassion" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>Compassion Ministry</Link></li>
+                                        <li><Link to="/ministries#highschool" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>High School Ministry</Link></li>
+                                        <li><Link to="/programs" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>Outreach</Link></li>
                                     </ul>
                                 </li>
-                                <li className={`dropdown ${openDropdown === 'programs' ? 'active' : ''}`}>
-                                    <NavLink to="/programs" onClick={() => toggleDropdown('programs')}>Programs <i className="fas fa-chevron-down"></i></NavLink>
-                                    <ul className="dropdown-menu">
-                                        <li><Link to="/programs#missions" onClick={() => setMobileMenuOpen(false)}>Mission Trips</Link></li>
-                                        <li><Link to="/programs#bible-study" onClick={() => setMobileMenuOpen(false)}>Bible Study</Link></li>
-                                        <li><Link to="/programs#prayer" onClick={() => setMobileMenuOpen(false)}>Prayer Programs</Link></li>
-                                        <li><Link to="/programs#training" onClick={() => setMobileMenuOpen(false)}>Leadership Training</Link></li>
-                                    </ul>
-                                </li>
+                                <li><NavLink to="/leadership" onClick={() => setMobileMenuOpen(false)}>Leadership</NavLink></li>
                                 <li><NavLink to="/events" onClick={() => setMobileMenuOpen(false)}>Events</NavLink></li>
                                 <li><NavLink to="/gallery" onClick={() => setMobileMenuOpen(false)}>Gallery</NavLink></li>
                                 <li><NavLink to="/contact" onClick={() => setMobileMenuOpen(false)}>Contact Us</NavLink></li>
