@@ -63,6 +63,7 @@ const Navbar = () => {
                                     <NavLink to="/about" onClick={() => toggleDropdown('about')}>About Us <i className="fas fa-chevron-down"></i></NavLink>
                                     <ul className="dropdown-menu">
                                         <li><Link to="/about#who-we-are" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>Who We Are</Link></li>
+                                        <li><Link to="/about#our-history" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>Our History</Link></li>
                                         <li><Link to="/about#vision-mission" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>Vision & Mission</Link></li>
                                         <li><Link to="/about#statement-of-faith" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>Statement of Faith</Link></li>
                                     </ul>
