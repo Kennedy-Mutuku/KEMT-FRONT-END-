@@ -152,10 +152,10 @@ const Home = () => {
                                 Carrying the <em>Light of Christ</em><br />Across Kenya &amp; Beyond
                             </h2>
                             <p className="about-v2-desc">
-                                Kingdom Enlightenment Missions Team is a Christ-centered missions organization dedicated to spreading the Gospel of Jesus Christ. Founded on the Great Commission, we reach the unreached, disciple believers, and establish vibrant Christian communities.
+                                Kingdom Enlightenment Missions Team is a Christ-centered missions organization dedicated to spreading the Gospel of Jesus Christ. Founded on the Great Commission, we reach the unreached, disciple believers and establish vibrant Christian communities.
                             </p>
                             <p className="about-v2-desc">
-                                Our team comprises passionate men and women who have answered God's call — bringing hope, healing, and the light of Christ to every corner of the land through crusades, prayer walks, school missions, and compassion outreach.
+                                Our team comprises passionate men and women who have answered God's call — bringing hope, healing and the light of Christ to every corner of the land through crusades, prayer walks, school missions and compassion outreach.
                             </p>
                             <div className="about-v2-pills">
                                 <div className="about-v2-pill"><i className="fas fa-bible"></i> Bible-Based Teaching</div>
@@ -195,13 +195,13 @@ const Home = () => {
                             <span className="vm-v2-num">02</span>
                             <div className="vm-v2-icon"><i className="fas fa-bullseye"></i></div>
                             <h3>Our Mission</h3>
-                            <p>To glorify God by evangelizing the lost, discipling believers, equipping leaders, and planting churches that reproduce and multiply across nations.</p>
+                            <p>To glorify God by evangelizing the lost, discipling believers, equipping leaders and planting churches that reproduce and multiply across nations.</p>
                         </div>
                         <div className="vm-v2-card">
                             <span className="vm-v2-num">03</span>
                             <div className="vm-v2-icon"><i className="fas fa-heart"></i></div>
                             <h3>Our Values</h3>
-                            <p>Faith in God, Biblical Authority, Prayer, Excellence, Integrity, Unity, Compassion, and Servant Leadership guide everything we do in every mission field.</p>
+                            <p>Faith in God, Biblical Authority, Prayer, Excellence, Integrity, Unity, Compassion and Servant Leadership guide everything we do in every mission field.</p>
                         </div>
                     </div>
                 </div>
@@ -217,12 +217,12 @@ const Home = () => {
                     </div>
                     <div className="ministry-v2-grid">
                         {[
-                            { icon: 'globe-africa',       title: 'Evangelism & Missions',  desc: 'Reaching the unreached with the Gospel through crusades, door-to-door evangelism, and mission trips to remote areas.',                    link: '/ministries#evangelism' },
-                            { icon: 'book-open',          title: 'Discipleship',            desc: 'Building mature believers through systematic Bible study, mentorship programs, and spiritual growth initiatives.',                          link: '/ministries#discipleship' },
-                            { icon: 'child',              title: 'Youth Ministry',          desc: 'Empowering young people to know Christ and live purposefully through youth camps, conferences, and mentorship.',                            link: '/ministries#youth-ministry' },
-                            { icon: 'female',             title: 'Women Ministry',          desc: 'Equipping women to fulfill their God-given potential through fellowship, teaching, and empowerment programs.',                              link: '/ministries#women-ministry' },
-                            { icon: 'male',               title: 'Men Ministry',            desc: 'Building godly men who lead with integrity in their families, churches, and communities through targeted discipleship.',                    link: '/ministries#men-ministry' },
-                            { icon: 'hand-holding-heart', title: 'Community Outreach',      desc: 'Demonstrating Christ\'s love through feeding programs, medical camps, education support, and community development.',                      link: '/ministries#community-outreach' },
+                            { icon: 'globe-africa',       title: 'Evangelism & Missions',  desc: 'Reaching the unreached with the Gospel through crusades, door-to-door evangelism and mission trips to remote areas.',                    link: '/ministries#evangelism' },
+                            { icon: 'book-open',          title: 'Discipleship',            desc: 'Building mature believers through systematic Bible study, mentorship programs and spiritual growth initiatives.',                          link: '/ministries#discipleship' },
+                            { icon: 'child',              title: 'Youth Ministry',          desc: 'Empowering young people to know Christ and live purposefully through youth camps, conferences and mentorship.',                            link: '/ministries#youth-ministry' },
+                            { icon: 'female',             title: 'Women Ministry',          desc: 'Equipping women to fulfill their God-given potential through fellowship, teaching and empowerment programs.',                              link: '/ministries#women-ministry' },
+                            { icon: 'male',               title: 'Men Ministry',            desc: 'Building godly men who lead with integrity in their families, churches and communities through targeted discipleship.',                    link: '/ministries#men-ministry' },
+                            { icon: 'hand-holding-heart', title: 'Community Outreach',      desc: 'Demonstrating Christ\'s love through feeding programs, medical camps, education support and community development.',                      link: '/ministries#community-outreach' },
                         ].map((m, i) => (
                             <div className="ministry-v2-card" key={i}>
                                 <div className="ministry-v2-icon-wrap">
@@ -316,7 +316,7 @@ const Home = () => {
                                     <span><i className="fas fa-clock"></i> Friday - Sunday</span>
                                     <span><i className="fas fa-map-marker-alt"></i> Youth Center</span>
                                 </div>
-                                <p>A powerful weekend of worship, word, and fellowship for young people.</p>
+                                <p>A powerful weekend of worship, word and fellowship for young people.</p>
                                 <Link to="/events" className="event-link">Learn More</Link>
                             </div>
                         </div>
@@ -331,7 +331,7 @@ const Home = () => {
                                     <span><i className="fas fa-clock"></i> 8:00 AM - 4:00 PM</span>
                                     <span><i className="fas fa-map-marker-alt"></i> Various Locations</span>
                                 </div>
-                                <p>Join us as we serve our community with food, medical care, and the Gospel.</p>
+                                <p>Join us as we serve our community with food, medical care and the Gospel.</p>
                                 <Link to="/events" className="event-link">Learn More</Link>
                             </div>
                         </div>
@@ -405,7 +405,7 @@ const Home = () => {
                             <div className="news-content">
                                 <div className="news-date">August 2026 — Meru</div>
                                 <h3>Ntakira Mission: Carrying the Gospel to Meru</h3>
-                                <p>The Ntakira mission brought the Gospel through crusades, revivals, street evangelism, and youth mentorship at Methodist Church of Kenya, Ntakira Parish.</p>
+                                <p>The Ntakira mission brought the Gospel through crusades, revivals, street evangelism and youth mentorship at Methodist Church of Kenya, Ntakira Parish.</p>
                                 <Link to="/programs" className="news-link">Read More <i className="fas fa-arrow-right"></i></Link>
                             </div>
                         </div>
@@ -417,7 +417,7 @@ const Home = () => {
                             <div className="news-content">
                                 <div className="news-date">August 2026 — Makueni &amp; Kajiado</div>
                                 <h3>Emali Mission: 76 Souls Give Their Lives to Christ</h3>
-                                <p>The Emali mission at Methodist Church of Kenya saw 76 people surrender their lives to Christ through evangelism, prayer walks, crusades, and compassion outreach.</p>
+                                <p>The Emali mission at Methodist Church of Kenya saw 76 people surrender their lives to Christ through evangelism, prayer walks, crusades and compassion outreach.</p>
                                 <Link to="/programs" className="news-link">Read More <i className="fas fa-arrow-right"></i></Link>
                             </div>
                         </div>
@@ -429,7 +429,7 @@ const Home = () => {
                             <div className="news-content">
                                 <div className="news-date">April 2026 — Machakos</div>
                                 <h3>Tala Mission: 170 Souls Saved in Machakos</h3>
-                                <p>Liberty Church, Tala hosted a powerful week-long outreach that saw 170 people come to Christ through street evangelism, prayer walks, crusades, and youth workshops.</p>
+                                <p>Liberty Church, Tala hosted a powerful week-long outreach that saw 170 people come to Christ through street evangelism, prayer walks, crusades and youth workshops.</p>
                                 <Link to="/programs" className="news-link">Read More <i className="fas fa-arrow-right"></i></Link>
                             </div>
                         </div>

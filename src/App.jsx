@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import Ministries from './pages/Ministries';
 import Programs from './pages/Programs';
@@ -22,6 +23,7 @@ import AdminEvents from './pages/admin/AdminEvents';
 // Layout for the main website
 const MainLayout = () => (
   <div className="app">
+    <ScrollToTop />
     <Navbar />
     <Outlet />
     <Footer />

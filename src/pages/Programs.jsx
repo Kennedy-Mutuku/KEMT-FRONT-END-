@@ -66,7 +66,7 @@ const missions = [
     souls: 130,
     photos: [g1, g2, g3, g4],
     description:
-      'The Gikumene mission was a powerful Gospel outreach that combined personal evangelism, street outreach, compassion, and integral mission. Through crusades and revival meetings, the Gospel was proclaimed publicly, while youth workshops and mentorship provided a platform to encourage and equip the next generation.',
+      'The Gikumene mission was a powerful Gospel outreach that combined personal evangelism, street outreach, compassion and integral mission. Through crusades and revival meetings, the Gospel was proclaimed publicly, while youth workshops and mentorship provided a platform to encourage and equip the next generation.',
     activities: [
       'One-on-One Evangelism',
       'Street Evangelism',
@@ -89,7 +89,7 @@ const missions = [
     souls: 170,
     photos: [t1, t2, t3, t4],
     description:
-      'The Tala mission carried the Gospel into the community through one-on-one and street evangelism, complemented by integral mission and compassion outreach. The team also conducted prayer walks, interceding for the community and preparing the ground spiritually. Crusades, revival meetings, youth workshops, and mentorship further strengthened the outreach.',
+      'The Tala mission carried the Gospel into the community through one-on-one and street evangelism, complemented by integral mission and compassion outreach. The team also conducted prayer walks, interceding for the community and preparing the ground spiritually. Crusades, revival meetings, youth workshops and mentorship further strengthened the outreach.',
     activities: [
       'One-on-One Evangelism',
       'Street Evangelism',
@@ -113,7 +113,7 @@ const missions = [
     souls: 76,
     photos: [e1, e2, e3, e4],
     description:
-      'The Emali mission brought together evangelism and practical community transformation. The team engaged people through one-on-one evangelism, street evangelism, compassion ministry, and integral mission, while prayer walks helped establish a strong spiritual foundation. Crusades, revival meetings, youth workshops, and mentorship created spaces for people to encounter Christ and grow in faith.',
+      'The Emali mission brought together evangelism and practical community transformation. The team engaged people through one-on-one evangelism, street evangelism, compassion ministry and integral mission, while prayer walks helped establish a strong spiritual foundation. Crusades, revival meetings, youth workshops and mentorship created spaces for people to encounter Christ and grow in faith.',
     activities: [
       'One-on-One Evangelism',
       'Street Evangelism',
@@ -137,7 +137,7 @@ const missions = [
     souls: null,
     photos: [n1, n2, n3, n4],
     description:
-      "The Ntakira mission continued the team's commitment to reaching communities with the Gospel. Through one-on-one evangelism, street evangelism, integral mission, and compassion, we connected with people at a personal and community level. The mission also featured crusades, revival meetings, youth mentorship, and prayer, creating opportunities for people to encounter the transforming power of Jesus Christ.",
+      "The Ntakira mission continued the team's commitment to reaching communities with the Gospel. Through one-on-one evangelism, street evangelism, integral mission and compassion, we connected with people at a personal and community level. The mission also featured crusades, revival meetings, youth mentorship and prayer, creating opportunities for people to encounter the transforming power of Jesus Christ.",
     activities: [
       'One-on-One Evangelism',
       'Street Evangelism',
@@ -266,7 +266,7 @@ const Programs = () => {
             <h2 className="section-title">Lighting Communities With the Gospel</h2>
             <p className="section-description">
               Kingdom Enlightenment Missions Team (KEMT) is committed to taking the Gospel of Jesus Christ to
-              communities through evangelism, prayer, compassion, mentorship, and integral mission. From 2025 to
+              communities through evangelism, prayer, compassion, mentorship and integral mission. From 2025 to
               2026, KEMT conducted several outreach missions across Kenya, witnessing lives transformed and people
               coming to Christ.
             </p>
@@ -607,7 +607,7 @@ const Programs = () => {
             <h2>Our Impact So Far</h2>
             <p>
               Through these missions, <strong>445 people</strong> have so far made decisions to receive Christ,
-              with many more reached through evangelism, prayer, compassion, mentorship, and community outreach.
+              with many more reached through evangelism, prayer, compassion, mentorship and community outreach.
             </p>
 
             <div className="impact-total-stats">

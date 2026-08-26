@@ -21,7 +21,7 @@ const Leadership = () => (
         <div className="banner-content">
           <span className="banner-tag">The Team</span>
           <h1>Leadership Team</h1>
-          <p>Servant-leaders committed to advancing the Kingdom of God through humility, faith, and dedication.</p>
+          <p>Servant-leaders committed to advancing the Kingdom of God through humility, faith and dedication.</p>
         </div>
       </div>
     </section>

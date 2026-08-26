@@ -16,9 +16,9 @@ const values = [
 ];
 
 const faith = [
-  'We believe in one God, eternally existing in three Persons: Father, Son, and Holy Spirit.',
+  'We believe in one God, eternally existing in three Persons: Father, Son and Holy Spirit.',
   'We believe in the full inspiration and authority of the Holy Scriptures as the Word of God.',
-  'We believe in the deity and humanity of Jesus Christ, His virgin birth, sinless life, atoning death, bodily resurrection, and imminent return.',
+  'We believe in the deity and humanity of Jesus Christ, His virgin birth, sinless life, atoning death, bodily resurrection and imminent return.',
   'We believe in salvation by grace through faith in Jesus Christ alone.',
   'We believe in the present ministry of the Holy Spirit, by whose indwelling the Christian is enabled to live a godly life.',
   'We believe in the resurrection of the dead and the eternal life of believers with God.',
@@ -48,7 +48,7 @@ const timeline = [
     date: 'Ongoing from 2025',
     icon: 'fas fa-book-open',
     title: 'Monday Online Bible Study Fellowships',
-    text: 'Regular Monday online Bible study fellowships nurtured spiritual growth, unity, prayer, and a passion for evangelism — becoming a training ground that prepared the team for active mission work.',
+    text: 'Regular Monday online Bible study fellowships nurtured spiritual growth, unity, prayer and a passion for evangelism — becoming a training ground that prepared the team for active mission work.',
   },
   {
     date: '18–24 August 2025',
@@ -61,14 +61,14 @@ const timeline = [
     date: '29 Dec 2025 – 4 Jan 2026',
     icon: 'fas fa-globe-africa',
     title: 'Second Mission — Gikumene, Meru County',
-    text: 'At Deliverance Church International, Gikumene, we witnessed God\'s faithfulness through transformed lives, renewed faith, and the continued advancement of the Gospel.',
+    text: 'At Deliverance Church International, Gikumene, we witnessed God\'s faithfulness through transformed lives, renewed faith and the continued advancement of the Gospel.',
     souls: '130 Souls Won',
   },
   {
     date: '20–26 April 2026',
     icon: 'fas fa-globe-africa',
     title: 'Tala Mission — Machakos County',
-    text: 'The team ministered at Liberty Center, Tala, carrying the Gospel through evangelism, outreach, prayer, and community engagement.',
+    text: 'The team ministered at Liberty Center, Tala, carrying the Gospel through evangelism, outreach, prayer and community engagement.',
     souls: '170 Souls Won',
   },
   {
@@ -82,7 +82,7 @@ const timeline = [
     date: '20–23 August 2026',
     icon: 'fas fa-globe-africa',
     title: 'Gaukene Mission — MCK Ntakira Circuit',
-    text: 'The team continued its mission journey in Gaukene under the Methodist Church of Kenya Ntakira Circuit, proclaiming Christ, reaching communities, and calling people to faith and transformation.',
+    text: 'The team continued its mission journey in Gaukene under the Methodist Church of Kenya Ntakira Circuit, proclaiming Christ, reaching communities and calling people to faith and transformation.',
   },
 ];
 
@@ -135,8 +135,8 @@ const About = () => {
               </p>
               <p>
                 We believe in the power of the Gospel to transform lives and communities. Through
-                our departments and mission outreaches, we bring hope, healing, and the light of
-                Christ — reaching schools, churches, towns, and villages across Kenya.
+                our departments and mission outreaches, we bring hope, healing and the light of
+                Christ — reaching schools, churches, towns and villages across Kenya.
               </p>
               <div className="about-quick-stats">
                 <div className="aq-stat"><strong>445+</strong><span>Souls Won</span></div>
@@ -202,7 +202,7 @@ const About = () => {
             <div className="vm-card mission-card">
               <div className="vm-icon"><i className="fas fa-bullseye"></i></div>
               <h3>Our Mission</h3>
-              <p>To glorify God by evangelizing the lost, discipling believers, equipping leaders, and establishing communities of faith that reproduce and multiply across nations.</p>
+              <p>To glorify God by evangelizing the lost, discipling believers, equipping leaders and establishing communities of faith that reproduce and multiply across nations.</p>
             </div>
             <div className="vm-card values-card">
               <div className="vm-icon"><i className="fas fa-heart"></i></div>

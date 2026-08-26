@@ -31,6 +31,34 @@ import ks1 from '../assets/KitheoSiniourSchool1.jpg';
 import ks2 from '../assets/KitheoSiniourSchool3.jpg';
 import ks3 from '../assets/KitheoSiniourSchool5.jpg';
 
+const evangelismMethodologies = [
+  {
+    icon: 'fas fa-bullhorn',
+    title: 'One-on-One Outreach',
+    desc: 'Meeting individuals at their homes and workplaces with personal Gospel conversations.',
+  },
+  {
+    icon: 'fas fa-users',
+    title: 'Street Evangelism',
+    desc: 'Public proclaiming of the message of salvation in town centers and busy markets.',
+  },
+  {
+    icon: 'fas fa-fire',
+    title: 'Crusades & Revivals',
+    desc: 'Open-air revival crusades igniting faith, healings and spiritual awakening.',
+  },
+  {
+    icon: 'fas fa-person-walking',
+    title: 'Prayer Walks',
+    desc: 'Covering entire towns and villages in intercessory prayer before outreaches.',
+  },
+  {
+    icon: 'fas fa-seedling',
+    title: 'Integral Mission',
+    desc: 'Combining spiritual evangelism with practical community transformation.',
+  },
+];
+
 const schools = [
   {
     number: '01',
@@ -40,7 +68,7 @@ const schools = [
     photos: [rs1, rs2, rs3],
     badge: 'Spiritual & Social Empowerment',
     description:
-      'A weekend ministry focused on encouraging students to overcome academic, social, and spiritual challenges through mentorship, encouragement, prayer, and the Word of God.',
+      'A weekend ministry focused on encouraging students to overcome academic, social and spiritual challenges through mentorship, encouragement, prayer and the Word of God.',
     pillars: ['Overcoming Challenges', 'Biblical Encouragement', 'Personal Mentorship', 'Fervent Prayer'],
   },
   {
@@ -51,7 +79,7 @@ const schools = [
     photos: [gb1, gb2, gb3],
     badge: 'Academic Discipline & Potential',
     description:
-      'A student empowerment program aimed at inspiring learners to pursue academic excellence, discover their potential, develop discipline, and remain focused on their educational goals.',
+      'A student empowerment program aimed at inspiring learners to pursue academic excellence, discover their potential, develop discipline and remain focused on their educational goals.',
     pillars: ['Academic Discipline', 'Potential Discovery', 'Goal Setting & Focus', 'Character Building'],
   },
   {
@@ -62,7 +90,7 @@ const schools = [
     photos: [ks1, ks2, ks3],
     badge: 'Faith & Practical Living',
     description:
-      'A ministry focused on strengthening students spiritually through the Word of God, prayer, fellowship, and practical Christian teachings, helping them grow in faith and live for Christ.',
+      'A ministry focused on strengthening students spiritually through the Word of God, prayer, fellowship and practical Christian teachings, helping them grow in faith and live for Christ.',
     pillars: ['Scripture Grounding', 'Student Fellowship', 'Christian Living', 'Faith Growth'],
   },
 ];
@@ -76,7 +104,7 @@ const compassionWings = [
   {
     icon: 'fas fa-hands-holding-child',
     title: 'Youth Safe Spaces',
-    desc: 'Creating nurturing environments where young people find encouragement, hope, direction, and spiritual nourishment.',
+    desc: 'Creating nurturing environments where young people find encouragement, hope, direction and spiritual nourishment.',
   },
   {
     icon: 'fas fa-comments',
@@ -86,16 +114,16 @@ const compassionWings = [
   {
     icon: 'fas fa-house-chimney-medical',
     title: 'Community Visitation',
-    desc: 'Home-to-home outreach praying with the sick, elderly, and vulnerable at their point of need.',
+    desc: 'Home-to-home outreach praying with the sick, elderly and vulnerable at their point of need.',
   },
 ];
 
 const prayerPillars = [
   { icon: 'fas fa-compass', title: "God's Direction", desc: 'Seeking divine guidance before every mission' },
   { icon: 'fas fa-bolt', title: 'Empowerment', desc: 'Equipping missioners with spiritual boldness' },
-  { icon: 'fas fa-shield-alt', title: 'Kingdom Intercession', desc: 'Standing in the gap for churches & nations' },
+  { icon: 'fas fa-shield-alt', title: 'Kingdom Intercession', desc: 'Standing in the gap for churches and nations' },
   { icon: 'fas fa-fire', title: 'Fasting & Prayer', desc: 'Consecrated Thursday weekly prayer vigils' },
-  { icon: 'fas fa-school', title: 'Schools & Youth', desc: 'Covering students in prayer & mentorship' },
+  { icon: 'fas fa-school', title: 'Schools & Youth', desc: 'Covering students in prayer and mentorship' },
   { icon: 'fas fa-heart', title: 'Souls Harvest', desc: 'Interceding for unreached communities' },
 ];
 
@@ -126,7 +154,7 @@ const Ministries = () => {
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['evangelism', 'prayer', 'compassion', 'highschool'];
-      const scrollPosition = window.scrollY + 200;
+      const scrollPosition = window.scrollY + 220;
 
       for (const sectionId of sections) {
         const el = document.getElementById(sectionId);
@@ -206,7 +234,9 @@ const Ministries = () => {
       {/* 01 — Evangelism & Missions */}
       <section id="evangelism" className="dept-section section">
         <div className="container">
-          <div className="dept-grid">
+
+          {/* Top Row: Photo collage & Header text at the same level */}
+          <div className="dept-intro-row">
             <div className="dept-media">
               <div
                 className="dept-photo-collage"
@@ -223,45 +253,58 @@ const Ministries = () => {
                 </div>
               </div>
             </div>
+
             <div className="dept-content">
               <span className="dept-number">01</span>
               <span className="section-subtitle">Department</span>
               <h2 className="section-title">Evangelism &amp; Missions</h2>
               <p className="lead">
                 We are called to go — and go we do. KEMT's evangelism arm takes the Gospel to communities across
-                Kenya through strategic mission trips, street evangelism, one-on-one outreach, and mass crusades.
+                Kenya through strategic mission trips, street evangelism, one-on-one outreach and mass crusades.
               </p>
               <p>
-                From Meru to Machakos, and from Makueni to Kajiado, our missioners carry the light of Christ into
+                From Meru to Machakos and from Makueni to Kajiado, our missioners carry the light of Christ into
                 every community they enter. Between 2025 and 2026, we have witnessed <strong>445+ souls</strong> come
                 to Christ across five major mission outreaches.
               </p>
-
-              <div className="dept-feature-pills">
-                <span className="feature-pill"><i className="fas fa-bullhorn"></i> One-on-One Outreach</span>
-                <span className="feature-pill"><i className="fas fa-users"></i> Street Evangelism</span>
-                <span className="feature-pill"><i className="fas fa-fire"></i> Crusades & Revivals</span>
-                <span className="feature-pill"><i className="fas fa-person-walking"></i> Prayer Walks</span>
-                <span className="feature-pill"><i className="fas fa-seedling"></i> Integral Mission</span>
-              </div>
-
-              <div className="dept-actions">
-                <Link to="/programs" className="btn btn-primary dept-cta">
-                  Explore Mission Outreaches <i className="fas fa-arrow-right"></i>
-                </Link>
-                <Link to="/gallery" className="btn btn-secondary dept-cta">
-                  <i className="fas fa-images"></i> Mission Gallery
-                </Link>
-              </div>
             </div>
           </div>
+
+          {/* Full-width Lower Section spanning the entire container */}
+          <div className="dept-lower-content">
+            <h4 className="dept-lower-heading">Core Outreach Methodologies</h4>
+            <div className="methodologies-grid">
+              {evangelismMethodologies.map((m, idx) => (
+                <div className="methodology-card" key={idx}>
+                  <div className="methodology-card__icon">
+                    <i className={m.icon}></i>
+                  </div>
+                  <h5>{m.title}</h5>
+                  <p>{m.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Centered Actions */}
+            <div className="dept-actions dept-actions--center">
+              <Link to="/programs" className="btn btn-primary dept-cta">
+                Explore Mission Outreaches <i className="fas fa-arrow-right"></i>
+              </Link>
+              <Link to="/gallery" className="btn btn-secondary dept-cta">
+                <i className="fas fa-images"></i> Mission Gallery
+              </Link>
+            </div>
+          </div>
+
         </div>
       </section>
 
       {/* 02 — Prayer Department */}
       <section id="prayer" className="dept-section dept-section--alt section">
         <div className="container">
-          <div className="dept-grid dept-grid--reverse">
+
+          {/* Top Row: Photo collage & Prayer Intro Header at the same level */}
+          <div className="dept-intro-row dept-intro-row--reverse">
             <div className="dept-content">
               <span className="dept-number">02</span>
               <span className="section-subtitle">Department</span>
@@ -273,57 +316,10 @@ const Ministries = () => {
                 Our Prayer Department provides a strong spiritual foundation for the ministry through a dedicated
                 prayer committee committed to seeking God and standing in the gap for the work of the Kingdom.
               </p>
-
-              {/* Spotlight Thursday Prayer & Fasting Box */}
-              <div className="prayer-schedule-box">
-                <div className="prayer-schedule-box__header">
-                  <div className="prayer-schedule-box__icon">
-                    <i className="fas fa-fire"></i>
-                  </div>
-                  <div>
-                    <h4>Every Thursday Prayer &amp; Fasting</h4>
-                    <span className="prayer-schedule-box__tag">Weekly Spiritual Foundation</span>
-                  </div>
-                </div>
-                <p>
-                  Every <strong>Thursday</strong>, our entire team comes together for a dedicated time of{' '}
-                  <strong>prayer and fasting</strong>, interceding for our missions, missioners, communities,
-                  churches, schools, and the advancement of the Gospel.
-                </p>
-                <div className="prayer-schedule-box__footer">
-                  <span><i className="fas fa-clock"></i> 6:00 AM – 6:00 PM (EAT)</span>
-                  <span><i className="fas fa-users"></i> Dedicated Intercession Committee</span>
-                </div>
-              </div>
-
               <p>
-                Through prayer, we seek God's direction, strength, wisdom, and empowerment as we continue to
+                Through prayer we seek God's direction, strength, wisdom and empowerment as we continue to
                 fulfil our mandate of reaching the unreached and advancing the Kingdom of God.
               </p>
-
-              <blockquote className="dept-quote">
-                "We believe that before we go out to reach people, we must first go before God in prayer."
-              </blockquote>
-
-              <div className="prayer-pillars-grid">
-                {prayerPillars.map((p, i) => (
-                  <div className="prayer-pillar-card" key={i}>
-                    <div className="prayer-pillar-card__icon">
-                      <i className={p.icon}></i>
-                    </div>
-                    <div>
-                      <h5>{p.title}</h5>
-                      <p>{p.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="dept-actions" style={{ marginTop: '1.75rem' }}>
-                <Link to="/contact" className="btn btn-primary dept-cta">
-                  <i className="fas fa-hands-praying"></i> Submit Prayer Request
-                </Link>
-              </div>
             </div>
 
             <div className="dept-media">
@@ -343,13 +339,68 @@ const Ministries = () => {
               </div>
             </div>
           </div>
+
+          {/* Full-width Lower Section: Thursday Fasting Spotlight, Quote & 6 Pillars Grid */}
+          <div className="dept-lower-content">
+
+            {/* Spotlight Thursday Prayer & Fasting Box covering full width */}
+            <div className="prayer-schedule-box">
+              <div className="prayer-schedule-box__header">
+                <div className="prayer-schedule-box__icon">
+                  <i className="fas fa-fire"></i>
+                </div>
+                <div>
+                  <h4>Every Thursday Prayer &amp; Fasting</h4>
+                  <span className="prayer-schedule-box__tag">Weekly Spiritual Foundation</span>
+                </div>
+              </div>
+              <p>
+                Every <strong>Thursday</strong>, our entire team comes together for a dedicated time of{' '}
+                <strong>prayer and fasting</strong>, interceding for our missions, missioners, communities,
+                churches, schools and the advancement of the Gospel.
+              </p>
+              <div className="prayer-schedule-box__footer">
+                <span><i className="fas fa-clock"></i> 6:00 AM – 6:00 PM (EAT)</span>
+                <span><i className="fas fa-users"></i> Dedicated Intercession Committee</span>
+                <span><i className="fas fa-hands-praying"></i> Standing in the Gap for Communities</span>
+              </div>
+            </div>
+
+            <blockquote className="dept-quote">
+              "We believe that before we go out to reach people we must first go before God in prayer."
+            </blockquote>
+
+            <div className="prayer-pillars-grid">
+              {prayerPillars.map((p, i) => (
+                <div className="prayer-pillar-card" key={i}>
+                  <div className="prayer-pillar-card__icon">
+                    <i className={p.icon}></i>
+                  </div>
+                  <div>
+                    <h5>{p.title}</h5>
+                    <p>{p.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Centered Actions */}
+            <div className="dept-actions dept-actions--center">
+              <Link to="/contact" className="btn btn-primary dept-cta">
+                <i className="fas fa-hands-praying"></i> Submit Prayer Request
+              </Link>
+            </div>
+          </div>
+
         </div>
       </section>
 
       {/* 03 — Compassion Ministry */}
       <section id="compassion" className="dept-section section">
         <div className="container">
-          <div className="dept-grid">
+
+          {/* Top Row: Photo collage & Intro Header at the same level */}
+          <div className="dept-intro-row">
             <div className="dept-media">
               <div
                 className="dept-photo-collage"
@@ -372,53 +423,61 @@ const Ministries = () => {
               <span className="section-subtitle">Department</span>
               <h2 className="section-title">Compassion Ministry</h2>
               <p className="lead">
-                At Kingdom Enlightenment Missions Team, we believe that the Gospel must not only be preached with
+                At Kingdom Enlightenment Missions Team we believe that the Gospel must not only be preached with
                 our lips but also demonstrated through our actions.
               </p>
               <p>
-                Through our missions, we engage communities with compassion, reaching people at their point of
-                need and reminding them that they are seen, valued, and loved by God.
+                Through our missions we engage communities with compassion, reaching people at their point of
+                need and reminding them that they are seen, valued and loved by God.
               </p>
               <p>
-                Our compassion ministry involves giving food and clothing, offering counsel, praying with people,
+                Our compassion ministry involves giving food and clothing, offering counsel, praying with people
                 and walking alongside those facing different challenges, with special attention to the young generation.
-                We create safe spaces where young people can find encouragement, hope, direction, and spiritual nourishment.
+                We create safe spaces where young people can find encouragement, hope, direction and spiritual nourishment.
               </p>
-              <p>
-                For us, compassion is more than meeting a physical need — it is an opportunity to reveal the heart
-                of Christ. Every meal shared, garment given, prayer offered, and life encouraged becomes a bridge
-                through which the love of Jesus reaches the community.
-              </p>
-
-              {/* 4 Compassion Wings */}
-              <div className="compassion-wings-grid">
-                {compassionWings.map((item, i) => (
-                  <div className="compassion-wing-card" key={i}>
-                    <div className="compassion-wing-card__icon">
-                      <i className={item.icon}></i>
-                    </div>
-                    <div className="compassion-wing-card__text">
-                      <h4>{item.title}</h4>
-                      <p>{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <blockquote className="dept-quote">
-                "We serve because Christ first loved us. We care because every soul matters."
-              </blockquote>
-
-              <div className="dept-actions" style={{ marginTop: '1.5rem' }}>
-                <Link to="/donate" className="btn btn-primary dept-cta">
-                  <i className="fas fa-heart"></i> Support Compassion Fund
-                </Link>
-                <Link to="/contact" className="btn btn-secondary dept-cta">
-                  Partner in Giving
-                </Link>
-              </div>
             </div>
           </div>
+
+          {/* Full-width Lower Section: Narrative, 4 Wings Grid & Quote */}
+          <div className="dept-lower-content">
+            <div className="compassion-overview-card">
+              <p>
+                For us compassion is more than meeting a physical need—it is an opportunity to reveal the heart
+                of Christ. Every meal shared, garment given, prayer offered and life encouraged becomes a bridge
+                through which the love of Jesus reaches the community.
+              </p>
+            </div>
+
+            {/* 4 Compassion Wings spanning across the full width */}
+            <div className="compassion-wings-grid">
+              {compassionWings.map((item, i) => (
+                <div className="compassion-wing-card" key={i}>
+                  <div className="compassion-wing-card__icon">
+                    <i className={item.icon}></i>
+                  </div>
+                  <div className="compassion-wing-card__text">
+                    <h4>{item.title}</h4>
+                    <p>{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <blockquote className="dept-quote">
+              "We serve because Christ first loved us. We care because every soul matters."
+            </blockquote>
+
+            {/* Centered Actions */}
+            <div className="dept-actions dept-actions--center">
+              <Link to="/donate" className="btn btn-primary dept-cta">
+                <i className="fas fa-heart"></i> Support Compassion Fund
+              </Link>
+              <Link to="/contact" className="btn btn-secondary dept-cta">
+                Partner in Giving
+              </Link>
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -430,8 +489,8 @@ const Ministries = () => {
             <span className="section-subtitle">Department</span>
             <h2 className="section-title">High School Ministry</h2>
             <p className="section-description">
-              Reaching the next generation where they are — in the classroom, the dormitory, and the heart.
-              Empowering students through spiritual nourishment, academic motivation, and life mentorship.
+              Reaching the next generation where they are — in the classroom, the dormitory and the heart.
+              Empowering students through spiritual nourishment, academic motivation and life mentorship.
             </p>
           </div>
 
@@ -485,8 +544,8 @@ const Ministries = () => {
               <div className="school-invite-box__text">
                 <h3>Would You Like KEMT To Visit Your School or Youth Fellowship?</h3>
                 <p>
-                  We partner with secondary schools, high schools, and youth groups across Kenya to conduct
-                  Weekend Challenges, Academic Mentorship, and Spiritual Nourishment sessions.
+                  We partner with secondary schools, high schools and youth groups across Kenya to conduct
+                  Weekend Challenges, Academic Mentorship and Spiritual Nourishment sessions.
                 </p>
               </div>
               <div className="school-invite-box__action">
@@ -537,7 +596,7 @@ const Ministries = () => {
         <div className="container">
           <div className="cta-content">
             <h2>Get Involved In Our Ministries</h2>
-            <p>Whether through prayer, giving, or serving — there is a place for you in what God is doing through KEMT.</p>
+            <p>Whether through prayer, giving or serving — there is a place for you in what God is doing through KEMT.</p>
             <div className="cta-buttons">
               <Link to="/contact" className="btn btn-primary">Partner With Us</Link>
               <Link to="/donate" className="btn btn-secondary">Give Now</Link>

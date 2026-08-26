@@ -29,6 +29,8 @@ const BackToTop = () => {
             className={`back-to-top ${isVisible ? 'visible' : ''}`}
             id="backToTop"
             onClick={scrollToTop}
+            aria-label="Back to top"
+            title="Back to top"
         >
             <i className="fas fa-chevron-up"></i>
         </button>

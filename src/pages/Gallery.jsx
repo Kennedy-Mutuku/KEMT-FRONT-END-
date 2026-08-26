@@ -74,7 +74,7 @@ const Gallery = () => {
           <div className="banner-content">
             <span className="banner-tag">Visual Stories</span>
             <h1>Photo Gallery</h1>
-            <p>A glimpse into the lives touched, communities reached, and moments of grace captured in the field.</p>
+            <p>A glimpse into the lives touched, communities reached and moments of grace captured in the field.</p>
           </div>
         </div>
       </section>
