@@ -29,7 +29,7 @@ const AdminEvents = () => {
 
   const fetchEvents = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/events');
+      const response = await fetch('${import.meta.env.VITE_API_URL}/api/events');
       if (response.ok) {
         const data = await response.json();
         setEvents(data);
@@ -90,8 +90,8 @@ const AdminEvents = () => {
 
     try {
       const url = editingId 
-        ? `http://localhost:5000/api/events/${editingId}`
-        : 'http://localhost:5000/api/events';
+        ? `${import.meta.env.VITE_API_URL}/api/events/${editingId}`
+        : '${import.meta.env.VITE_API_URL}/api/events';
       
       const method = editingId ? 'PUT' : 'POST';
 
@@ -122,7 +122,7 @@ const AdminEvents = () => {
     if (!window.confirm('Are you sure you want to delete this event?')) return;
 
     try {
-      const response = await fetch(`http://localhost:5000/api/events/${id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/events/${id}`, {
         method: 'DELETE'
       });
 

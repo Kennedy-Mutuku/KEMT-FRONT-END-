@@ -29,7 +29,7 @@ const Header = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/profile');
+        const response = await fetch('${import.meta.env.VITE_API_URL}/api/profile');
         if (response.ok) {
           const data = await response.json();
           setProfile(data);
@@ -68,7 +68,7 @@ const Header = () => {
     formData.append('avatar', file);
 
     try {
-      const response = await fetch('http://localhost:5000/api/profile/upload', {
+      const response = await fetch('${import.meta.env.VITE_API_URL}/api/profile/upload', {
         method: 'POST',
         body: formData
       });
@@ -92,7 +92,7 @@ const Header = () => {
   // Construct image URL safely
   const imageUrl = profile.profileImageUrl.startsWith('http') 
     ? profile.profileImageUrl 
-    : `http://localhost:5000/${profile.profileImageUrl}`;
+    : `${import.meta.env.VITE_API_URL}/${profile.profileImageUrl}`;
 
   return (
     <header className="admin-header">

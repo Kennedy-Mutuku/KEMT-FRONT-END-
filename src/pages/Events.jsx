@@ -61,7 +61,7 @@ const Events = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/events');
+        const response = await fetch('${import.meta.env.VITE_API_URL}/api/events');
         if (!response.ok) {
           throw new Error('Failed to fetch events');
         }
@@ -124,7 +124,7 @@ const Events = () => {
                 >
                   {event.posterUrl ? (
                     <div style={{ height: '200px', width: '100%', overflow: 'hidden' }}>
-                      <img src={`http://localhost:5000/${event.posterUrl}`} alt={event.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      <img src={`${import.meta.env.VITE_API_URL}/${event.posterUrl}`} alt={event.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     </div>
                   ) : (
                     <div style={{ height: '160px', backgroundColor: '#3C50E0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white' }}>
