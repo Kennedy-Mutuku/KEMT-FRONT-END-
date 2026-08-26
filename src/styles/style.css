@@ -1493,7 +1493,8 @@ p {
         position: absolute;
         top: 100%;
         left: 0;
-        width: 260px;
+        width: 70vw;
+        max-width: 230px;
         background-color: #fff;
         padding: 0;
         box-shadow: 4px 8px 24px rgba(0,0,0,0.15);
@@ -1511,8 +1512,8 @@ p {
     }
 
     .main-nav.active .nav-menu > li > a {
-        padding: 13px 20px;
-        font-size: 0.95rem;
+        padding: 11px 16px;
+        font-size: 0.88rem;
         font-weight: 600;
         color: var(--text-color);
         display: flex;
@@ -1681,8 +1682,28 @@ p {
 
     .footer-bottom-content {
         flex-direction: column;
-        gap: 15px;
+        gap: 10px;
         text-align: center;
+    }
+
+    .footer-bottom p {
+        font-size: 0.78rem;
+    }
+
+    .footer-links {
+        gap: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .footer-links a {
+        font-size: 0.78rem;
+    }
+
+    .footer-col > p,
+    .footer-col ul li a,
+    .contact-info li span {
+        font-size: 0.875rem;
     }
 
     .cta-buttons {
@@ -4963,7 +4984,14 @@ p {
     }
 
     .logo-name-bottom {
-        display: none !important;
+        display: block !important;
+        font-size: 0.5rem !important;
+        letter-spacing: 1.6px !important;
+        color: #c0392b !important;
+        font-weight: 700 !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: clip !important;
     }
 
     .nav-buttons {
@@ -6831,4 +6859,91 @@ p {
     .faith-item { flex-direction: column; gap: 0.5rem; }
     .amount-presets { gap: 0.4rem; }
     .subscribe-form { flex-direction: column; align-items: stretch; }
+
+    /* Footer fine-tuning on very small phones */
+    .footer-bottom p,
+    .footer-links a {
+        font-size: 0.72rem;
+    }
+    .footer-links { gap: 8px; }
+    .footer-col h4 { font-size: 0.95rem; }
+    .footer-top { padding: 48px 0 32px; }
+    .footer-logo-img { height: 56px; }
+    .footer-social a { width: 34px; height: 34px; font-size: 0.8rem; }
+}
+
+/* =====================================================
+   TABLET (768px – 1024px) — Hybrid layout
+   ===================================================== */
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Logo: visible & balanced */
+    .logo-img { height: 44px; width: 44px; }
+    .logo-name-top { font-size: 0.88rem; }
+    .logo-name-bottom { font-size: 0.58rem; }
+
+    /* Header */
+    .header-content { padding: 14px 0; }
+
+    /* Nav buttons stay visible */
+    .nav-buttons .btn { padding: 7px 16px; font-size: 0.85rem; }
+
+    /* Footer: 2-column grid */
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .footer-top { padding: 60px 0 40px; }
+
+    /* About & missions sections: 2-column grids */
+    .about-grid,
+    .about-v2-grid { grid-template-columns: 1fr; }
+    .vm-cards,
+    .vm-v2-cards { grid-template-columns: 1fr 1fr; }
+
+    /* Departments: photos below text on tablet */
+    .dept-intro-row,
+    .dept-intro-row--reverse {
+        flex-direction: column;
+        gap: 1.75rem;
+    }
+    .dept-photo-collage { height: 340px; }
+
+    /* Cards: 2-column grids */
+    .ministries-grid,
+    .methodologies-grid,
+    .prayer-pillars-grid,
+    .compassion-wings-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* School cards */
+    .schools-grid { grid-template-columns: 1fr 1fr; }
+
+    /* Section typography scaled for tablet */
+    .section-title { font-size: 1.8rem; }
+    .page-banner h1 { font-size: 2rem; }
+    .page-banner p { font-size: 0.95rem; }
+
+    /* Programs/missions */
+    .missions-grid { grid-template-columns: 1fr; }
+    .impact-total-stats { gap: 2.5rem; }
+}
+
+/* =====================================================
+   LAPTOP (1025px – 1440px) — Standard desktop
+   ===================================================== */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .container { max-width: 1180px; }
+    .footer-grid { grid-template-columns: 1.5fr 1fr 1fr 1.2fr; }
+    .dept-photo-collage { height: 460px; }
+    .schools-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* =====================================================
+   LARGE SCREENS (> 1440px) — Dynamic centering
+   ===================================================== */
+@media (min-width: 1441px) {
+    .container { max-width: 1340px; }
+    .section-title { font-size: 2.6rem; }
+    .hero-slider { height: 700px; }
+    .slide-content h2 { font-size: 4rem; }
+    .footer-grid { grid-template-columns: 1.8fr 1fr 1fr 1.3fr; }
+    .dept-photo-collage { height: 520px; }
 }
