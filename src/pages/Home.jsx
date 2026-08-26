@@ -36,9 +36,9 @@ const Home = () => {
     // Testimonials Slider State
     const [currentTestimonial, setCurrentTestimonial] = useState(0);
     const testimonials = [
-        { quote: "Through Kingdom Enlightenment Missions Team, I came to know Jesus Christ as my Lord and Savior. My life has never been the same. Today, I am a pastor leading a congregation of over 200 believers.", author: "Pastor John Kamau", location: "Nakuru County" },
-        { quote: "The youth ministry transformed my life completely. I was on the wrong path, but through the mentorship and discipleship programs, I found purpose and direction. Glory to God!", author: "Mary Wanjiku", location: "Nairobi County" },
-        { quote: "The community outreach program brought medical services and the Gospel to our village. Many were healed physically and spiritually. We thank God for this ministry.", author: "Chief Joseph Mutua", location: "Machakos County" }
+        { quote: "Through Kingdom Enlightenment Missions Team, I came to know Jesus Christ as my Lord and Savior. My life has never been the same. Today, I am a pastor leading a congregation of over 200 believers.", author: "Pastor John Kamau", location: "Nakuru County", initials: "JK", color: "#e67e22" },
+        { quote: "The youth ministry transformed my life completely. I was on the wrong path, but through the mentorship and discipleship programs, I found purpose and direction. Glory to God!", author: "Mary Wanjiku", location: "Nairobi County", initials: "MW", color: "#2980b9" },
+        { quote: "The community outreach program brought medical services and the Gospel to our village. Many were healed physically and spiritually. We thank God for this ministry.", author: "Chief Joseph Mutua", location: "Machakos County", initials: "JM", color: "#27ae60" }
     ];
 
     useEffect(() => {
@@ -357,8 +357,8 @@ const Home = () => {
                                     <p>"{testimonial.quote}"</p>
                                 </div>
                                 <div className="testimonial-author">
-                                    <div className="author-image">
-                                        <i className="fas fa-user"></i>
+                                    <div className="author-image" style={{ background: `linear-gradient(135deg, ${testimonial.color}dd, ${testimonial.color}99)`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontWeight: 700, fontSize: '1.1rem', fontFamily: 'Poppins, sans-serif', letterSpacing: '0.5px' }}>
+                                        {testimonial.initials}
                                     </div>
                                     <div className="author-info">
                                         <h4>{testimonial.author}</h4>
