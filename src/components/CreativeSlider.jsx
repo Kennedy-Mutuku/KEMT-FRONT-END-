@@ -6,6 +6,7 @@ import hero1 from '../assets/Ruanyage1.jpg';
 import hero2 from '../assets/Tala mission1.jpg';
 import hero3 from '../assets/Emali mission3.jpg'; 
 import newsTala from '../assets/Tala mission2.jpg';
+import handsTogether from '../assets/HANDS TOGETHER.jpg';
 
 const slides = [
   {
@@ -95,9 +96,9 @@ const CreativeSlider = () => {
     }
   };
 
-  const finger1Img = slides[(currentSlide + 1) % slides.length].image;
-  const finger2Img = slides[(currentSlide + 2) % slides.length].image;
-  const finger3Img = slides[(currentSlide + 3) % slides.length].image;
+  const finger1Img = slides[currentSlide].image;
+  const finger2Img = slides[(currentSlide + 1) % slides.length].image;
+  const finger3Img = slides[(currentSlide + 2) % slides.length].image;
 
   return (
     <section 
@@ -108,7 +109,7 @@ const CreativeSlider = () => {
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
-      {/* Background Image of the Current Slide (with Ken Burns effect) */}
+      {/* Dynamic Background Image (Full screen, but covered on the right) */}
       {slides.map((slide, index) => (
         <div 
           key={index} 
@@ -121,6 +122,15 @@ const CreativeSlider = () => {
           <div className="bg-overlay"></div>
         </div>
       ))}
+
+      {/* Static Background Image (Right half with diagonal split) */}
+      <div className="creative-bg-right">
+        <div 
+          className="bg-right-img"
+          style={{ backgroundImage: `url(${handsTogether})` }}
+        ></div>
+        <div className="bg-right-overlay"></div>
+      </div>
 
       <div className="creative-container">
         {/* Left Side: Text Content */}
@@ -168,23 +178,21 @@ const CreativeSlider = () => {
             </button>
           </div>
         </div>
+      </div>
 
-        {/* Right Side: The "Fingers" Image Queue */}
-        <div className="creative-visual-col">
-          <div className="fingers-container">
-            {/* Finger 1 */}
-            <div className="finger finger-1">
-              <div className="finger-img" key={finger1Img} style={{ backgroundImage: `url(${finger1Img})` }}></div>
-            </div>
-            {/* Finger 2 */}
-            <div className="finger finger-2">
-              <div className="finger-img" key={finger2Img} style={{ backgroundImage: `url(${finger2Img})` }}></div>
-            </div>
-            {/* Finger 3 */}
-            <div className="finger finger-3">
-              <div className="finger-img" key={finger3Img} style={{ backgroundImage: `url(${finger3Img})` }}></div>
-            </div>
-          </div>
+      {/* Right Side: The Visual "Fingers" Queue (Centered in the right half of screen) */}
+      <div className="fingers-container">
+        {/* Finger 1 */}
+        <div className="finger finger-1">
+          <div className="finger-img" key={finger1Img} style={{ backgroundImage: `url(${finger1Img})` }}></div>
+        </div>
+        {/* Finger 2 */}
+        <div className="finger finger-2">
+          <div className="finger-img" key={finger2Img} style={{ backgroundImage: `url(${finger2Img})` }}></div>
+        </div>
+        {/* Finger 3 */}
+        <div className="finger finger-3">
+          <div className="finger-img" key={finger3Img} style={{ backgroundImage: `url(${finger3Img})` }}></div>
         </div>
       </div>
     </section>

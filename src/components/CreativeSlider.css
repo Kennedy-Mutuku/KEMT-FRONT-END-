@@ -11,17 +11,49 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  /* Shrink the container to only cover the left side, so the photo fits end-to-end */
+  width: 61%; 
   height: 100%;
   opacity: 0;
   transition: opacity 1s ease-in-out;
   z-index: 0;
   overflow: hidden; /* For Ken Burns */
+  /* Re-calculated clip path for the new 61% width container */
+  clip-path: polygon(0 0, 100% 0, 81.96% 100%, 0 100%);
 }
 
 .creative-bg-image.active {
   opacity: 1;
   z-index: 1;
+}
+
+/* Static Right Half Image */
+.creative-bg-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 3; /* Fixed: Must be higher than creative-bg-image.active (which is 2) */
+  /* Slant border leaning the other way (inclining to the right) */
+  clip-path: polygon(22% 0, 100% 0, 100% 100%, 0 100%);
+  border-left: 2px solid var(--primary-color);
+}
+
+.bg-right-img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-right-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(230, 126, 34, 0.9) 0%, rgba(211, 84, 0, 0.9) 100%); /* Bright vibrant theme orange */
 }
 
 /* Ken Burns Effect */
@@ -273,14 +305,15 @@
 
 .fingers-container {
   position: absolute;
-  right: 5%;
+  left: 75%; /* Center of the right 50% of the screen */
   top: 50%;
   width: auto;
-  transform: translateY(-50%) rotate(25deg);
+  transform: translate(-50%, -50%) rotate(25deg);
   display: flex;
   gap: 15px;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
+  z-index: 10;
 }
 
 .finger {

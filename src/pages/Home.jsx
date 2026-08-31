@@ -84,15 +84,12 @@ const Home = () => {
                 <div className="ticker-wrap">
                     <div className="ticker-label">KEMT IMPACT</div>
                     <div className="ticker-track">
-                        {[0, 1].map(i => (
+                        {[0, 1, 2].map(i => (
                             <React.Fragment key={i}>
-                                <div className="ticker-item"><i className="fas fa-heart"></i><span className="ticker-num">445+</span> Souls Won to Christ</div>
-                                <div className="ticker-item"><i className="fas fa-globe-africa"></i><span className="ticker-num">5</span> Mission Trips Completed</div>
-                                <div className="ticker-item"><i className="fas fa-map-marked-alt"></i><span className="ticker-num">4</span> Counties Reached</div>
-                                <div className="ticker-item"><i className="fas fa-graduation-cap"></i><span className="ticker-num">3</span> Schools Ministered</div>
-                                <div className="ticker-item"><i className="fas fa-church"></i> Multiple Partner Churches</div>
-                                <div className="ticker-item"><i className="fas fa-hands-praying"></i> Thursday Prayer &amp; Fasting</div>
-                                <div className="ticker-item"><i className="fas fa-cross"></i> Spreading God's Kingdom in Kenya</div>
+                                <div className="ticker-item">MONDAY ONLINE FELLOWSHIPS</div>
+                                <div className="ticker-item">MISSIONS</div>
+                                <div className="ticker-item">THURSDAY ONLINE PRAYERS</div>
+                                <div className="ticker-item">3 MISSIONS PER YEAR</div>
                             </React.Fragment>
                         ))}
                     </div>

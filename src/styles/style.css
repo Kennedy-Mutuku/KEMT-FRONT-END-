@@ -6467,6 +6467,7 @@ p {
     align-items: stretch;
     width: 100%;
     overflow: hidden;
+    position: relative;
 }
 .ticker-label {
     background: var(--primary-color);
@@ -6480,11 +6481,15 @@ p {
     flex-shrink: 0;
     display: flex;
     align-items: center;
+    position: relative;
+    z-index: 10;
 }
 .ticker-track {
     display: flex;
     animation: tickerScroll 30s linear infinite;
     white-space: nowrap;
+    position: relative;
+    z-index: 1;
 }
 .ticker-item {
     display: inline-flex;
