@@ -7,7 +7,7 @@ import hero1 from '../assets/Ruanyage1.jpg';
 import hero2 from '../assets/Tala mission1.jpg';
 
 // About section photos
-import aboutMain from '../assets/Emali mission3.jpg';
+import aboutMain from '../assets/Tala mission7.jpg';
 import aboutThumb1 from '../assets/Tala mission3.jpg';
 import aboutThumb2 from '../assets/Ruanyage5.jpg';
 

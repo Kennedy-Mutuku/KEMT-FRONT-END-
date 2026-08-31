@@ -53,14 +53,11 @@ const CreativeSlider = () => {
   const touchEndX = useRef(0);
 
   useEffect(() => {
-    // Only set interval if we are not hovering
-    if (isHovered) return;
-
     const interval = setInterval(() => {
       nextSlide();
     }, 6000); 
     return () => clearInterval(interval);
-  }, [isHovered]); // Re-run effect when hover state changes
+  }, []); // Run constantly
 
   const nextSlide = () => {
     if (isTransitioning) return;
@@ -102,9 +99,7 @@ const CreativeSlider = () => {
 
   return (
     <section 
-      className={`creative-hero ${isHovered ? 'is-paused' : ''}`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      className="creative-hero"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}

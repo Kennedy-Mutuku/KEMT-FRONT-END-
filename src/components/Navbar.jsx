@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import logoImg from '../assets/logo Kingdom enightement.jpg';
 
 const Navbar = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -49,7 +50,7 @@ const Navbar = () => {
                         </div>
                         <div className="logo">
                             <Link to="/">
-                                <img src="/images/logo.png" alt="Kingdom Enlightenment Missions Team" className="logo-img" />
+                                <img src={logoImg} alt="Kingdom Enlightenment Missions Team" className="logo-img" />
                                 <div className="logo-name">
                                     <span className="logo-name-top">Kingdom Enlightenment</span>
                                     <span className="logo-name-bottom">Missions Team</span>
