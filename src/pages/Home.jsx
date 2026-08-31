@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import CreativeSlider from '../components/CreativeSlider';
 
 // Hero photos
 import hero1 from '../assets/Ruanyage1.jpg';
@@ -16,23 +17,6 @@ import newsEmali from '../assets/Emali mission2.jpg';
 import newsTala from '../assets/Tala mission2.jpg';
 
 const Home = () => {
-    // Hero Slider State
-    const [currentSlide, setCurrentSlide] = useState(0);
-    const slides = [
-        { image: hero1, title: 'Welcome to Kingdom Enlightenment', text: 'Spreading the Gospel, Transforming Lives, Building God\'s Kingdom', btn1: { text: 'Learn More', link: '/about' }, btn2: { text: 'Join Us', link: '/contact' } },
-        { image: hero2, title: 'Go Into All The World', text: 'And preach the gospel to every creature — Mark 16:15', btn1: { text: 'Our Departments', link: '/ministries' }, btn2: { text: 'Support Us', link: '/donate' } }
-    ];
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentSlide(prev => (prev + 1) % slides.length);
-        }, 5000);
-        return () => clearInterval(interval);
-    }, [slides.length]);
-
-    const nextSlide = () => setCurrentSlide((currentSlide + 1) % slides.length);
-    const prevSlide = () => setCurrentSlide((currentSlide - 1 + slides.length) % slides.length);
-
     // Testimonials Slider State
     const [currentTestimonial, setCurrentTestimonial] = useState(0);
     const testimonials = [
@@ -93,34 +77,7 @@ const Home = () => {
 
     return (
         <main>
-            {/* Hero Slider */}
-            <section className="hero-slider">
-                <div className="slider-container">
-                    {slides.map((slide, index) => (
-                        <div key={index} className={`slide ${index === currentSlide ? 'active' : ''}`} style={{ backgroundImage: `url(${slide.image})` }}>
-                            <div className="slide-overlay"></div>
-                            <div className="slide-content">
-                                <h2>{slide.title}</h2>
-                                <p>{slide.text}</p>
-                                <div className="slide-buttons">
-                                    <Link to={slide.btn1.link} className="btn btn-primary">{slide.btn1.text}</Link>
-                                    <Link to={slide.btn2.link} className="btn btn-secondary">{slide.btn2.text}</Link>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-                <div className="slider-nav">
-                    <button className="slider-prev" onClick={prevSlide}><i className="fas fa-chevron-left"></i></button>
-                    <button className="slider-next" onClick={nextSlide}><i className="fas fa-chevron-right"></i></button>
-                </div>
-                <div className="slider-dots">
-                    {slides.map((_, index) => (
-                        <div key={index} className={`dot ${index === currentSlide ? 'active' : ''}`} onClick={() => setCurrentSlide(index)}></div>
-                    ))}
-                </div>
-            </section>
-
+            <CreativeSlider />
 
             {/* Impact Ticker */}
             <div className="impact-ticker">
