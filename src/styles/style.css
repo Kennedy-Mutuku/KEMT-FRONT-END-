@@ -6907,6 +6907,7 @@ p {
     .about-v2-grid { gap: 50px; }
     .ministries-split { grid-template-columns: 1fr; gap: 40px; }
     .ministries-left { position: static; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 768px) {
     .about-v2-grid { grid-template-columns: 1fr; gap: 50px; }
@@ -6936,6 +6937,7 @@ p {
     .values-grid { grid-template-columns: 1fr; }
     .donate-why-grid { grid-template-columns: 1fr; }
     .leadership-grid { grid-template-columns: repeat(2, 1fr); }
+    .stats-grid { grid-template-columns: 1fr; }
     .about-quick-stats { gap: 0.75rem; }
     .faith-item { flex-direction: column; gap: 0.5rem; }
     .amount-presets { gap: 0.4rem; }
