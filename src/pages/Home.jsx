@@ -209,32 +209,40 @@ const Home = () => {
                             <div className="stat-icon">
                                 <i className="fas fa-heart"></i>
                             </div>
-                            <div className="stat-number">
-                                {statsVisible ? stats.souls : 0}
-                                {statsVisible && stats.souls >= 445 ? '+' : ''}
+                            <div className="stat-content">
+                                <div className="stat-number">
+                                    {statsVisible ? stats.souls : 0}
+                                    {statsVisible && stats.souls >= 445 ? '+' : ''}
+                                </div>
+                                <div className="stat-label">Souls Won to Christ</div>
                             </div>
-                            <div className="stat-label">Souls Won to Christ</div>
                         </div>
                         <div className="stat-item">
                             <div className="stat-icon">
                                 <i className="fas fa-globe-africa"></i>
                             </div>
-                            <div className="stat-number">{statsVisible ? stats.missions : 0}</div>
-                            <div className="stat-label">Mission Trips</div>
+                            <div className="stat-content">
+                                <div className="stat-number">{statsVisible ? stats.missions : 0}</div>
+                                <div className="stat-label">Mission Trips</div>
+                            </div>
                         </div>
                         <div className="stat-item">
                             <div className="stat-icon">
                                 <i className="fas fa-map-marked-alt"></i>
                             </div>
-                            <div className="stat-number">{statsVisible ? stats.counties : 0}</div>
-                            <div className="stat-label">Counties Reached</div>
+                            <div className="stat-content">
+                                <div className="stat-number">{statsVisible ? stats.counties : 0}</div>
+                                <div className="stat-label">Counties Reached</div>
+                            </div>
                         </div>
                         <div className="stat-item">
                             <div className="stat-icon">
                                 <i className="fas fa-graduation-cap"></i>
                             </div>
-                            <div className="stat-number">{statsVisible ? stats.schools : 0}</div>
-                            <div className="stat-label">Schools Ministered</div>
+                            <div className="stat-content">
+                                <div className="stat-number">{statsVisible ? stats.schools : 0}</div>
+                                <div className="stat-label">Schools Ministered</div>
+                            </div>
                         </div>
                     </div>
                 </div>
