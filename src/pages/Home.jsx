@@ -138,24 +138,27 @@ const Home = () => {
                         <p className="vm-v2-verse">"Go into all the world and preach the gospel to all creation." — Mark 16:15</p>
                         <h2 className="vm-v2-title">Our <span>Purpose</span> &amp; Calling</h2>
                     </div>
-                    <div className="vm-v2-cards">
-                        <div className="vm-v2-card">
-                            <span className="vm-v2-num">01</span>
-                            <div className="vm-v2-icon"><i className="fas fa-eye"></i></div>
-                            <h3>Our Vision</h3>
-                            <p>To see every person in Kenya and beyond encounter the transforming love of Jesus Christ and become a committed disciple who impacts their world for God's Kingdom.</p>
+                    <div className="vm-v2-list">
+                        <div className="vm-v2-list-item">
+                            <div className="vm-v2-list-icon"><i className="fas fa-eye"></i></div>
+                            <div className="vm-v2-list-content">
+                                <h3>Our Vision</h3>
+                                <p>To see every person in Kenya and beyond encounter the transforming love of Jesus Christ and become a committed disciple who impacts their world for God's Kingdom.</p>
+                            </div>
                         </div>
-                        <div className="vm-v2-card">
-                            <span className="vm-v2-num">02</span>
-                            <div className="vm-v2-icon"><i className="fas fa-bullseye"></i></div>
-                            <h3>Our Mission</h3>
-                            <p>To glorify God by evangelizing the lost, discipling believers, equipping leaders and planting churches that reproduce and multiply across nations.</p>
+                        <div className="vm-v2-list-item">
+                            <div className="vm-v2-list-icon"><i className="fas fa-bullseye"></i></div>
+                            <div className="vm-v2-list-content">
+                                <h3>Our Mission</h3>
+                                <p>To glorify God by evangelizing the lost, discipling believers, equipping leaders and planting churches that reproduce and multiply across nations.</p>
+                            </div>
                         </div>
-                        <div className="vm-v2-card">
-                            <span className="vm-v2-num">03</span>
-                            <div className="vm-v2-icon"><i className="fas fa-heart"></i></div>
-                            <h3>Our Values</h3>
-                            <p>Faith in God, Biblical Authority, Prayer, Excellence, Integrity, Unity, Compassion and Servant Leadership guide everything we do in every mission field.</p>
+                        <div className="vm-v2-list-item">
+                            <div className="vm-v2-list-icon"><i className="fas fa-heart"></i></div>
+                            <div className="vm-v2-list-content">
+                                <h3>Our Values</h3>
+                                <p>Faith in God, Biblical Authority, Prayer, Excellence, Integrity, Unity, Compassion and Servant Leadership guide everything we do in every mission field.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -163,13 +166,13 @@ const Home = () => {
 
             {/* Ministries — Redesigned */}
             <section className="ministries-v2">
-                <div className="container">
-                    <div className="section-header">
+                <div className="container ministries-split">
+                    <div className="ministries-left">
                         <span className="section-subtitle">What We Do</span>
                         <h2 className="section-title">Our Ministries</h2>
-                        <p className="section-description">We serve through various ministries designed to meet the spiritual and physical needs of people at every stage of life.</p>
+                        <p className="section-description">We serve through various ministries designed to meet the spiritual and physical needs of people at every stage of life. Partner with us as we carry the light of Christ across borders.</p>
                     </div>
-                    <div className="ministry-v2-grid">
+                    <div className="ministries-right">
                         {[
                             { icon: 'globe-africa',       title: 'Evangelism & Missions',  desc: 'Reaching the unreached with the Gospel through crusades, door-to-door evangelism and mission trips to remote areas.',                    link: '/ministries#evangelism' },
                             { icon: 'book-open',          title: 'Discipleship',            desc: 'Building mature believers through systematic Bible study, mentorship programs and spiritual growth initiatives.',                          link: '/ministries#discipleship' },
@@ -178,13 +181,15 @@ const Home = () => {
                             { icon: 'male',               title: 'Men Ministry',            desc: 'Building godly men who lead with integrity in their families, churches and communities through targeted discipleship.',                    link: '/ministries#men-ministry' },
                             { icon: 'hand-holding-heart', title: 'Community Outreach',      desc: 'Demonstrating Christ\'s love through feeding programs, medical camps, education support and community development.',                      link: '/ministries#community-outreach' },
                         ].map((m, i) => (
-                            <div className="ministry-v2-card" key={i}>
-                                <div className="ministry-v2-icon-wrap">
+                            <div className="ministry-list-item" key={i}>
+                                <div className="ministry-list-icon">
                                     <i className={`fas fa-${m.icon}`}></i>
                                 </div>
-                                <h3>{m.title}</h3>
-                                <p>{m.desc}</p>
-                                <Link to={m.link} className="ministry-v2-link">Learn More <i className="fas fa-arrow-right"></i></Link>
+                                <div className="ministry-list-content">
+                                    <h3>{m.title}</h3>
+                                    <p>{m.desc}</p>
+                                    <Link to={m.link} className="ministry-link-inline">Learn More <i className="fas fa-arrow-right"></i></Link>
+                                </div>
                             </div>
                         ))}
                     </div>
