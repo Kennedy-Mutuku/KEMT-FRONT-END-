@@ -256,50 +256,62 @@ const Home = () => {
                         <h2 className="section-title">Events & Programs</h2>
                         <p className="section-description">Join us for our upcoming events and be part of what God is doing.</p>
                     </div>
-                    <div className="events-grid">
-                        <div className="event-card">
+                    <div className="events-list">
+                        <div className="event-list-item">
                             <div className="event-date">
                                 <span className="day">15</span>
                                 <span className="month">JAN</span>
                             </div>
                             <div className="event-content">
-                                <h3>Annual Prayer Conference</h3>
-                                <div className="event-meta">
-                                    <span><i className="fas fa-clock"></i> 9:00 AM - 5:00 PM</span>
-                                    <span><i className="fas fa-map-marker-alt"></i> Main Auditorium</span>
+                                <div className="event-info">
+                                    <h3>Annual Prayer Conference</h3>
+                                    <div className="event-meta">
+                                        <span><i className="fas fa-clock"></i> 9:00 AM - 5:00 PM</span>
+                                        <span><i className="fas fa-map-marker-alt"></i> Main Auditorium</span>
+                                    </div>
+                                    <p>A day of intense prayer and intercession for the nation and our ministries.</p>
                                 </div>
-                                <p>A day of intense prayer and intercession for the nation and our ministries.</p>
-                                <Link to="/events" className="event-link">Learn More</Link>
+                                <div className="event-link-wrap">
+                                    <Link to="/events" className="event-link">Learn More <i className="fas fa-arrow-right"></i></Link>
+                                </div>
                             </div>
                         </div>
-                        <div className="event-card">
+                        <div className="event-list-item">
                             <div className="event-date">
                                 <span className="day">22</span>
                                 <span className="month">JAN</span>
                             </div>
                             <div className="event-content">
-                                <h3>Youth Revival Weekend</h3>
-                                <div className="event-meta">
-                                    <span><i className="fas fa-clock"></i> Friday - Sunday</span>
-                                    <span><i className="fas fa-map-marker-alt"></i> Youth Center</span>
+                                <div className="event-info">
+                                    <h3>Youth Revival Weekend</h3>
+                                    <div className="event-meta">
+                                        <span><i className="fas fa-clock"></i> Friday - Sunday</span>
+                                        <span><i className="fas fa-map-marker-alt"></i> Youth Center</span>
+                                    </div>
+                                    <p>A powerful weekend of worship, word and fellowship for young people.</p>
                                 </div>
-                                <p>A powerful weekend of worship, word and fellowship for young people.</p>
-                                <Link to="/events" className="event-link">Learn More</Link>
+                                <div className="event-link-wrap">
+                                    <Link to="/events" className="event-link">Learn More <i className="fas fa-arrow-right"></i></Link>
+                                </div>
                             </div>
                         </div>
-                        <div className="event-card">
+                        <div className="event-list-item">
                             <div className="event-date">
                                 <span className="day">05</span>
                                 <span className="month">FEB</span>
                             </div>
                             <div className="event-content">
-                                <h3>Community Outreach Day</h3>
-                                <div className="event-meta">
-                                    <span><i className="fas fa-clock"></i> 8:00 AM - 4:00 PM</span>
-                                    <span><i className="fas fa-map-marker-alt"></i> Various Locations</span>
+                                <div className="event-info">
+                                    <h3>Community Outreach Day</h3>
+                                    <div className="event-meta">
+                                        <span><i className="fas fa-clock"></i> 8:00 AM - 4:00 PM</span>
+                                        <span><i className="fas fa-map-marker-alt"></i> Various Locations</span>
+                                    </div>
+                                    <p>Join us as we serve our community with food, medical care and the Gospel.</p>
                                 </div>
-                                <p>Join us as we serve our community with food, medical care and the Gospel.</p>
-                                <Link to="/events" className="event-link">Learn More</Link>
+                                <div className="event-link-wrap">
+                                    <Link to="/events" className="event-link">Learn More <i className="fas fa-arrow-right"></i></Link>
+                                </div>
                             </div>
                         </div>
                     </div>
