@@ -9,7 +9,8 @@ import {
   MessageSquare,
   Settings,
   PieChart,
-  ChevronDown
+  ChevronDown,
+  Image
 } from 'lucide-react';
 
 const Sidebar = () => {
@@ -50,6 +51,13 @@ const Sidebar = () => {
           <div className="admin-nav-item-left">
             <Calendar size={20} />
             Events
+          </div>
+        </Link>
+
+        <Link to="/admin/gallery" className={`admin-nav-item ${isCurrentPath('/admin/gallery') ? 'active' : ''}`}>
+          <div className="admin-nav-item-left">
+            <Image size={20} />
+            Gallery
           </div>
         </Link>
 

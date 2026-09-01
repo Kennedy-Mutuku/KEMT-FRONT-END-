@@ -6078,10 +6078,82 @@ p {
 .form-success h4 { font-size: 1.3rem; color: var(--text-color); margin-bottom: 0.6rem; }
 .form-success p { color: var(--text-light); }
 
+/* Field-level validation error */
+.field-error {
+    display: block;
+    color: #c0392b;
+    font-size: 0.8rem;
+    margin-top: 0.35rem;
+    font-weight: 500;
+}
 
-/* =====================================================
-   LEADERSHIP PAGE
-   ===================================================== */
+.form-group input[aria-invalid="true"],
+.form-group textarea[aria-invalid="true"] {
+    border-color: #c0392b;
+}
+
+/* Contact detail items */
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+}
+
+.contact-detail-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.contact-detail-icon {
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.contact-detail-icon i {
+    color: #fff;
+    font-size: 1rem;
+}
+
+.contact-detail-item h4 {
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+    color: var(--text-color);
+}
+
+.contact-detail-item a,
+.contact-detail-item span {
+    font-size: 0.88rem;
+    color: var(--text-light);
+}
+
+.contact-detail-item a:hover {
+    color: var(--primary-color);
+}
+
+/* Gallery lightbox info */
+.lightbox__info {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Gallery loading / empty / error states */
+.gallery-loading,
+.gallery-error,
+.gallery-empty {
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .leadership-banner {
     min-height: 220px !important;
     background-image: linear-gradient(135deg, #0d1b2a 0%, #1a2e45 60%, #0d1b2a 100%) !important;
