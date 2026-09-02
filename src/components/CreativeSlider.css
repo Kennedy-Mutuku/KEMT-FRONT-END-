@@ -377,7 +377,7 @@
 
 @media (max-width: 768px) {
   .creative-hero {
-    height: 260px;
+    height: 340px;
     min-height: unset;
     overflow: hidden;
   }
