@@ -1475,8 +1475,8 @@ p {
     }
 
     .logo-img {
-        height: 48px;
-        width: 48px;
+        height: 66px;
+        width: 66px;
         flex-shrink: 0;
     }
 
@@ -1487,7 +1487,7 @@ p {
     }
 
     .logo-name-top {
-        font-size: 0.95rem;
+        font-size: 1.15rem;
         letter-spacing: 1.2px;
         white-space: nowrap;
         line-height: 1.1;
@@ -1496,7 +1496,7 @@ p {
     }
 
     .logo-name-bottom {
-        font-size: 0.55rem;
+        font-size: 0.65rem;
         letter-spacing: 2.5px;
         white-space: nowrap;
         align-self: flex-start;
