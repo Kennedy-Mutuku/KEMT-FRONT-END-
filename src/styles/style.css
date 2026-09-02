@@ -5002,14 +5002,27 @@ p {
     .mobile-menu-toggle {
         margin-left: 2px !important;
         margin-right: -10px !important;
-        padding: 6px 8px !important;
-        gap: 4px !important;
+        padding: 0 !important;
         order: 4 !important;
+        background: linear-gradient(135deg, var(--primary-color), #d35400) !important;
+        border-radius: 50% !important;
+        box-shadow: 0 4px 10px rgba(230, 126, 34, 0.4) !important;
+        border: 2px solid #fff !important;
+        height: 40px !important;
+        width: 40px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 4px !important;
     }
 
     .mobile-menu-toggle span {
-        width: 18px !important;
+        width: 16px !important;
         height: 2px !important;
+        background-color: #fff !important;
+        border-radius: 2px !important;
+        margin: 0 !important;
     }
 
     .logo {
@@ -5063,11 +5076,15 @@ p {
     }
 
     .nav-buttons .btn {
-        padding: 5px 10px !important;
+        padding: 5px 12px !important;
         font-size: 0.72rem !important;
         border-radius: 20px !important;
         font-weight: 700 !important;
         white-space: nowrap !important;
+        background: transparent !important;
+        border: 2px solid var(--primary-color) !important;
+        color: var(--primary-color) !important;
+        box-shadow: none !important;
     }
 
     .outreach-stats-ribbon {
