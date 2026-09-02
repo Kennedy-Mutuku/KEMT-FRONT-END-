@@ -1,16 +1,33 @@
-# React + Vite
+# Kingdom Enlightenment Missions Team (KEMT) - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Modern React application built with Vite for the Kingdom Enlightenment Missions Team (KEMT).
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🌐 **Public Website**: Home, About Us, Departments, Programs & Crusades, Events, Media Gallery, Contact Us, and Donation pages.
+- 📬 **Contact Form Integration**: Submits inquiries to the backend API (`/api/contact`), which forwards emails to `info@kingdomenlightenment.org` and saves records to the Admin Dashboard.
+- 🔐 **Admin Portal**: Accessible at `/login` with credentials.
+- 📅 **Events Management**: Administrators can upload posters and schedule upcoming crusade & mission dates via `/admin/events`.
+- 💬 **Messages Management**: Administrators can view, filter, mark read, reply to, and delete website inquiries via `/admin/messages`.
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Navigate to the frontend directory:
+   ```bash
+   cd KEMT-FRONT-END-
+   ```
 
-## Expanding the ESLint configuration
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+   The application will start on `http://localhost:5173`.
+
+> [!NOTE]
+> Make sure the backend server (`KEMT-BACK-END-`) is running on `http://localhost:5000` so that contact forms, event listings, and admin logins work seamlessly via the Vite proxy.

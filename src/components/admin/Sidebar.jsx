@@ -1,19 +1,36 @@
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { 
   LayoutDashboard, 
   Users, 
-  BookOpen, 
   Calendar, 
   Heart,
   DollarSign,
   MessageSquare,
   Settings,
   PieChart,
-  ChevronDown
+  Globe
 } from 'lucide-react';
+import logoImg from '../../assets/logo Kingdom enightement.jpg';
 
 const Sidebar = () => {
   const location = useLocation();
+  const [unreadCount, setUnreadCount] = useState(0);
+
+  useEffect(() => {
+    const fetchStats = async () => {
+      try {
+        const res = await fetch('/api/admin/stats');
+        if (res.ok) {
+          const data = await res.json();
+          setUnreadCount(data.unreadMessages || 0);
+        }
+      } catch {}
+    };
+    fetchStats();
+    const interval = setInterval(fetchStats, 15000);
+    return () => clearInterval(interval);
+  }, [location.pathname]);
 
   const isCurrentPath = (path) => {
     if (path === '/admin') return location.pathname === '/admin';
@@ -24,9 +41,9 @@ const Sidebar = () => {
     <aside className="admin-sidebar">
       <div className="admin-sidebar-header">
         <div className="admin-sidebar-logo-icon">
-          <BookOpen size={20} />
+          <img src={logoImg} alt="KEMT" />
         </div>
-        ChurchAdmin
+        <span>KEMT Admin</span>
       </div>
       
       <div className="admin-nav">
@@ -34,62 +51,43 @@ const Sidebar = () => {
         
         <Link to="/admin" className={`admin-nav-item ${isCurrentPath('/admin') && location.pathname === '/admin' ? 'active' : ''}`}>
           <div className="admin-nav-item-left">
-            <LayoutDashboard size={20} />
+            <LayoutDashboard size={19} />
             Dashboard
           </div>
         </Link>
         
-        <Link to="/admin/users" className={`admin-nav-item ${isCurrentPath('/admin/users') ? 'active' : ''}`}>
-          <div className="admin-nav-item-left">
-            <Users size={20} />
-            Members
-          </div>
-        </Link>
-
         <Link to="/admin/events" className={`admin-nav-item ${isCurrentPath('/admin/events') ? 'active' : ''}`}>
           <div className="admin-nav-item-left">
-            <Calendar size={20} />
-            Events
+            <Calendar size={19} />
+            Events & Missions
           </div>
         </Link>
-
-        <Link to="/admin/donations" className={`admin-nav-item ${isCurrentPath('/admin/donations') ? 'active' : ''}`}>
-          <div className="admin-nav-item-left">
-            <DollarSign size={20} />
-            Donations
-          </div>
-        </Link>
-
-        <div className="admin-nav-category">Pastoral Care</div>
 
         <Link to="/admin/messages" className={`admin-nav-item ${isCurrentPath('/admin/messages') ? 'active' : ''}`}>
           <div className="admin-nav-item-left">
-            <MessageSquare size={20} />
-            Messages
+            <MessageSquare size={19} />
+            Contact Messages
+          </div>
+          {unreadCount > 0 && (
+            <span className="admin-nav-badge">
+              {unreadCount}
+            </span>
+          )}
+        </Link>
+
+        <Link to="/admin/users" className={`admin-nav-item ${isCurrentPath('/admin/users') ? 'active' : ''}`}>
+          <div className="admin-nav-item-left">
+            <Users size={19} />
+            Leadership & Members
           </div>
         </Link>
 
-        <Link to="/admin/prayer-requests" className={`admin-nav-item ${isCurrentPath('/admin/prayer-requests') ? 'active' : ''}`}>
-          <div className="admin-nav-item-left">
-            <Heart size={20} />
-            Prayer Requests
-          </div>
-          <span className="admin-nav-badge" style={{backgroundColor: '#EF4444'}}>12</span>
-        </Link>
+        <div className="admin-nav-category">Quick Navigation</div>
 
-        <div className="admin-nav-category">System</div>
-
-        <Link to="/admin/analytics" className={`admin-nav-item ${isCurrentPath('/admin/analytics') ? 'active' : ''}`}>
+        <Link to="/" className="admin-nav-item">
           <div className="admin-nav-item-left">
-            <PieChart size={20} />
-            Analytics
-          </div>
-        </Link>
-
-        <Link to="/admin/settings" className={`admin-nav-item ${isCurrentPath('/admin/settings') ? 'active' : ''}`}>
-          <div className="admin-nav-item-left">
-            <Settings size={20} />
-            Settings
+            <Globe size={19} />
+            Live Website
           </div>
         </Link>
       </div>

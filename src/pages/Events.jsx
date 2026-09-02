@@ -55,8 +55,45 @@ const Events = () => {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
   const [events, setEvents] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const res = await fetch('/api/events');
+        if (res.ok) {
+          const data = await res.json();
+          setEvents(data);
+          localStorage.setItem('kemt_events_cache', JSON.stringify(data));
+        } else {
+          throw new Error('Could not load events');
+        }
+      } catch {
+        const cached = localStorage.getItem('kemt_events_cache');
+        if (cached) {
+          try {
+            setEvents(JSON.parse(cached));
+          } catch {}
+        } else {
+          // Default upcoming event if fresh
+          setEvents([
+            {
+              _id: 'sample-event-1',
+              title: 'Kingdom Outreach Revival & Leadership Conference',
+              date: new Date(Date.now() + 14 * 24 * 60 * 60 * 1000).toISOString(),
+              location: 'Methodist Church Grounds, Meru Central',
+              description: 'A powerful gathering of believers, youths, and community leaders for spiritual renewal, prayer vigils, and missionary training.',
+              posterUrl: ''
+            }
+          ]);
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchEvents();
+  }, []);
 
   const handleSubscribe = (e) => {
     e.preventDefault();
@@ -86,46 +123,59 @@ const Events = () => {
             <h2 className="section-title">Upcoming Events</h2>
           </div>
           
-          {loading && <div style={{ textAlign: 'center', padding: '40px' }}>Loading events...</div>}
-          {error && <div style={{ textAlign: 'center', color: '#EF4444', padding: '40px' }}>Error loading events: {error}</div>}
+          {loading && <div style={{ textAlign: 'center', padding: '40px', color: '#64748b' }}><i className="fas fa-spinner fa-spin"></i> Loading upcoming events...</div>}
           
-          {!loading && !error && events.length > 0 && (
+          {!loading && events.length > 0 && (
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '30px', marginBottom: '40px' }}>
               {events.map((event) => (
                 <div key={event._id} style={{ 
                   backgroundColor: '#FFFFFF', 
                   borderRadius: '12px', 
-                  boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06)',
+                  boxShadow: '0 4px 16px rgba(0,0,0,0.06)',
+                  border: '1px solid #f1f5f9',
                   overflow: 'hidden',
-                  transition: 'transform 0.2s',
+                  transition: 'transform 0.25s ease, box-shadow 0.25s ease',
                   cursor: 'pointer'
                 }}
-                onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
-                onMouseOut={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-5px)';
+                  e.currentTarget.style.boxShadow = '0 12px 24px rgba(0,0,0,0.1)';
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 4px 16px rgba(0,0,0,0.06)';
+                }}
                 >
                   {event.posterUrl ? (
-                    <div style={{ height: '200px', width: '100%', overflow: 'hidden' }}>
-                      <img src={`${import.meta.env.VITE_API_URL}/${event.posterUrl}`} alt={event.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <div style={{ height: '200px', width: '100%', overflow: 'hidden', background: '#f8fafc' }}>
+                      <img 
+                        src={event.posterUrl.startsWith('http') ? event.posterUrl : `/${event.posterUrl}`} 
+                        alt={event.title} 
+                        style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                      />
                     </div>
                   ) : (
-                    <div style={{ height: '160px', backgroundColor: '#3C50E0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white' }}>
-                      <Calendar size={48} opacity={0.5} />
+                    <div style={{ height: '160px', backgroundColor: 'rgba(232, 125, 30, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#E87D1E' }}>
+                      <Calendar size={48} opacity={0.7} />
                     </div>
                   )}
                   <div style={{ padding: '24px' }}>
-                    <h3 style={{ margin: '0 0 12px 0', color: '#1C2434', fontSize: '1.25rem' }}>{event.title}</h3>
+                    <div style={{ display: 'inline-block', padding: '3px 10px', background: 'rgba(232, 125, 30, 0.12)', color: '#E87D1E', borderRadius: '20px', fontSize: '0.72rem', fontWeight: 700, textTransform: 'uppercase', marginBottom: '10px' }}>
+                      Upcoming Outreach
+                    </div>
+                    <h3 style={{ margin: '0 0 12px 0', color: '#1e293b', fontSize: '1.25rem', fontWeight: 700, lineHeight: 1.35 }}>{event.title}</h3>
                     
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#64748B', marginBottom: '8px', fontSize: '0.9rem' }}>
-                      <Clock size={16} color="#3C50E0" />
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#64748b', marginBottom: '8px', fontSize: '0.88rem' }}>
+                      <Clock size={16} color="#E87D1E" />
                       <span>{new Date(event.date).toLocaleString([], { dateStyle: 'medium', timeStyle: 'short' })}</span>
                     </div>
                     
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#64748B', marginBottom: '16px', fontSize: '0.9rem' }}>
-                      <MapPin size={16} color="#3C50E0" />
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#64748b', marginBottom: '16px', fontSize: '0.88rem' }}>
+                      <MapPin size={16} color="#E87D1E" />
                       <span>{event.location}</span>
                     </div>
                     
-                    <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: '1.5', margin: 0 }}>
+                    <p style={{ color: '#475569', fontSize: '0.92rem', lineHeight: '1.55', margin: 0 }}>
                       {event.description}
                     </p>
                   </div>
@@ -134,7 +184,7 @@ const Events = () => {
             </div>
           )}
 
-          {!loading && !error && events.length === 0 && (
+          {!loading && events.length === 0 && (
             <div className="no-events-card">
               <h3>New Events Coming Soon</h3>
               <p>We are always planning the next outreach, revival, or ministry engagement. Subscribe below to be the first to know when new events are announced.</p>
