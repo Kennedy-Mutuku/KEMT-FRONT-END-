@@ -4878,7 +4878,11 @@ p {
 
     /* Scaled-down typography across mobile pages */
     .page-banner {
-        padding: 3.5rem 0 2.5rem !important;
+        padding: 1.5rem 0 1rem !important;
+    }
+
+    .banner-content {
+        padding: 1rem !important;
     }
 
     .page-banner h1 {
