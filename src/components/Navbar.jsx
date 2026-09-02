@@ -48,7 +48,7 @@ const Navbar = () => {
                                 <img src={logoImg} alt="Kingdom Enlightenment Missions Team" className="logo-img" />
                                 <div className="logo-name">
                                     <span className="logo-name-top">Kingdom Enlightenment</span>
-                                    <span className="logo-name-bottom">Missions Team</span>
+                                    <span className="logo-name-bottom">MINISTRIES</span>
                                 </div>
                             </Link>
                         </div>
