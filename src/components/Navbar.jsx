@@ -43,11 +43,6 @@ const Navbar = () => {
             <header className="header">
                 <div className="container">
                     <div className="header-content">
-                        <div className="mobile-menu-toggle" onClick={toggleMobileMenu}>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
                         <div className="logo">
                             <Link to="/">
                                 <img src={logoImg} alt="Kingdom Enlightenment Missions Team" className="logo-img" />
@@ -90,6 +85,11 @@ const Navbar = () => {
                                 <Link to="/donate" className="btn btn-primary">Donate</Link>
                             </div>
                         </nav>
+                        <div className="mobile-menu-toggle" onClick={toggleMobileMenu}>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
                     </div>
                 </div>
             </header>
