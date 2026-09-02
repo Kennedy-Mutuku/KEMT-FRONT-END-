@@ -310,20 +310,13 @@ export const galleryItems = [
 
   // --- LEADERSHIP & TEAM ---
   {
-    id: 'lead-kennedy',
-    src: kennedyImg,
-    title: 'Kennedy Mutuku — Media Director',
-    category: 'Leadership & Team',
-    shortCaption: 'Leading communications, media ministry, and visual storytelling.',
-    fullDescription: 'Kennedy Mutuku spearheads digital outreach, multimedia productions, and broadcast communications to amplify the ministry’s mission.'
-  },
-  {
     id: 'lead-vincent',
     src: vincentImg,
     title: 'Vincent Mwendwa — Director',
     category: 'Leadership & Team',
     shortCaption: 'Guiding the organizational vision, strategic direction, and ministry partnerships.',
-    fullDescription: 'Overseeing global operations, mission planning, and spiritual direction for Kingdom Enlightenment Ministries Trust.'
+    fullDescription: 'Overseeing global operations, mission planning, and spiritual direction for Kingdom Enlightenment Ministries Trust.',
+    objectPosition: 'top center'
   },
   {
     id: 'lead-morice',
@@ -331,7 +324,8 @@ export const galleryItems = [
     title: 'Morice Mutharimi — Chairperson',
     category: 'Leadership & Team',
     shortCaption: 'Presiding over board governance, mission integrity, and advisory councils.',
-    fullDescription: 'Ensuring structural integrity, faithful execution of the ministry constitution, and pastoral guidance across regional branches.'
+    fullDescription: 'Ensuring structural integrity, faithful execution of the ministry constitution, and pastoral guidance across regional branches.',
+    objectPosition: 'top center'
   },
   {
     id: 'lead-mwanzia',
@@ -339,7 +333,17 @@ export const galleryItems = [
     title: 'Mwanzia David — Outreach Incharge',
     category: 'Leadership & Team',
     shortCaption: 'Coordinating field operations, logistical planning, and mission trips.',
-    fullDescription: 'Leading field outreach expeditions, community surveys, and mobilizing volunteers across diverse regions of Kenya.'
+    fullDescription: 'Leading field outreach expeditions, community surveys, and mobilizing volunteers across diverse regions of Kenya.',
+    objectPosition: 'top center'
+  },
+  {
+    id: 'lead-kennedy',
+    src: kennedyImg,
+    title: 'Kennedy Mutuku — Media Director',
+    category: 'Leadership & Team',
+    shortCaption: 'Leading communications, media ministry, and visual storytelling.',
+    fullDescription: 'Kennedy Mutuku spearheads digital outreach, multimedia productions, and broadcast communications to amplify the ministry’s mission.',
+    objectPosition: 'top center'
   },
   {
     id: 'lead-mukami',
@@ -347,7 +351,8 @@ export const galleryItems = [
     title: 'Evaline Mukami — Secretary',
     category: 'Leadership & Team',
     shortCaption: 'Managing official records, administration, and partner correspondence.',
-    fullDescription: 'Facilitating core administrative workflows, record keeping, and member engagement for smooth ministry execution.'
+    fullDescription: 'Facilitating core administrative workflows, record keeping, and member engagement for smooth ministry execution.',
+    objectPosition: 'top center'
   },
   {
     id: 'lead-ray',
@@ -355,7 +360,8 @@ export const galleryItems = [
     title: 'Raymond Ewoi — Prayer Coordinator',
     category: 'Leadership & Team',
     shortCaption: 'Leading prayer vigils, spiritual intercession, and devotional teams.',
-    fullDescription: 'Anchor for spiritual intercession, organizing prayer chains, and nurturing devotion across all outreach endeavors.'
+    fullDescription: 'Anchor for spiritual intercession, organizing prayer chains, and nurturing devotion across all outreach endeavors.',
+    objectPosition: 'top center'
   },
   {
     id: 'lead-george',
@@ -363,7 +369,8 @@ export const galleryItems = [
     title: 'George — Technical Coordinator',
     category: 'Leadership & Team',
     shortCaption: 'Supporting audiovisual equipment and field production setups.',
-    fullDescription: 'Managing public address systems, sound engineering, and technical logistics during major outdoor campaigns and conferences.'
+    fullDescription: 'Managing public address systems, sound engineering, and technical logistics during major outdoor campaigns and conferences.',
+    objectPosition: 'top center'
   },
   {
     id: 'lead-odina',
@@ -371,6 +378,7 @@ export const galleryItems = [
     title: 'Odina — Community Mobilizer',
     category: 'Leadership & Team',
     shortCaption: 'Connecting local churches and grassroot community networks.',
-    fullDescription: 'Building strong relationships with local church leadership, area chiefs, and community youth groups for coordinated outreach.'
+    fullDescription: 'Building strong relationships with local church leadership, area chiefs, and community youth groups for coordinated outreach.',
+    objectPosition: 'top center'
   }
 ];

@@ -146,10 +146,8 @@ const Gallery = () => {
                     alt={item.title}
                     loading="lazy"
                     className="gallery-card__img"
+                    style={{ objectPosition: item.objectPosition || 'center' }}
                   />
-                  <div className="gallery-card__badge-top">
-                    <span className="gallery-card__category-tag">{item.category}</span>
-                  </div>
                 </div>
 
                 {/* Hover Gradient Overlay */}

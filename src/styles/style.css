@@ -5631,28 +5631,6 @@ p {
     transform: scale(1.06);
 }
 
-.gallery-card__badge-top {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    z-index: 2;
-    transition: opacity 0.3s ease;
-}
-
-.gallery-card__category-tag {
-    display: inline-block;
-    padding: 0.3rem 0.75rem;
-    border-radius: 20px;
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    background: rgba(255, 255, 255, 0.92);
-    color: #E87D1E;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    backdrop-filter: blur(4px);
-}
-
 /* Hover Gradient Overlay */
 .gallery-card__overlay {
     position: absolute;
