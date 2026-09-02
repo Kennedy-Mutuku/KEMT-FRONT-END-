@@ -97,6 +97,13 @@ const CreativeSlider = () => {
   const finger2Img = slides[(currentSlide + 1) % slides.length].image;
   const finger3Img = slides[(currentSlide + 2) % slides.length].image;
 
+  // Rotate KINGDOM / ENLIGHTENMENT / MINISTRIES across the 3 fingers on each slide
+  const fingerWords = ['KINGDOM', 'ENLIGHTENMENT', 'MINISTRIES'];
+  const wordOffset = currentSlide % 3;
+  const word1 = fingerWords[wordOffset % 3];
+  const word2 = fingerWords[(wordOffset + 1) % 3];
+  const word3 = fingerWords[(wordOffset + 2) % 3];
+
   return (
     <section 
       className="creative-hero"
@@ -175,19 +182,22 @@ const CreativeSlider = () => {
         </div>
       </div>
 
-      {/* Right Side: The Visual "Fingers" Queue (Centered in the right half of screen) */}
+      {/* Right Side: The Visual "Fingers" Queue */}
       <div className="fingers-container">
         {/* Finger 1 */}
         <div className="finger finger-1">
           <div className="finger-img" key={finger1Img} style={{ backgroundImage: `url(${finger1Img})` }}></div>
+          <div key={`w1-${currentSlide}`} className="finger-word">{word1}</div>
         </div>
         {/* Finger 2 */}
         <div className="finger finger-2">
           <div className="finger-img" key={finger2Img} style={{ backgroundImage: `url(${finger2Img})` }}></div>
+          <div key={`w2-${currentSlide}`} className="finger-word finger-word-center">{word2}</div>
         </div>
         {/* Finger 3 */}
         <div className="finger finger-3">
           <div className="finger-img" key={finger3Img} style={{ backgroundImage: `url(${finger3Img})` }}></div>
+          <div key={`w3-${currentSlide}`} className="finger-word">{word3}</div>
         </div>
       </div>
     </section>
