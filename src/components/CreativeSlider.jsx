@@ -193,6 +193,7 @@ const CreativeSlider = () => {
       <div className="creative-container">
         {/* Left Side: Text Content */}
         <div className="creative-text-col">
+          <div className="text-wrapper">
             {slides.map((slide, index) => (
               <div 
                 key={index} 
