@@ -430,14 +430,25 @@
   .finger-1 {
     height: 240px;
     transform: translateY(20px);
+    background: linear-gradient(160deg, #e67e22 0%, #c0392b 100%);
+    border-color: rgba(255,255,255,0.3);
   }
   .finger-2 {
     height: 300px;
     transform: translateY(-30px);
+    background: linear-gradient(160deg, #1a1a2e 0%, #16213e 100%);
+    border-color: rgba(255,255,255,0.25);
   }
   .finger-3 {
     height: 240px;
     transform: translateY(20px);
+    background: linear-gradient(160deg, #e67e22 0%, #c0392b 100%);
+    border-color: rgba(255,255,255,0.3);
+  }
+
+  /* Hide the moving photos inside fingers on mobile — solid color fills instead */
+  .finger-img {
+    display: none;
   }
 
   /* Full landscape cover — photos fill the entire hero beautifully */
@@ -478,8 +489,8 @@
 }
 
 @keyframes wordAppear {
-  0%   { opacity: 0; letter-spacing: 0.05em; }
-  100% { opacity: 1; letter-spacing: 0.2em; }
+  0%   { opacity: 0; transform: translate(-50%, -50%) rotate(155deg) scaleY(0.7); }
+  100% { opacity: 1; transform: translate(-50%, -50%) rotate(155deg) scaleY(1); }
 }
 
 @media (max-width: 768px) {
@@ -488,25 +499,29 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    /* Counter-rotate the finger rotation so text runs vertically straight down */
-    transform: translate(-50%, -50%) rotate(-25deg);
+    /*
+     * 180deg flips writing-mode direction (now reads bottom→top, i.e. upward)
+     * −25deg counters the parent fingers-container rotation
+     * Net: 180 − 25 = 155deg
+     */
+    transform: translate(-50%, -50%) rotate(155deg);
     writing-mode: vertical-rl;
     text-orientation: mixed;
-    font-size: 0.72rem;
+    /* Large enough to fill the finger height */
+    font-size: 1.25rem;
     font-weight: 900;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.18em;
     color: #ffffff;
     text-transform: uppercase;
     text-shadow:
-      0 2px 8px rgba(0, 0, 0, 0.9),
-      0 0 16px rgba(0, 0, 0, 0.7);
+      2px 2px 0 rgba(0, 0, 0, 0.5),
+      0 4px 12px rgba(0, 0, 0, 0.6);
     white-space: nowrap;
     z-index: 10;
-    /* Fade-in animation on each slide change (key prop triggers re-mount) */
-    animation: wordAppear 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-    /* Subtle frosted backdrop along the word */
-    background: rgba(0, 0, 0, 0.28);
-    padding: 10px 4px;
-    border-radius: 6px;
+    /* Fade-in + scale-in on each slide change */
+    animation: wordAppear 0.55s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    /* No background — words sit clean on the solid finger color */
+    background: none;
+    padding: 0;
   }
 }
