@@ -6925,7 +6925,33 @@ p {
     .values-grid { grid-template-columns: 1fr; }
     .donate-why-grid { grid-template-columns: 1fr; }
     .leadership-grid { grid-template-columns: repeat(2, 1fr); }
-    .stats-grid { grid-template-columns: 1fr; }
+    .stats-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 12px; 
+    }
+    .stat-item {
+        flex-direction: column;
+        gap: 8px;
+        padding: 16px 10px;
+        text-align: center;
+    }
+    .stat-content {
+        text-align: center;
+    }
+    .stat-icon {
+        width: 44px;
+        height: 44px;
+    }
+    .stat-icon i {
+        font-size: 1.1rem;
+    }
+    .stat-number {
+        font-size: 1.6rem;
+    }
+    .stat-label {
+        font-size: 0.65rem;
+        line-height: 1.3;
+    }
     .event-list-item { flex-direction: column; }
     .event-date { border-right: none; border-bottom: 1px solid #f0e6dd; padding: 15px; flex-direction: row; gap: 15px; justify-content: flex-start; }
     .event-date .day { font-size: 1.8rem; }
