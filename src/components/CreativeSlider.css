@@ -115,12 +115,16 @@
 /* --- Left Side: Text --- */
 .creative-text-col {
   width: 55%;
+  height: 100%;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .text-wrapper {
   position: relative;
-  height: 280px; 
+  height: 220px; 
 }
 
 .text-slide {
@@ -141,59 +145,74 @@
   transition-delay: 0.3s;
 }
 
+/* Glassmorphism Card for 100% text clarity without obscuring background photos */
+.text-glass-card {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 20px 24px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  max-width: 480px;
+}
+
 .slide-subtitle {
   display: inline-block;
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: 0.78rem;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #e67e22; 
+  color: #ffaa44; 
+  background: rgba(230, 126, 34, 0.25);
+  border: 1px solid rgba(230, 126, 34, 0.4);
+  padding: 4px 12px;
+  border-radius: 20px;
   margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.7);
-  text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
 }
 
 .slide-title {
-  font-size: 3.2rem;
-  font-weight: 800;
-  line-height: 1.2;
+  font-size: 2.1rem;
+  font-weight: 900;
+  line-height: 1.25;
   color: #ffffff;
-  margin-bottom: 15px;
+  margin-bottom: 8px;
   text-transform: uppercase;
   font-family: var(--font-secondary, sans-serif);
-  -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.9);
-  text-shadow: 3px 5px 12px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.4);
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  -webkit-text-stroke: 0;
 }
 
 .slide-desc {
-  font-size: 1.15rem;
-  line-height: 1.5;
-  color: #ffffff;
-  margin-bottom: 30px;
-  max-width: 90%;
-  font-weight: 600;
-  text-shadow: 1px 1px 0 rgba(0,0,0,0.8), -1px -1px 0 rgba(0,0,0,0.8), 1px -1px 0 rgba(0,0,0,0.8), -1px 1px 0 rgba(0,0,0,0.8), 0 4px 10px rgba(0,0,0,0.6);
+  font-size: 1rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 0;
+  font-weight: 500;
 }
 
-.slide-actions {
+/* Action Buttons: Positioned cleanly at the bottom left of hero, right above the KEMT Impact bar */
+.slide-actions-bottom {
+  position: absolute;
+  top: 240px;
+  left: 0;
   display: flex;
-  gap: 15px;
+  gap: 14px;
   align-items: center;
+  z-index: 20;
 }
 
 .btn-modern-primary {
   background-color: #e67e22;
   color: white;
-  padding: 12px 30px;
-  border-radius: 5px;
-  font-weight: 600;
-  font-size: 1rem;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.95rem;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 14px rgba(230, 126, 34, 0.3);
+  box-shadow: 0 4px 14px rgba(230, 126, 34, 0.35);
   border: 2px solid #e67e22;
 }
 
@@ -201,26 +220,28 @@
   background-color: #d35400;
   border-color: #d35400;
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(230, 126, 34, 0.42);
+  box-shadow: 0 6px 18px rgba(230, 126, 34, 0.5);
   color: white;
 }
 
 .btn-modern-outline {
   display: inline-block;
-  background-color: transparent;
-  color: #e67e22;
-  border: 2px solid #e67e22;
-  padding: 12px 30px;
-  border-radius: 5px;
-  font-weight: 600;
-  font-size: 1rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.95rem;
   text-decoration: none;
   transition: all 0.3s ease;
+  backdrop-filter: blur(6px);
 }
 
 .btn-modern-outline:hover {
-  background-color: rgba(230, 126, 34, 0.1);
-  color: #e67e22;
+  background-color: #ffffff;
+  color: #111111;
+  border-color: #ffffff;
 }
 
 /* --- Controls --- */

@@ -13,7 +13,7 @@ const slides = [
     image: hero1,
     subtitle: "Welcome to",
     title: "KINGDOM ENLIGHTENMENT",
-    text: "Spreading the Gospel, Transforming Lives, Building God's Kingdom",
+    text: "Spreading the Gospel & Transforming Lives",
     btn1: { text: "Learn More", link: "/about" },
     btn2: { text: "Join Us", link: "/contact" }
   },
@@ -21,7 +21,7 @@ const slides = [
     image: hero2,
     subtitle: "Mark 16:15",
     title: "GO INTO ALL THE WORLD",
-    text: "And preach the gospel to every creature.",
+    text: "Preaching the Gospel to Every Creature",
     btn1: { text: "Our Departments", link: "/ministries" },
     btn2: { text: "Support Us", link: "/donate" }
   },
@@ -29,7 +29,7 @@ const slides = [
     image: hero3,
     subtitle: "Compassion Outreach",
     title: "TOUCHING LIVES",
-    text: "Demonstrating Christ's love through feeding programs, medical camps, and community support.",
+    text: "Demonstrating Christ's Love in Action",
     btn1: { text: "Our Impact", link: "/about" },
     btn2: { text: "Get Involved", link: "/contact" }
   },
@@ -37,7 +37,7 @@ const slides = [
     image: newsTala,
     subtitle: "Community Focus",
     title: "TRANSFORMING REGIONS",
-    text: "Bringing hope and tangible assistance to marginalized communities.",
+    text: "Bringing Hope to Communities",
     btn1: { text: "Our Work", link: "/ministries" },
     btn2: { text: "Donate", link: "/donate" }
   }
@@ -199,10 +199,12 @@ const CreativeSlider = () => {
                 key={index} 
                 className={`text-slide ${index === currentSlide ? 'active' : ''}`}
               >
-                <span className="slide-subtitle">{slide.subtitle}</span>
-                <h1 className="slide-title">{slide.title}</h1>
-                <p className="slide-desc">{slide.text}</p>
-                <div className="slide-actions">
+                <div className="text-glass-card">
+                  <span className="slide-subtitle">{slide.subtitle}</span>
+                  <h1 className="slide-title">{slide.title}</h1>
+                  <p className="slide-desc">{slide.text}</p>
+                </div>
+                <div className="slide-actions-bottom">
                   <Link to={slide.btn1.link} className="btn-modern-primary">{slide.btn1.text}</Link>
                   <Link to={slide.btn2.link} className="btn-modern-outline">
                     {slide.btn2.text}
