@@ -4888,6 +4888,20 @@ p {
         border: 1px solid rgba(0,0,0,0.03) !important;
     }
 
+    /* Compact Core Values for Mobile */
+    .values-compact-list {
+        gap: 0.75rem !important;
+    }
+
+    .value-compact-item {
+        padding: 1.2rem 1.25rem !important;
+    }
+
+    .values-section {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
     /* Scaled-down typography across mobile pages */
     .page-banner {
         padding: 1.5rem 0 1rem !important;
