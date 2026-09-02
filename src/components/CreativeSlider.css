@@ -145,57 +145,38 @@
   transition-delay: 0.3s;
 }
 
-/* Glassmorphism Card for 100% text clarity without obscuring background photos */
-.text-glass-card {
-  background: rgba(15, 23, 42, 0.65);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  padding: 20px 24px;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  max-width: 480px;
-}
-
-.slide-subtitle {
-  display: inline-block;
-  font-size: 0.78rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #ffaa44; 
-  background: rgba(230, 126, 34, 0.25);
-  border: 1px solid rgba(230, 126, 34, 0.4);
-  padding: 4px 12px;
-  border-radius: 20px;
-  margin-bottom: 10px;
+/* Clean Floating Text without cards or pill badges */
+.text-content-clean {
+  max-width: 500px;
 }
 
 .slide-title {
-  font-size: 2.1rem;
+  font-size: 2.7rem;
   font-weight: 900;
-  line-height: 1.25;
+  line-height: 1.15;
   color: #ffffff;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   text-transform: uppercase;
   font-family: var(--font-secondary, sans-serif);
-  letter-spacing: 1px;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.5px;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.9), 0 1px 4px rgba(0, 0, 0, 0.8);
   -webkit-text-stroke: 0;
 }
 
 .slide-desc {
-  font-size: 1rem;
-  line-height: 1.45;
-  color: rgba(255, 255, 255, 0.92);
+  font-size: 1.15rem;
+  line-height: 1.4;
+  color: #ffffff;
   margin-bottom: 0;
-  font-weight: 500;
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+  max-width: 92%;
 }
 
-/* Action Buttons: Positioned cleanly at the bottom left of hero, right above the KEMT Impact bar */
-.slide-actions-bottom {
+/* Action Buttons: Positioned fixed at the bottom left of hero, right above the KEMT Impact bar */
+.hero-fixed-bottom-actions {
   position: absolute;
-  top: 240px;
+  bottom: 25px;
   left: 0;
   display: flex;
   gap: 14px;

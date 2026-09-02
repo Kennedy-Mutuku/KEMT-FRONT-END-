@@ -193,25 +193,25 @@ const CreativeSlider = () => {
       <div className="creative-container">
         {/* Left Side: Text Content */}
         <div className="creative-text-col">
-          <div className="text-wrapper">
             {slides.map((slide, index) => (
               <div 
                 key={index} 
                 className={`text-slide ${index === currentSlide ? 'active' : ''}`}
               >
-                <div className="text-glass-card">
-                  <span className="slide-subtitle">{slide.subtitle}</span>
+                <div className="text-content-clean">
                   <h1 className="slide-title">{slide.title}</h1>
                   <p className="slide-desc">{slide.text}</p>
                 </div>
-                <div className="slide-actions-bottom">
-                  <Link to={slide.btn1.link} className="btn-modern-primary">{slide.btn1.text}</Link>
-                  <Link to={slide.btn2.link} className="btn-modern-outline">
-                    {slide.btn2.text}
-                  </Link>
-                </div>
               </div>
             ))}
+          </div>
+
+          {/* Action Buttons: Fixed at the very bottom of the hero carousel, right above the KEMT Impact bar */}
+          <div className="hero-fixed-bottom-actions">
+            <Link to={slides[currentSlide].btn1.link} className="btn-modern-primary">{slides[currentSlide].btn1.text}</Link>
+            <Link to={slides[currentSlide].btn2.link} className="btn-modern-outline">
+              {slides[currentSlide].btn2.text}
+            </Link>
           </div>
 
           <div className="slider-controls-modern">
