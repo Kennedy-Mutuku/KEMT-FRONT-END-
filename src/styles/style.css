@@ -5021,6 +5021,7 @@ p {
 
     .logo a {
         gap: 6px !important;
+        width: 100% !important;
     }
 
     .logo-img {
@@ -5030,6 +5031,7 @@ p {
 
     .logo-name {
         gap: 0 !important;
+        width: 100% !important;
     }
 
     .logo-name-top {
@@ -5039,6 +5041,8 @@ p {
         white-space: normal !important;
         display: block !important;
         word-break: normal !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
     }
 
     .logo-name-bottom {
