@@ -425,25 +425,24 @@
 
   .finger {
     width: 70px;
+    box-shadow: none;
+    border: none;
   }
 
   .finger-1 {
     height: 240px;
     transform: translateY(20px);
-    background: linear-gradient(160deg, #e67e22 0%, #c0392b 100%);
-    border-color: rgba(255,255,255,0.3);
+    background: #e67e22;
   }
   .finger-2 {
     height: 300px;
     transform: translateY(-30px);
-    background: linear-gradient(160deg, #1a1a2e 0%, #16213e 100%);
-    border-color: rgba(255,255,255,0.25);
+    background: #000000;
   }
   .finger-3 {
     height: 240px;
     transform: translateY(20px);
-    background: linear-gradient(160deg, #e67e22 0%, #c0392b 100%);
-    border-color: rgba(255,255,255,0.3);
+    background: #e67e22;
   }
 
   /* Hide the moving photos inside fingers on mobile — solid color fills instead */
@@ -512,14 +511,11 @@
     letter-spacing: 0.18em;
     color: #ffffff;
     text-transform: uppercase;
-    text-shadow:
-      2px 2px 0 rgba(0, 0, 0, 0.5),
-      0 4px 12px rgba(0, 0, 0, 0.6);
+    text-shadow: none;
+    -webkit-text-stroke: 0;
     white-space: nowrap;
     z-index: 10;
-    /* Fade-in + scale-in on each slide change */
     animation: wordAppear 0.55s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-    /* No background — words sit clean on the solid finger color */
     background: none;
     padding: 0;
   }
