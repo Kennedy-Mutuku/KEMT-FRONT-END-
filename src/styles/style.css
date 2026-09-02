@@ -6577,6 +6577,12 @@ p {
     gap: 11px;
     margin: 28px 0 34px;
 }
+
+@media (max-width: 768px) {
+    .about-v2-pills {
+        display: none !important;
+    }
+}
 .about-v2-pill {
     display: inline-flex;
     align-items: center;
