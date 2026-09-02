@@ -5095,6 +5095,24 @@ p {
         box-shadow: none !important;
     }
 
+    .about-quick-stats {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1.5rem 1rem !important;
+        margin: 1.5rem 0 0.5rem 0 !important;
+    }
+
+    .aq-stat {
+        background: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        min-width: 0 !important;
+    }
+
+    .about-intro-section {
+        padding-bottom: 1.5rem !important;
+    }
+
     .outreach-stats-ribbon {
         grid-template-columns: 1fr;
     }

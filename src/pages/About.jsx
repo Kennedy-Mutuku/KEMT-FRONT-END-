@@ -136,7 +136,7 @@ const About = () => {
               <p>
                 We believe in the power of the Gospel to transform lives and communities. Through
                 our departments and mission outreaches, we bring hope, healing and the light of
-                Christ — reaching schools, churches, towns and villages across Kenya.
+                Christ, reaching schools, churches, towns and villages across Kenya.
               </p>
               <div className="about-quick-stats">
                 <div className="aq-stat"><strong>445+</strong><span>Souls Won</span></div>
