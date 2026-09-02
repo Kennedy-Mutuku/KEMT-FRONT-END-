@@ -4902,6 +4902,21 @@ p {
         padding-bottom: 2rem !important;
     }
 
+    /* Compact Statement of Faith for Mobile */
+    .faith-section {
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+    }
+
+    .faith-list {
+        margin-top: 1.5rem !important;
+        gap: 0.75rem !important;
+    }
+
+    .faith-item {
+        padding: 1rem 1.25rem !important;
+    }
+
     /* Scaled-down typography across mobile pages */
     .page-banner {
         padding: 1.5rem 0 1rem !important;
