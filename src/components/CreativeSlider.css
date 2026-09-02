@@ -461,6 +461,7 @@
     transform: translate(-50%, -50%) rotate(25deg);
     gap: 10px;
     z-index: 6;
+    opacity: 0.70;
   }
 
   .finger {
