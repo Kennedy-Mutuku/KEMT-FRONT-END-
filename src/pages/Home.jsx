@@ -55,7 +55,7 @@ const Home = () => {
             const steps = 50;
             const stepTime = duration / steps;
 
-            const targets = { souls: 445, missions: 5, counties: 4, schools: 3 };
+            const targets = { souls: 445, missions: 5, counties: 7, schools: 8 };
             let currentStep = 0;
 
             const timer = setInterval(() => {
@@ -232,7 +232,7 @@ const Home = () => {
                             </div>
                             <div className="stat-content">
                                 <div className="stat-number">{statsVisible ? stats.counties : 0}</div>
-                                <div className="stat-label">Counties Reached</div>
+                                <div className="stat-label">Counties in Kenya</div>
                             </div>
                         </div>
                         <div className="stat-item">

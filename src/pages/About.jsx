@@ -141,19 +141,11 @@ const About = () => {
               <div className="about-quick-stats">
                 <div className="aq-stat"><strong>445+</strong><span>Souls Won</span></div>
                 <div className="aq-stat"><strong>5</strong><span>Mission Trips</span></div>
-                <div className="aq-stat"><strong>4</strong><span>Counties</span></div>
-                <div className="aq-stat"><strong>3</strong><span>Schools</span></div>
+                <div className="aq-stat"><strong>7</strong><span>Counties in Kenya</span></div>
+                <div className="aq-stat"><strong>8</strong><span>Schools</span></div>
               </div>
             </div>
-            <div className="dept-media">
-              <div className="dept-photo-collage">
-                <img src={storyPhoto1} alt="KEMT in the field" className="collage-main" />
-                <div className="collage-side">
-                  <img src={storyPhoto2} alt="" />
-                  <img src={storyPhoto3} alt="" />
-                </div>
-              </div>
-            </div>
+
           </div>
         </div>
       </section>
