@@ -1455,7 +1455,7 @@ p {
     }
 
     .header-content {
-        padding: 28px 0;
+        padding: 20px 0;
         position: relative;
         gap: 0;
         justify-content: flex-start;
@@ -1475,8 +1475,8 @@ p {
     }
 
     .logo-img {
-        height: 82px;
-        width: 82px;
+        height: 74px;
+        width: 74px;
         flex-shrink: 0;
     }
 
@@ -4991,7 +4991,7 @@ p {
 @media (max-width: 600px) {
     /* Header layout - clean alignment without text or button overlap */
     .header-content {
-        padding: 24px 0 !important;
+        padding: 16px 0 !important;
         gap: 8px !important;
         align-items: center !important;
     }
@@ -5017,8 +5017,8 @@ p {
     }
 
     .logo-img {
-        height: 80px !important;
-        width: 80px !important;
+        height: 72px !important;
+        width: 72px !important;
     }
 
     .logo-name {
