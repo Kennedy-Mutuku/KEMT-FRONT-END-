@@ -5015,6 +5015,7 @@ p {
     .logo {
         flex: 1 !important;
         min-width: 0 !important;
+        order: 1 !important;
     }
 
     .logo a {
