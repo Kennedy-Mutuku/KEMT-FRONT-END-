@@ -1782,9 +1782,11 @@ p {
     }
 
     .logo-name-bottom {
-        font-size: 0.48rem;
+        font-size: 0.58rem;
         letter-spacing: 1.5px;
-        white-space: normal;
+        color: #00bfff;
+        align-self: center;
+        white-space: nowrap;
     }
 
     .logo a {
@@ -5157,8 +5159,10 @@ p {
         display: block !important;
         font-size: min(0.75rem, 3.5vw) !important;
         letter-spacing: 1px !important;
-        color: #c0392b !important;
-        font-weight: 700 !important;
+        color: #00bfff !important;
+        font-weight: 900 !important;
+        font-family: 'Arial Black', 'Impact', sans-serif !important;
+        align-self: center !important;
         white-space: nowrap !important;
         overflow: hidden !important;
         text-overflow: clip !important;
