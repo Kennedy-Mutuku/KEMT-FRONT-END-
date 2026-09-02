@@ -5055,6 +5055,7 @@ p {
     .nav-buttons {
         margin-left: 4px !important;
         flex-shrink: 0 !important;
+        order: 3 !important;
     }
 
     .nav-buttons .btn {
