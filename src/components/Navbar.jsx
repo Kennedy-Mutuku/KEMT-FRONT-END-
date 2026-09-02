@@ -59,7 +59,7 @@ const Navbar = () => {
                         </div>
                         <nav className={`main-nav ${mobileMenuOpen ? 'active' : ''}`}>
                             <ul className="nav-menu">
-                                <li><NavLink to="/" className={({ isActive }) => isActive ? "active" : ""} onClick={() => setMobileMenuOpen(false)}>Home</NavLink></li>
+                                <li><NavLink to="/" className={({ isActive }) => isActive ? "active" : ""} onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>Home</NavLink></li>
                                 <li className={`dropdown ${openDropdown === 'about' ? 'active' : ''}`}>
                                     <NavLink to="/about" onClick={() => toggleDropdown('about')}>About Us <i className="fas fa-chevron-down"></i></NavLink>
                                     <ul className="dropdown-menu">
@@ -81,10 +81,10 @@ const Navbar = () => {
                                         <li><Link to="/ministries#digital" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>07 Digital Infrastructure</Link></li>
                                     </ul>
                                 </li>
-                                <li><NavLink to="/leadership" onClick={() => setMobileMenuOpen(false)}>Leadership</NavLink></li>
-                                <li><NavLink to="/events" onClick={() => setMobileMenuOpen(false)}>Events</NavLink></li>
-                                <li><NavLink to="/gallery" onClick={() => setMobileMenuOpen(false)}>Gallery</NavLink></li>
-                                <li><NavLink to="/contact" onClick={() => setMobileMenuOpen(false)}>Contact Us</NavLink></li>
+                                <li><NavLink to="/leadership" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>Leadership</NavLink></li>
+                                <li><NavLink to="/events" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>Events</NavLink></li>
+                                <li><NavLink to="/gallery" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>Gallery</NavLink></li>
+                                <li><NavLink to="/contact" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>Contact Us</NavLink></li>
                             </ul>
                             <div className="nav-buttons">
                                 <Link to="/donate" className="btn btn-primary">Donate</Link>
