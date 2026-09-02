@@ -4991,8 +4991,8 @@ p {
 @media (max-width: 600px) {
     /* Header layout - clean alignment without text or button overlap */
     .header-content {
-        padding: 8px 0 !important;
-        gap: 6px !important;
+        padding: 24px 0 !important;
+        gap: 8px !important;
         align-items: center !important;
     }
 
@@ -5017,8 +5017,8 @@ p {
     }
 
     .logo-img {
-        height: 36px !important;
-        width: 36px !important;
+        height: 80px !important;
+        width: 80px !important;
     }
 
     .logo-name {
@@ -5026,7 +5026,7 @@ p {
     }
 
     .logo-name-top {
-        font-size: 0.74rem !important;
+        font-size: 1.25rem !important;
         letter-spacing: 0.5px !important;
         line-height: 1.15 !important;
         white-space: normal !important;
@@ -5038,7 +5038,7 @@ p {
 
     .logo-name-bottom {
         display: block !important;
-        font-size: 0.5rem !important;
+        font-size: 0.75rem !important;
         letter-spacing: 1.6px !important;
         color: #c0392b !important;
         font-weight: 700 !important;
