@@ -1824,7 +1824,7 @@ p {
 /* Page Banner */
 .page-banner {
     position: relative;
-    min-height: 420px;
+    min-height: 280px;
     background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
     display: flex;
     align-items: center;
