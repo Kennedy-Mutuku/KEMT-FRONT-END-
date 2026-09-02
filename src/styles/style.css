@@ -6610,25 +6610,25 @@ p {
 .contact-form-card {
     background: #fff;
     border-radius: 20px;
-    padding: 1.5rem;
+    padding: 1rem;
     box-shadow: var(--shadow-lg);
     border: 1px solid var(--border-color);
 }
 
 .contact-form-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
     color: var(--text-color);
 }
 
-.contact-form { display: flex; flex-direction: column; gap: 0.85rem; }
+.contact-form { display: flex; flex-direction: column; gap: 0.6rem; }
 
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
 
-.form-group { display: flex; flex-direction: column; gap: 0.25rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.2rem; }
 
 .form-group label {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -6637,10 +6637,10 @@ p {
 
 .form-group input,
 .form-group textarea {
-    padding: 0.6rem 0.85rem;
+    padding: 0.5rem 0.75rem;
     border: 1.5px solid var(--border-color);
     border-radius: 8px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-family: var(--font-primary);
     color: var(--text-color);
     outline: none;
