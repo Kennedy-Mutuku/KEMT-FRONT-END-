@@ -1548,15 +1548,16 @@ p {
         flex-direction: column;
         position: absolute;
         top: 100%;
-        left: 0;
+        left: auto;
+        right: 0;
         width: 70vw;
         max-width: 230px;
         background-color: #fff;
         padding: 0;
-        box-shadow: 4px 8px 24px rgba(0,0,0,0.15);
+        box-shadow: -4px 8px 24px rgba(0,0,0,0.15);
         z-index: 1001;
         border-top: 3px solid var(--primary-color);
-        border-radius: 0 0 8px 0;
+        border-radius: 0 0 0 8px;
     }
 
     .main-nav.active .nav-menu > li {
