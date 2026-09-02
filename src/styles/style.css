@@ -5023,8 +5023,8 @@ p {
     }
 
     .logo-img {
-        height: 64px !important;
-        width: 64px !important;
+        height: 50px !important;
+        width: 50px !important;
     }
 
     .logo-name {
@@ -5032,7 +5032,7 @@ p {
     }
 
     .logo-name-top {
-        font-size: 1.25rem !important;
+        font-size: 1.05rem !important;
         letter-spacing: 0.5px !important;
         line-height: 1.15 !important;
         white-space: normal !important;
@@ -5054,13 +5054,13 @@ p {
     }
 
     .nav-buttons {
-        margin-left: 4px !important;
+        margin-left: 2px !important;
         flex-shrink: 0 !important;
         order: 3 !important;
     }
 
     .nav-buttons .btn {
-        padding: 5px 12px !important;
+        padding: 5px 10px !important;
         font-size: 0.72rem !important;
         border-radius: 20px !important;
         font-weight: 700 !important;
