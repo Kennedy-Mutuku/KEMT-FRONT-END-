@@ -168,38 +168,33 @@ const Events = () => {
             <h2 className="section-title">Completed Missions</h2>
             <p className="section-description">A record of the outreach missions KEMT has carried out — each one a testimony of God's faithfulness.</p>
           </div>
-          <div className="past-events-timeline">
+          <div className="past-events-list">
             {pastEvents.map((event, i) => (
-              <div className="past-event-card" key={event.id}>
-                <div className="past-event-marker">
-                  <div className="marker-dot"></div>
-                  {i < pastEvents.length - 1 && <div className="marker-line"></div>}
+              <div key={event.id} style={{ 
+                borderBottom: i < pastEvents.length - 1 ? '1px solid #eaeaea' : 'none', 
+                padding: '2rem 0' 
+              }}>
+                <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '1.5rem', color: '#1a1a1a' }}>{event.name}</h3>
+                
+                <div style={{ color: '#666', fontSize: '0.95rem', marginBottom: '1rem', display: 'flex', flexWrap: 'wrap', gap: '1.5rem' }}>
+                  <span><strong>Date:</strong> {event.dates}</span>
+                  <span><strong>Location:</strong> {event.location}</span>
+                  <span><strong>Type:</strong> {event.type}</span>
                 </div>
-                <div className="past-event-body">
-                  <div className="past-event-top">
-                    <span className="past-event-type">{event.type}</span>
-                    <span className="past-event-dates"><i className="fas fa-calendar-alt"></i> {event.dates}</span>
-                  </div>
-                  <h3 className="past-event-name">{event.name}</h3>
-                  <p className="past-event-location"><i className="fas fa-map-marker-alt"></i> {event.location}</p>
-                  <div className="past-event-highlights">
-                    {event.highlights.map((h, j) => (
-                      <span className="activity-tag" key={j}>{h}</span>
-                    ))}
-                  </div>
-                  {event.souls ? (
-                    <div className="souls-badge" style={{ marginTop: '1rem' }}>
-                      <i className="fas fa-heart"></i>
-                      <strong>{event.souls}</strong>
-                      <span>souls received Christ</span>
-                    </div>
-                  ) : (
-                    <div className="souls-badge souls-badge--pending" style={{ marginTop: '1rem' }}>
-                      <i className="fas fa-clock"></i>
-                      <span>Statistics to be updated</span>
-                    </div>
-                  )}
+                
+                <div style={{ marginBottom: '1rem', color: '#444', lineHeight: '1.6' }}>
+                  <strong>Key Activities:</strong> {event.highlights.join(', ')}
                 </div>
+                
+                {event.souls ? (
+                  <div style={{ color: '#e67e22', fontWeight: 'bold', fontSize: '1.05rem' }}>
+                    {event.souls} souls received Christ
+                  </div>
+                ) : (
+                  <div style={{ color: '#888', fontStyle: 'italic', fontSize: '0.95rem' }}>
+                    Statistics to be updated
+                  </div>
+                )}
               </div>
             ))}
           </div>
