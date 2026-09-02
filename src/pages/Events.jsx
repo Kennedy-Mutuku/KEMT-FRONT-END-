@@ -171,30 +171,53 @@ const Events = () => {
           <div className="past-events-list">
             {pastEvents.map((event, i) => (
               <div key={event.id} style={{ 
+                display: 'flex',
+                flexWrap: 'wrap',
+                gap: '2.5rem',
                 borderBottom: i < pastEvents.length - 1 ? '1px solid #eaeaea' : 'none', 
-                padding: '2rem 0' 
+                padding: '3.5rem 0',
+                alignItems: 'flex-start'
               }}>
-                <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '1.5rem', color: '#1a1a1a' }}>{event.name}</h3>
-                
-                <div style={{ color: '#666', fontSize: '0.95rem', marginBottom: '1rem', display: 'flex', flexWrap: 'wrap', gap: '1.5rem' }}>
-                  <span><strong>Date:</strong> {event.dates}</span>
-                  <span><strong>Location:</strong> {event.location}</span>
-                  <span><strong>Type:</strong> {event.type}</span>
+                {/* Left Column: Date & Impact */}
+                <div style={{ flex: '1 1 200px', borderLeft: '4px solid #f39c12', paddingLeft: '1.5rem' }}>
+                  <div style={{ color: '#f39c12', fontWeight: '700', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '1.5px', marginBottom: '1rem' }}>
+                    {event.dates}
+                  </div>
+                  {event.souls ? (
+                    <div style={{ fontSize: '3rem', fontWeight: '800', color: '#1a1a1a', lineHeight: '1', letterSpacing: '-1px' }}>
+                      {event.souls}
+                      <span style={{ fontSize: '0.95rem', fontWeight: '600', color: '#666', display: 'block', letterSpacing: '0', textTransform: 'uppercase', marginTop: '0.5rem' }}>Souls Won</span>
+                    </div>
+                  ) : (
+                    <div style={{ fontSize: '1.2rem', fontWeight: '500', color: '#888', fontStyle: 'italic', marginTop: '1rem' }}>
+                      Ongoing Impact
+                    </div>
+                  )}
                 </div>
                 
-                <div style={{ marginBottom: '1rem', color: '#444', lineHeight: '1.6' }}>
-                  <strong>Key Activities:</strong> {event.highlights.join(', ')}
+                {/* Right Column: Details */}
+                <div style={{ flex: '3 1 400px' }}>
+                  <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '2rem', color: '#1a1a1a', fontWeight: '800', letterSpacing: '-0.5px' }}>{event.name}</h3>
+                  <div style={{ color: '#666', fontSize: '1.05rem', marginBottom: '2rem', fontWeight: '500' }}>
+                    {event.location} &nbsp;—&nbsp; {event.type}
+                  </div>
+                  
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
+                    {event.highlights.map((h, j) => (
+                      <span key={j} style={{ 
+                        backgroundColor: '#f8f9fa', 
+                        padding: '0.5rem 1.25rem', 
+                        borderRadius: '30px', 
+                        fontSize: '0.9rem', 
+                        fontWeight: '600',
+                        color: '#444', 
+                        border: '1px solid #eaeaea' 
+                      }}>
+                        {h}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-                
-                {event.souls ? (
-                  <div style={{ color: '#e67e22', fontWeight: 'bold', fontSize: '1.05rem' }}>
-                    {event.souls} souls received Christ
-                  </div>
-                ) : (
-                  <div style={{ color: '#888', fontStyle: 'italic', fontSize: '0.95rem' }}>
-                    Statistics to be updated
-                  </div>
-                )}
               </div>
             ))}
           </div>
