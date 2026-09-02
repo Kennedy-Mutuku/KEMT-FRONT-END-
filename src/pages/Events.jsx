@@ -146,17 +146,13 @@ const Events = () => {
                   e.currentTarget.style.boxShadow = '0 4px 16px rgba(0,0,0,0.06)';
                 }}
                 >
-                  {event.posterUrl ? (
+                  {event.posterUrl && (
                     <div style={{ height: '200px', width: '100%', overflow: 'hidden', background: '#f8fafc' }}>
                       <img 
                         src={event.posterUrl.startsWith('http') ? event.posterUrl : `/${event.posterUrl}`} 
                         alt={event.title} 
                         style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
                       />
-                    </div>
-                  ) : (
-                    <div style={{ height: '160px', backgroundColor: 'rgba(232, 125, 30, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#E87D1E' }}>
-                      <Calendar size={48} opacity={0.7} />
                     </div>
                   )}
                   <div style={{ padding: '24px' }}>
