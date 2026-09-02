@@ -6902,6 +6902,13 @@ p {
     .ministries-left .section-subtitle {
         font-size: 1.1rem !important;
     }
+
+    .testimonials-section {
+        padding: 30px 0 !important;
+    }
+    .testimonials-section .section-header {
+        margin-bottom: 25px !important;
+    }
 }
 @media (max-width: 540px) {
     .about-v2-photo-accent { width: 120px; height: 120px; }
