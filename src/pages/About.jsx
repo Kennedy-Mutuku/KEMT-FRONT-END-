@@ -194,7 +194,7 @@ const About = () => {
             </div>
             <div className="vm-compact-item">
               <h3>Our Mandate</h3>
-              <p>The Great Commission — Go into all the world, preach the Gospel, make disciples of all nations, baptizing them and teaching them to observe all that Christ commanded. Matthew 28:19-20.</p>
+              <p>The Great Commission — "Therefore go and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, and teaching them to obey everything I have commanded you." — Matthew 28:19-20 (NIV)</p>
             </div>
           </div>
         </div>

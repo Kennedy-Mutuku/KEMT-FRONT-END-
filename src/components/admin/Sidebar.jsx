@@ -9,7 +9,8 @@ import {
   MessageSquare,
   Settings,
   PieChart,
-  Globe
+  Globe,
+  BookOpen
 } from 'lucide-react';
 import logoImg from '../../assets/logo Kingdom enightement.jpg';
 
@@ -75,6 +76,13 @@ const Sidebar = () => {
           )}
         </Link>
 
+        <Link to="/admin/bible-groups" className={`admin-nav-item ${isCurrentPath('/admin/bible-groups') ? 'active' : ''}`}>
+          <div className="admin-nav-item-left">
+            <BookOpen size={19} />
+            Bible Study Groups
+          </div>
+        </Link>
+
         <Link to="/admin/users" className={`admin-nav-item ${isCurrentPath('/admin/users') ? 'active' : ''}`}>
           <div className="admin-nav-item-left">
             <Users size={19} />
@@ -87,7 +95,7 @@ const Sidebar = () => {
         <Link to="/" className="admin-nav-item">
           <div className="admin-nav-item-left">
             <Globe size={19} />
-            Live Website
+            Back to Main Page
           </div>
         </Link>
       </div>

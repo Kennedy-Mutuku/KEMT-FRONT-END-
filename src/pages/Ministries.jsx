@@ -31,34 +31,6 @@ import ks1 from '../assets/KitheoSiniourSchool1.jpg';
 import ks2 from '../assets/KitheoSiniourSchool3.jpg';
 import ks3 from '../assets/KitheoSiniourSchool5.jpg';
 
-const evangelismMethodologies = [
-  {
-    icon: 'fas fa-bullhorn',
-    title: 'One-on-One Outreach',
-    desc: 'Meeting individuals at their homes and workplaces with personal Gospel conversations.',
-  },
-  {
-    icon: 'fas fa-users',
-    title: 'Street Evangelism',
-    desc: 'Public proclaiming of the message of salvation in town centers and busy markets.',
-  },
-  {
-    icon: 'fas fa-fire',
-    title: 'Crusades & Revivals',
-    desc: 'Open-air revival crusades igniting faith, healings and spiritual awakening.',
-  },
-  {
-    icon: 'fas fa-person-walking',
-    title: 'Prayer Walks',
-    desc: 'Covering entire towns and villages in intercessory prayer before outreaches.',
-  },
-  {
-    icon: 'fas fa-seedling',
-    title: 'Integral Mission',
-    desc: 'Combining spiritual evangelism with practical community transformation.',
-  },
-];
-
 const schools = [
   {
     number: '01',
@@ -93,38 +65,6 @@ const schools = [
       'A ministry focused on strengthening students spiritually through the Word of God, prayer, fellowship and practical Christian teachings, helping them grow in faith and live for Christ.',
     pillars: ['Scripture Grounding', 'Student Fellowship', 'Christian Living', 'Faith Growth'],
   },
-];
-
-const compassionWings = [
-  {
-    icon: 'fas fa-utensils',
-    title: 'Food & Clothing Drives',
-    desc: 'Meeting essential physical needs with dignity and compassion across vulnerable households.',
-  },
-  {
-    icon: 'fas fa-hands-holding-child',
-    title: 'Youth Safe Spaces',
-    desc: 'Creating nurturing environments where young people find encouragement, hope, direction and spiritual nourishment.',
-  },
-  {
-    icon: 'fas fa-comments',
-    title: 'Counseling & Guidance',
-    desc: 'Walking alongside individuals and families facing distress, offering prayer and compassionate support.',
-  },
-  {
-    icon: 'fas fa-house-chimney-medical',
-    title: 'Community Visitation',
-    desc: 'Home-to-home outreach praying with the sick, elderly and vulnerable at their point of need.',
-  },
-];
-
-const prayerPillars = [
-  { icon: 'fas fa-compass', title: "God's Direction", desc: 'Seeking divine guidance before every mission' },
-  { icon: 'fas fa-bolt', title: 'Empowerment', desc: 'Equipping missioners with spiritual boldness' },
-  { icon: 'fas fa-shield-alt', title: 'Kingdom Intercession', desc: 'Standing in the gap for churches and nations' },
-  { icon: 'fas fa-fire', title: 'Fasting & Prayer', desc: 'Consecrated Thursday weekly prayer vigils' },
-  { icon: 'fas fa-school', title: 'Schools & Youth', desc: 'Covering students in prayer and mentorship' },
-  { icon: 'fas fa-heart', title: 'Souls Harvest', desc: 'Interceding for unreached communities' },
 ];
 
 const scrollToHash = (hash) => {
@@ -249,13 +189,18 @@ const Ministries = () => {
                 Prayer is the foundation of everything we do. Our Prayer Department provides a strong spiritual foundation through a dedicated committee committed to seeking God.
               </p>
               
+              <blockquote className="sleek-quote">
+                "Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God."
+                <div style={{ fontSize: '0.85rem', color: '#E87D1E', fontWeight: 700, marginTop: '6px' }}>— Philippians 4:6 (NIV)</div>
+              </blockquote>
+
               <div className="sleek-prayer-box">
                 <h5><i className="fas fa-fire"></i> Thursday Prayer &amp; Fasting</h5>
                 <p>Every Thursday, our team intercedes for our missions, communities, and schools (6:00 AM – 6:00 PM).</p>
               </div>
               
               <div className="dept-actions">
-                <Link to="/contact" className="btn btn-primary">Submit Prayer Request</Link>
+                <Link to="/contact?dept=prayer" className="btn btn-primary">Submit Prayer Request</Link>
               </div>
             </div>
           </div>
@@ -274,10 +219,11 @@ const Ministries = () => {
               
               <blockquote className="sleek-quote">
                 "God is spirit, and his worshipers must worship in the Spirit and in truth."
+                <div style={{ fontSize: '0.85rem', color: '#E87D1E', fontWeight: 700, marginTop: '6px' }}>— John 4:24 (NIV)</div>
               </blockquote>
               
               <div className="dept-actions">
-                <Link to="/contact" className="btn btn-primary">Join the Worship Team</Link>
+                <Link to="/contact?dept=worship" className="btn btn-primary">Join the Worship Team</Link>
               </div>
             </div>
 
@@ -305,7 +251,8 @@ const Ministries = () => {
               </p>
               
               <blockquote className="sleek-quote">
-                "We serve because Christ first loved us. We care because every soul matters."
+                "We love because he first loved us."
+                <div style={{ fontSize: '0.85rem', color: '#E87D1E', fontWeight: 700, marginTop: '6px' }}>— 1 John 4:19 (NIV)</div>
               </blockquote>
               
               <div className="dept-actions">
@@ -325,9 +272,15 @@ const Ministries = () => {
               <p className="lead">
                 We are called to go — and go we do. KEMT's outreach arm takes the Gospel to communities across Kenya through strategic mission trips, street evangelism, and mass crusades.
               </p>
+
+              <blockquote className="sleek-quote">
+                "How, then, can they call on the one they have not believed in? And how can they believe in the one of whom they have not heard? And how can they hear without someone preaching to them?"
+                <div style={{ fontSize: '0.85rem', color: '#E87D1E', fontWeight: 700, marginTop: '6px' }}>— Romans 10:14 (NIV)</div>
+              </blockquote>
               
-              <div className="dept-actions">
-                <Link to="/programs" className="btn btn-primary">Explore Missions</Link>
+              <div className="dept-actions" style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                <Link to="/contact?dept=outreach" className="btn btn-primary">Join Outreach Team</Link>
+                <Link to="/programs" className="btn btn-secondary">Explore Missions</Link>
               </div>
             </div>
 
@@ -355,11 +308,12 @@ const Ministries = () => {
               </p>
               
               <blockquote className="sleek-quote">
-                "Therefore go and make disciples of all nations, teaching them to obey everything I have commanded you."
+                "Therefore go and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, and teaching them to obey everything I have commanded you."
+                <div style={{ fontSize: '0.85rem', color: '#E87D1E', fontWeight: 700, marginTop: '6px' }}>— Matthew 28:19-20 (NIV)</div>
               </blockquote>
               
               <div className="dept-actions">
-                <Link to="/contact" className="btn btn-primary">Join a Study Group</Link>
+                <Link to="/contact?dept=discipleship" className="btn btn-primary">Join a Study Group</Link>
               </div>
             </div>
           </div>
@@ -396,9 +350,9 @@ const Ministries = () => {
           <div className="school-invite-sleek">
             <div className="sis-text">
               <h4>Want KEMT at Your School?</h4>
-              <p>We partner with schools for Weekend Challenges &amp; Mentorship.</p>
+              <p>We partner with secondary schools for Weekend Challenges, motivational sessions &amp; student mentorship.</p>
             </div>
-            <Link to="/contact" className="btn btn-primary">Invite Us <i className="fas fa-paper-plane"></i></Link>
+            <Link to="/contact?dept=highschool" className="btn btn-primary">Invite Us <i className="fas fa-paper-plane"></i></Link>
           </div>
         </div>
       </section>
@@ -419,11 +373,12 @@ const Ministries = () => {
               </p>
               
               <blockquote className="sleek-quote">
-                "Taking the timeless message of the Gospel into the modern digital frontier."
+                "Go into all the world and preach the gospel to all creation."
+                <div style={{ fontSize: '0.85rem', color: '#E87D1E', fontWeight: 700, marginTop: '6px' }}>— Mark 16:15 (NIV)</div>
               </blockquote>
               
               <div className="dept-actions">
-                <Link to="/contact" className="btn btn-primary">Volunteer in Tech</Link>
+                <Link to="/contact?dept=digital" className="btn btn-primary">Volunteer in Tech</Link>
               </div>
             </div>
           </div>

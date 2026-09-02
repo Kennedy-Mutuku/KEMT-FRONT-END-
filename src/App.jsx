@@ -20,6 +20,7 @@ import AdminDashboard from './pages/admin/AdminDashboard';
 import AdminUsers from './pages/admin/AdminUsers';
 import AdminEvents from './pages/admin/AdminEvents';
 import AdminMessages from './pages/admin/AdminMessages';
+import AdminBibleGroups from './pages/admin/AdminBibleGroups';
 
 // Layout for the main website
 const MainLayout = () => (
@@ -42,6 +43,7 @@ function App() {
           <Route path="users" element={<AdminUsers />} />
           <Route path="events" element={<AdminEvents />} />
           <Route path="messages" element={<AdminMessages />} />
+          <Route path="bible-groups" element={<AdminBibleGroups />} />
           <Route path="donations" element={<div style={{padding: '30px', color: 'var(--admin-text-main)'}}><h1 className="admin-page-title">Donations</h1><p>Donations management coming soon...</p></div>} />
           <Route path="prayer-requests" element={<div style={{padding: '30px', color: 'var(--admin-text-main)'}}><h1 className="admin-page-title">Prayer Requests</h1><p>Prayer requests queue coming soon...</p></div>} />
           <Route path="analytics" element={<div style={{padding: '30px', color: 'var(--admin-text-main)'}}><h1 className="admin-page-title">Analytics</h1><p>Advanced system analytics coming soon...</p></div>} />

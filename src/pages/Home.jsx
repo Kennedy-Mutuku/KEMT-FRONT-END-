@@ -135,7 +135,7 @@ const Home = () => {
             <section className="vision-mission-v2">
                 <div className="container">
                     <div className="vm-v2-header">
-                        <p className="vm-v2-verse">"Go into all the world and preach the gospel to all creation." — Mark 16:15</p>
+                        <p className="vm-v2-verse">"Go into all the world and preach the gospel to all creation." — Mark 16:15 (NIV)</p>
                         <h2 className="vm-v2-title">Our <span>Purpose</span> &amp; Calling</h2>
                     </div>
                     <div className="vm-v2-list">
