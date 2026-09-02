@@ -55,27 +55,8 @@ const Events = () => {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
   const [events, setEvents] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchEvents = async () => {
-      try {
-        const response = await fetch('${import.meta.env.VITE_API_URL}/api/events');
-        if (!response.ok) {
-          throw new Error('Failed to fetch events');
-        }
-        const data = await response.json();
-        setEvents(data);
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchEvents();
-  }, []);
 
   const handleSubscribe = (e) => {
     e.preventDefault();
@@ -98,7 +79,7 @@ const Events = () => {
       </section>
 
       {/* Upcoming Events from Backend */}
-      <section className="section upcoming-section">
+      <section className="dept-section upcoming-section">
         <div className="container">
           <div className="section-header">
             <span className="section-subtitle">What's Next</span>
@@ -180,7 +161,7 @@ const Events = () => {
       </section>
 
       {/* Past Events */}
-      <section className="section past-events-section">
+      <section className="dept-section past-events-section">
         <div className="container">
           <div className="section-header">
             <span className="section-subtitle">2025 – 2026</span>
