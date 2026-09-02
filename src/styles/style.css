@@ -1462,12 +1462,14 @@ p {
     }
 
     .mobile-menu-toggle {
-        margin-right: 14px;
+        margin-left: 14px;
+        order: 4;
     }
 
     .logo {
         flex: 1;
         min-width: 0;
+        order: 1;
     }
 
     .logo a {
@@ -1510,6 +1512,7 @@ p {
         display: flex;
         flex-shrink: 0;
         margin-left: 12px;
+        order: 3;
     }
 
     .nav-buttons .btn {
@@ -4997,9 +5000,11 @@ p {
     }
 
     .mobile-menu-toggle {
-        margin-right: 6px !important;
+        margin-left: 6px !important;
+        margin-right: 0 !important;
         padding: 6px 8px !important;
         gap: 4px !important;
+        order: 4 !important;
     }
 
     .mobile-menu-toggle span {
