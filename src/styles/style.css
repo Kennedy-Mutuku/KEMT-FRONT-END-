@@ -4951,6 +4951,7 @@ p {
 
     /* Scaled-down typography across mobile pages */
     .page-banner {
+        min-height: auto !important;
         padding: 1.5rem 0 1rem !important;
     }
 
