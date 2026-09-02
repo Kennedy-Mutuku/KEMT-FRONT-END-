@@ -515,7 +515,7 @@
     -webkit-text-stroke: 0;
     white-space: nowrap;
     z-index: 10;
-    animation: wordAppear 0.55s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    /* No CSS animation — typing is driven by JS typewriter state */
     background: none;
     padding: 0;
   }

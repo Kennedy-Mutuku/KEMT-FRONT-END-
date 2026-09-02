@@ -43,19 +43,29 @@ const slides = [
   }
 ];
 
+// Words that rotate across fingers
+const FINGER_WORDS = ['KINGDOM', 'ENLIGHTENMENT', 'MINISTRIES'];
+const CHAR_SPEED = 110; // ms per character typed
+
 const CreativeSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+
+  // Typewriter state — how many chars are visible on each finger
+  const [typed1, setTyped1] = useState(0);
+  const [typed2, setTyped2] = useState(0);
+  const [typed3, setTyped3] = useState(0);
   
   // Touch variables
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
 
+  // Auto-advance every 8s (gives time for full typing sequence + ~4s view)
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 6000); 
+    }, 8000); 
     return () => clearInterval(interval);
   }, []); // Run constantly
 
@@ -97,12 +107,58 @@ const CreativeSlider = () => {
   const finger2Img = slides[(currentSlide + 1) % slides.length].image;
   const finger3Img = slides[(currentSlide + 2) % slides.length].image;
 
-  // Rotate KINGDOM / ENLIGHTENMENT / MINISTRIES across the 3 fingers on each slide
-  const fingerWords = ['KINGDOM', 'ENLIGHTENMENT', 'MINISTRIES'];
+  // Compute which word goes on which finger for this slide
   const wordOffset = currentSlide % 3;
-  const word1 = fingerWords[wordOffset % 3];
-  const word2 = fingerWords[(wordOffset + 1) % 3];
-  const word3 = fingerWords[(wordOffset + 2) % 3];
+  const word1 = FINGER_WORDS[wordOffset % 3];
+  const word2 = FINGER_WORDS[(wordOffset + 1) % 3];
+  const word3 = FINGER_WORDS[(wordOffset + 2) % 3];
+
+  // Typewriter: chain finger1 → finger2 → finger3 on every slide change
+  useEffect(() => {
+    let i2 = null;
+    let i3 = null;
+
+    // Reset all to empty
+    setTyped1(0);
+    setTyped2(0);
+    setTyped3(0);
+
+    // --- Finger 1 types immediately ---
+    let pos1 = 0;
+    const i1 = setInterval(() => {
+      pos1++;
+      setTyped1(pos1);
+      if (pos1 >= word1.length) clearInterval(i1);
+    }, CHAR_SPEED);
+
+    // --- Finger 2 starts after finger 1 finishes + 250ms pause ---
+    const t2 = setTimeout(() => {
+      let pos2 = 0;
+      i2 = setInterval(() => {
+        pos2++;
+        setTyped2(pos2);
+        if (pos2 >= word2.length) clearInterval(i2);
+      }, CHAR_SPEED);
+    }, word1.length * CHAR_SPEED + 250);
+
+    // --- Finger 3 starts after finger 2 finishes + 250ms pause ---
+    const t3 = setTimeout(() => {
+      let pos3 = 0;
+      i3 = setInterval(() => {
+        pos3++;
+        setTyped3(pos3);
+        if (pos3 >= word3.length) clearInterval(i3);
+      }, CHAR_SPEED);
+    }, (word1.length + word2.length) * CHAR_SPEED + 500);
+
+    return () => {
+      clearInterval(i1);
+      clearTimeout(t2);
+      clearTimeout(t3);
+      if (i2) clearInterval(i2);
+      if (i3) clearInterval(i3);
+    };
+  }, [currentSlide]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <section 
@@ -187,17 +243,17 @@ const CreativeSlider = () => {
         {/* Finger 1 */}
         <div className="finger finger-1">
           <div className="finger-img" key={finger1Img} style={{ backgroundImage: `url(${finger1Img})` }}></div>
-          <div key={`w1-${currentSlide}`} className="finger-word">{word1}</div>
+          <div className="finger-word">{word1.slice(0, typed1)}</div>
         </div>
         {/* Finger 2 */}
         <div className="finger finger-2">
           <div className="finger-img" key={finger2Img} style={{ backgroundImage: `url(${finger2Img})` }}></div>
-          <div key={`w2-${currentSlide}`} className="finger-word finger-word-center">{word2}</div>
+          <div className="finger-word finger-word-center">{word2.slice(0, typed2)}</div>
         </div>
         {/* Finger 3 */}
         <div className="finger finger-3">
           <div className="finger-img" key={finger3Img} style={{ backgroundImage: `url(${finger3Img})` }}></div>
-          <div key={`w3-${currentSlide}`} className="finger-word">{word3}</div>
+          <div className="finger-word">{word3.slice(0, typed3)}</div>
         </div>
       </div>
     </section>
