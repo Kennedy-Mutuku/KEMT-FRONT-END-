@@ -1864,6 +1864,15 @@ p {
     width: 100%;
 }
 
+/* Compact specific for Contact Page */
+.contact-page .page-banner {
+    min-height: 180px;
+}
+
+.contact-page .banner-content {
+    padding: 2.5rem 1rem 2rem;
+}
+
 .banner-tag {
     display: inline-block;
     background: var(--primary-color);
