@@ -407,10 +407,9 @@
     display: none;
   }
 
-  /* Nav bar centered at bottom */
+  /* Hide nav controls on mobile — swipe handles navigation */
   .slider-controls-modern {
-    margin-top: 0;
-    justify-content: center;
+    display: none;
   }
 
   /* Full-opacity fingers centred in the hero */
