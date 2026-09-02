@@ -136,7 +136,6 @@ const Events = () => {
 
           {!loading && !error && events.length === 0 && (
             <div className="no-events-card">
-              <div className="no-events-icon"><i className="fas fa-calendar-plus"></i></div>
               <h3>New Events Coming Soon</h3>
               <p>We are always planning the next outreach, revival, or ministry engagement. Subscribe below to be the first to know when new events are announced.</p>
               {subscribed ? (
