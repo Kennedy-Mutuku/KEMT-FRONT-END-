@@ -109,276 +109,76 @@ export const CATEGORIES = [
   'Leadership & Team',
 ];
 
-export const galleryItems = [
+export const galleryAlbums = [
   // --- COMMUNITY OUTREACH ---
   {
-    id: 'comm-emali-1',
-    src: emali1,
-    title: 'Emali Community Gathering',
+    id: 'album-emali',
+    coverImage: emali1,
+    title: 'Emali Mission',
     category: 'Community Outreach',
     shortCaption: 'Spreading hope and unity through outdoor open-air fellowship.',
-    fullDescription: 'During the Emali mission, our outreach team gathered community members across various villages to share the gospel, minister to local families, and provide words of spiritual encouragement.'
+    photos: [emali1, emali2, emali3, emali4, emali5, emali6, emali7, emali8, emali9, emali10, emali11, emali12, emali13, emali14, emali15, emali16, emali17, emali18]
   },
   {
-    id: 'comm-gaukene-1',
-    src: gaukene1,
-    title: 'Gaukene Ntakira Village Ministry',
+    id: 'album-gaukene',
+    coverImage: gaukene1,
+    title: 'Gaukene & Ntakira Circuit',
     category: 'Community Outreach',
     shortCaption: 'Engaging rural households with prayers and practical support.',
-    fullDescription: 'The Gaukene & Ntakira Circuit mission reached deep into rural settlements, engaging families with personalized prayer, encouragement, and community fellowship sessions.'
+    photos: [gaukene1, gaukene2, gaukene3, gaukene4, gaukene5, gaukene6, gaukene7, gaukene8]
   },
   {
-    id: 'comm-tala-1',
-    src: tala1,
-    title: 'Tala Town Evangelical Outreach',
+    id: 'album-tala',
+    coverImage: tala1,
+    title: 'Tala Mission',
     category: 'Community Outreach',
     shortCaption: 'Bringing transformed lives to the marketplace and homes of Tala.',
-    fullDescription: 'The team spent several days traversing Tala market and surrounding neighborhoods, hosting open sessions and praying with traders and families.'
+    photos: [tala1, tala2, tala3, tala4, tala5, tala6, tala7, tala8, tala9, tala10, tala11, tala12, tala13, tala14, tala15, tala16, tala17, tala18]
   },
   {
-    id: 'comm-ruanyage-1',
-    src: ruanyage1,
-    title: 'Ruanyage Open Air Mission',
+    id: 'album-ruanyage',
+    coverImage: ruanyage1,
+    title: 'Ruanyage Mission',
     category: 'Community Outreach',
     shortCaption: 'Worship and revival gathering in the Ruanyage countryside.',
-    fullDescription: 'Members from nearby villages convened in Ruanyage for a day of worship, teaching, and shared testimonies of faith and transformation.'
-  },
-  {
-    id: 'comm-emali-2',
-    src: emali2,
-    title: 'Emali Door-to-Door Visitation',
-    category: 'Community Outreach',
-    shortCaption: 'Visiting elderly and vulnerable households in the Emali region.',
-    fullDescription: 'Our volunteers went door-to-door listening to residents’ challenges, offering spiritual guidance, and identifying needs for community relief.'
-  },
-  {
-    id: 'comm-gaukene-2',
-    src: gaukene2,
-    title: 'Gaukene Fellowship Circle',
-    category: 'Community Outreach',
-    shortCaption: 'Strengthening community bonds through scripture reading and song.',
-    fullDescription: 'Local community elders and youth joined together under the shade of acacia trees to fellowship, discuss faith, and build lifelong bonds.'
-  },
-  {
-    id: 'comm-tala-2',
-    src: tala2,
-    title: 'Tala Prayer & Ministry Rally',
-    category: 'Community Outreach',
-    shortCaption: 'A joyful gathering celebrating community resilience and hope.',
-    fullDescription: 'Passionate praise and unified prayer at the Tala community grounds, inviting people of all backgrounds to experience the love of Christ.'
-  },
-  {
-    id: 'comm-ruanyage-2',
-    src: ruanyage2,
-    title: 'Ruanyage Congregation Assembly',
-    category: 'Community Outreach',
-    shortCaption: 'United in faith and mutual encouragement across denominations.',
-    fullDescription: 'A vibrant Sunday celebration marking the culmination of the Ruanyage mission with communal worship and shared meals.'
-  },
-  {
-    id: 'comm-emali-3',
-    src: emali13,
-    title: 'Emali Regional Revival',
-    category: 'Community Outreach',
-    shortCaption: 'Transforming hearts through powerful teaching and worship.',
-    fullDescription: 'Gathering dozens of local residents for deep biblical teaching on family life, ethics, and standing firm in faith.'
-  },
-  {
-    id: 'comm-tala-3',
-    src: tala9,
-    title: 'Tala Youth & Elders Outreach',
-    category: 'Community Outreach',
-    shortCaption: 'Bridging generational gaps with constructive dialogues.',
-    fullDescription: 'A special outreach session where church elders and village youths discussed leadership, purpose, and community growth.'
+    photos: [ruanyage1, ruanyage2, ruanyage3, ruanyage4, ruanyage5, ruanyage6, ruanyage7, ruanyage8, ruanyage9, ruanyage10, ruanyage11]
   },
 
   // --- YOUTH & SCHOOLS ---
   {
-    id: 'youth-rwanyange-1',
-    src: rwanyangeSec1,
-    title: 'Rwanyange Secondary Assembly',
+    id: 'album-rwanyange-sec',
+    coverImage: rwanyangeSec1,
+    title: 'Rwanyange Secondary',
     category: 'Youth & Schools',
     shortCaption: 'Inspiring high school students with mentorship and moral leadership.',
-    fullDescription: 'Speaking to students at Rwanyange Secondary School on academic excellence, integrity, emotional well-being, and trusting God with their future.'
+    photos: [rwanyangeSec1, rwanyangeSec2, rwanyangeSec3, rwanyangeSec4, rwanyangeSec5, rwanyangeSec6, rwanyangeSec7, rwanyangeSec8, rwanyangeSec9, rwanyangeSec10, rwanyangeSec11, rwanyangeSec12, rwanyangeSec13, rwanyangeSec14, rwanyangeSec15]
   },
   {
-    id: 'youth-kitheo-1',
-    src: kitheo1,
-    title: 'Kitheo Senior School Guidance',
+    id: 'album-kitheo',
+    coverImage: kitheo1,
+    title: 'Kitheo Senior School',
     category: 'Youth & Schools',
     shortCaption: 'Life skills and spiritual mentorship for graduating seniors.',
-    fullDescription: 'Engaging high school students at Kitheo Senior School in career guidance, character formation, and answering their questions about faith.'
-  },
-  {
-    id: 'youth-rwanyange-2',
-    src: rwanyangeSec2,
-    title: 'Student Mentorship Workshop',
-    category: 'Youth & Schools',
-    shortCaption: 'Interactive breakout sessions tackling teenage peer pressures.',
-    fullDescription: 'Small group discussions at Rwanyange Secondary where students shared their challenges, prayed together, and received guidance.'
-  },
-  {
-    id: 'youth-kitheo-2',
-    src: kitheo2,
-    title: 'Kitheo Student Praise Session',
-    category: 'Youth & Schools',
-    shortCaption: 'Vibrant worship and student empowerment at Kitheo School.',
-    fullDescription: 'Students gathered in high spirits during lunchtime fellowship, leading their peers in uplifting worship and prayer.'
-  },
-  {
-    id: 'youth-rwanyange-3',
-    src: rwanyangeSec3,
-    title: 'Rwanyange Youth Leaders Forum',
-    category: 'Youth & Schools',
-    shortCaption: 'Equipping student prefects and CU leaders with practical skills.',
-    fullDescription: 'Training student leaders at Rwanyange Secondary on servant leadership, conflict resolution, and peer mentorship.'
-  },
-  {
-    id: 'youth-kitheo-3',
-    src: kitheo3,
-    title: 'Kitheo Moral & Academic Motivation',
-    category: 'Youth & Schools',
-    shortCaption: 'Encouraging exam candidates toward focus and resilience.',
-    fullDescription: 'Motivational talks tailored for exam candidates at St. Kitheo School, combining spiritual focus with proven study disciplines.'
-  },
-  {
-    id: 'youth-rwanyange-4',
-    src: rwanyangeSec10,
-    title: 'High School Counseling Clinic',
-    category: 'Youth & Schools',
-    shortCaption: 'One-on-one guidance addressing personal and academic hurdles.',
-    fullDescription: 'Our ministry counselors provided confidential, nurturing support to young students seeking spiritual clarity and life guidance.'
-  },
-  {
-    id: 'youth-kitheo-4',
-    src: kitheo5,
-    title: 'Kitheo Campus Fellowship',
-    category: 'Youth & Schools',
-    shortCaption: 'Building strong foundations of faith within school communities.',
-    fullDescription: 'A collective session bringing together teachers and students in unison to promote a peaceful, supportive school environment.'
+    photos: [kitheo1, kitheo2, kitheo3, kitheo4, kitheo5, kitheo6, kitheo7]
   },
 
   // --- SERVICE & ACTION ---
   {
-    id: 'service-hands-1',
-    src: handsTogether,
+    id: 'album-hands',
+    coverImage: handsTogether,
     title: 'Hands Together in Service',
     category: 'Service & Action',
     shortCaption: 'Volunteers and leaders uniting hands for humanitarian impact.',
-    fullDescription: 'A symbol of unity, teamwork, and service as volunteers come together to support local community development, food assistance, and ministry aid.'
-  },
-  {
-    id: 'service-emali-relief',
-    src: emali4,
-    title: 'Emali Community Aid & Support',
-    category: 'Service & Action',
-    shortCaption: 'Providing basic needs and practical care to disadvantaged families.',
-    fullDescription: 'Demonstrating God’s love in practical ways through community support programs, supply distribution, and compassionate care in Emali.'
-  },
-  {
-    id: 'service-tala-action',
-    src: tala4,
-    title: 'Tala Social Action Initiative',
-    category: 'Service & Action',
-    shortCaption: 'Community cleanup and welfare outreach in Tala municipality.',
-    fullDescription: 'Volunteers teamed up with locals to participate in sanitation drives, cleanups, and visiting the infirm.'
-  },
-  {
-    id: 'service-ruanyage-action',
-    src: ruanyage3,
-    title: 'Ruanyage Mutual Assistance',
-    category: 'Service & Action',
-    shortCaption: 'Practical help and resource sharing for rural households.',
-    fullDescription: 'Delivering needed supplies and offering hands-on assistance to families in Ruanyage facing economic difficulties.'
-  },
-  {
-    id: 'service-gaukene-action',
-    src: gaukene4,
-    title: 'Gaukene Welfare Outreach',
-    category: 'Service & Action',
-    shortCaption: 'Helping hands extending comfort to widows and orphans.',
-    fullDescription: 'Dedicated ministry workers sharing resources and emotional support with vulnerable community members in Gaukene circuit.'
-  },
-  {
-    id: 'service-emali-teamwork',
-    src: emali16,
-    title: 'Community Building Project',
-    category: 'Service & Action',
-    shortCaption: 'Mobilizing local efforts for lasting infrastructure improvements.',
-    fullDescription: 'Working side by side with community members to repair fellowship spaces and support village initiatives.'
+    photos: [handsTogether]
   },
 
   // --- LEADERSHIP & TEAM ---
   {
-    id: 'lead-vincent',
-    src: vincentImg,
-    title: 'Vincent Mwendwa — Director',
+    id: 'album-leadership',
+    coverImage: vincentImg,
+    title: 'Leadership & Team',
     category: 'Leadership & Team',
     shortCaption: 'Guiding the organizational vision, strategic direction, and ministry partnerships.',
-    fullDescription: 'Overseeing global operations, mission planning, and spiritual direction for Kingdom Enlightenment Ministries Trust.',
-    objectPosition: 'top center'
-  },
-  {
-    id: 'lead-morice',
-    src: moriceImg,
-    title: 'Morice Mutharimi — Chairperson',
-    category: 'Leadership & Team',
-    shortCaption: 'Presiding over board governance, mission integrity, and advisory councils.',
-    fullDescription: 'Ensuring structural integrity, faithful execution of the ministry constitution, and pastoral guidance across regional branches.',
-    objectPosition: 'top center'
-  },
-  {
-    id: 'lead-mwanzia',
-    src: mwanziaImg,
-    title: 'Mwanzia David — Outreach Incharge',
-    category: 'Leadership & Team',
-    shortCaption: 'Coordinating field operations, logistical planning, and mission trips.',
-    fullDescription: 'Leading field outreach expeditions, community surveys, and mobilizing volunteers across diverse regions of Kenya.',
-    objectPosition: 'top center'
-  },
-  {
-    id: 'lead-kennedy',
-    src: kennedyImg,
-    title: 'Kennedy Mutuku — Media Director',
-    category: 'Leadership & Team',
-    shortCaption: 'Leading communications, media ministry, and visual storytelling.',
-    fullDescription: 'Kennedy Mutuku spearheads digital outreach, multimedia productions, and broadcast communications to amplify the ministry’s mission.',
-    objectPosition: 'top center'
-  },
-  {
-    id: 'lead-mukami',
-    src: mukamiImg,
-    title: 'Evaline Mukami — Secretary',
-    category: 'Leadership & Team',
-    shortCaption: 'Managing official records, administration, and partner correspondence.',
-    fullDescription: 'Facilitating core administrative workflows, record keeping, and member engagement for smooth ministry execution.',
-    objectPosition: 'top center'
-  },
-  {
-    id: 'lead-ray',
-    src: rayImg,
-    title: 'Raymond Ewoi — Prayer Coordinator',
-    category: 'Leadership & Team',
-    shortCaption: 'Leading prayer vigils, spiritual intercession, and devotional teams.',
-    fullDescription: 'Anchor for spiritual intercession, organizing prayer chains, and nurturing devotion across all outreach endeavors.',
-    objectPosition: 'top center'
-  },
-  {
-    id: 'lead-george',
-    src: georgeImg,
-    title: 'George — Technical Coordinator',
-    category: 'Leadership & Team',
-    shortCaption: 'Supporting audiovisual equipment and field production setups.',
-    fullDescription: 'Managing public address systems, sound engineering, and technical logistics during major outdoor campaigns and conferences.',
-    objectPosition: 'top center'
-  },
-  {
-    id: 'lead-odina',
-    src: odinaImg,
-    title: 'Odina — Community Mobilizer',
-    category: 'Leadership & Team',
-    shortCaption: 'Connecting local churches and grassroot community networks.',
-    fullDescription: 'Building strong relationships with local church leadership, area chiefs, and community youth groups for coordinated outreach.',
-    objectPosition: 'top center'
+    photos: [vincentImg, moriceImg, mwanziaImg, kennedyImg, mukamiImg, rayImg, georgeImg, odinaImg]
   }
 ];

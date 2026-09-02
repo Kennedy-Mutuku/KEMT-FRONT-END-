@@ -1,28 +1,34 @@
 import React, { useState, useMemo, useEffect, useCallback } from 'react';
-import { CATEGORIES, galleryItems } from '../data/galleryData';
+import { CATEGORIES, galleryAlbums } from '../data/galleryData';
 
 const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState('All');
   const [lightboxItem, setLightboxItem] = useState(null); // { item, index, set }
 
   // Filter items based on active category
-  const filteredItems = useMemo(() => {
-    if (activeCategory === 'All') return galleryItems;
-    return galleryItems.filter(item => item.category === activeCategory);
+  const filteredAlbums = useMemo(() => {
+    if (activeCategory === 'All') return galleryAlbums;
+    return galleryAlbums.filter(album => album.category === activeCategory);
   }, [activeCategory]);
 
   // Calculate category counts
   const categoryCounts = useMemo(() => {
-    const counts = { All: galleryItems.length };
+    const counts = { All: galleryAlbums.length };
     CATEGORIES.slice(1).forEach(cat => {
-      counts[cat] = galleryItems.filter(item => item.category === cat).length;
+      counts[cat] = galleryAlbums.filter(album => album.category === cat).length;
     });
     return counts;
   }, []);
 
-  // Open Lightbox
-  const openLightbox = (item, index) => {
-    setLightboxItem({ item, index, set: filteredItems });
+  // Open Lightbox with all photos for a specific album
+  const openLightbox = (album) => {
+    const photosSet = album.photos.map(photoSrc => ({
+      src: photoSrc,
+      title: album.title,
+      fullDescription: album.shortCaption,
+      objectPosition: album.objectPosition || 'center'
+    }));
+    setLightboxItem({ item: photosSet[0], index: 0, set: photosSet });
   };
 
   // Close Lightbox
@@ -118,48 +124,66 @@ const Gallery = () => {
           {/* Header Count & Category Title */}
           <div className="gallery-results-meta">
             <h2 className="gallery-results-heading">
-              {activeCategory === 'All' ? 'All Visual Stories' : activeCategory}
+              {activeCategory === 'All' ? 'All Missions & Events' : activeCategory}
             </h2>
             <span className="gallery-results-count">
-              Showing {filteredItems.length} {filteredItems.length === 1 ? 'photo' : 'photos'}
+              Showing {filteredAlbums.length} {filteredAlbums.length === 1 ? 'event album' : 'event albums'}
             </span>
           </div>
 
           {/* Responsive Uniform Image Grid */}
           <div className="gallery-grid-uniform">
-            {filteredItems.map((item, index) => (
+            {filteredAlbums.map((album) => (
               <article
-                key={item.id}
+                key={album.id}
                 className="gallery-card"
-                onClick={() => openLightbox(item, index)}
+                onClick={() => openLightbox(album)}
                 tabIndex={0}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
-                    openLightbox(item, index);
+                    openLightbox(album);
                   }
                 }}
               >
                 <div className="gallery-card__media">
                   <img
-                    src={item.src}
-                    alt={item.title}
+                    src={album.coverImage}
+                    alt={album.title}
                     loading="lazy"
                     className="gallery-card__img"
-                    style={{ objectPosition: item.objectPosition || 'center' }}
+                    style={{ objectPosition: album.objectPosition || 'center' }}
                   />
+                  {/* Badge showing photo count */}
+                  <div style={{
+                    position: 'absolute',
+                    top: '10px',
+                    right: '10px',
+                    background: 'rgba(0,0,0,0.7)',
+                    color: '#fff',
+                    padding: '4px 10px',
+                    borderRadius: '20px',
+                    fontSize: '0.8rem',
+                    fontWeight: '600',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '5px',
+                    zIndex: 5
+                  }}>
+                    <i className="fas fa-camera"></i> {album.photos.length} Photos
+                  </div>
                 </div>
 
                 {/* Hover Gradient Overlay */}
                 <div className="gallery-card__overlay">
                   <div className="gallery-card__overlay-content">
-                    <span className="gallery-card__overlay-tag">{item.category}</span>
-                    <h3 className="gallery-card__title">{item.title}</h3>
-                    <p className="gallery-card__caption">{item.shortCaption}</p>
+                    <span className="gallery-card__overlay-tag">{album.category}</span>
+                    <h3 className="gallery-card__title">{album.title}</h3>
+                    <p className="gallery-card__caption">{album.shortCaption}</p>
                     <div className="gallery-card__action">
                       <span className="gallery-card__view-btn">
-                        <i className="fas fa-expand-alt" aria-hidden="true"></i>
-                        <span>View Details</span>
+                        <i className="fas fa-images" aria-hidden="true"></i>
+                        <span>View All Photos</span>
                       </span>
                     </div>
                   </div>
