@@ -109,7 +109,7 @@ const Home = () => {
                                 Kingdom Enlightenment Missions Team is a Christ-centered missions organization dedicated to spreading the Gospel of Jesus Christ. Founded on the Great Commission, we reach the unreached, disciple believers and establish vibrant Christian communities.
                             </p>
                             <p className="about-v2-desc">
-                                Our team comprises passionate men and women who have answered God's call — bringing hope, healing and the light of Christ to every corner of the land through crusades, prayer walks, school missions and compassion outreach.
+                                Our team comprises passionate men and women who have answered God's call, bringing hope, healing and the light of Christ to every corner of the land through crusades, prayer walks, school missions and compassion outreach.
                             </p>
                             <div className="about-v2-pills">
                                 <div className="about-v2-pill"><i className="fas fa-bible"></i> Bible-Based Teaching</div>
