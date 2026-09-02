@@ -81,10 +81,10 @@ const Navbar = () => {
                                 <li><NavLink to="/gallery" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>Gallery</NavLink></li>
                                 <li><NavLink to="/contact" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>Contact Us</NavLink></li>
                             </ul>
-                            <div className="nav-buttons">
-                                <Link to="/donate" className="btn btn-primary">Donate</Link>
-                            </div>
                         </nav>
+                        <div className="nav-buttons">
+                            <Link to="/donate" className="btn btn-primary">Donate</Link>
+                        </div>
                         <div className="mobile-menu-toggle" onClick={toggleMobileMenu}>
                             <span></span>
                             <span></span>
