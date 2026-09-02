@@ -480,10 +480,27 @@
     transform: translateY(20px);
   }
 
-  /* Keep background images covering the hero */
+  /* Full landscape cover — photos fill the entire hero beautifully */
   .creative-bg-image {
     width: 100%;
+    height: 100%;
     clip-path: none;
+  }
+
+  .ken-burns-img {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  /* Bright overlay — only a gentle tint so photos shine through vividly */
+  .bg-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.30) 0%,
+      rgba(0, 0, 0, 0.20) 50%,
+      rgba(0, 0, 0, 0.35) 100%
+    );
   }
 
   .creative-bg-right {
