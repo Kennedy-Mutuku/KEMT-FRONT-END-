@@ -4930,6 +4930,7 @@ p {
     .pe-souls { font-size: 2.2rem !important; }
     .pe-title { font-size: 1.5rem !important; }
     .pe-location { font-size: 0.95rem !important; }
+    .pe-highlights { display: none !important; }
 
     /* Fix Leader Card Alignment & Wrapping */
     .leader-info {
@@ -6243,6 +6244,8 @@ p {
 .pe-right { flex: 3 1 400px; }
 .pe-title { margin: 0 0 0.5rem 0; font-size: 2rem; color: #1a1a1a; font-weight: 800; letter-spacing: -0.5px; }
 .pe-location { color: #666; font-size: 1.05rem; margin-bottom: 1.25rem; font-weight: 500; }
+.pe-highlights { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.pe-highlight-pill { background-color: #f8f9fa; padding: 0.5rem 1.25rem; border-radius: 30px; font-size: 0.9rem; font-weight: 600; color: #444; border: 1px solid #eaeaea; }
 
 .subscribe-form {
     display: flex;

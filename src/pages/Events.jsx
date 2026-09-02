@@ -190,17 +190,9 @@ const Events = () => {
                     {event.location}, {event.type}
                   </div>
                   
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
+                  <div className="pe-highlights">
                     {event.highlights.map((h, j) => (
-                      <span key={j} style={{ 
-                        backgroundColor: '#f8f9fa', 
-                        padding: '0.5rem 1.25rem', 
-                        borderRadius: '30px', 
-                        fontSize: '0.9rem', 
-                        fontWeight: '600',
-                        color: '#444', 
-                        border: '1px solid #eaeaea' 
-                      }}>
+                      <span key={j} className="pe-highlight-pill">
                         {h}
                       </span>
                     ))}
