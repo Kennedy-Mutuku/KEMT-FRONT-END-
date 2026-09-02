@@ -4917,6 +4917,11 @@ p {
         padding: 1rem 1.25rem !important;
     }
 
+    /* Compact Events Page */
+    .past-events-section {
+        padding-top: 1.5rem !important;
+    }
+
     /* Fix Leader Card Alignment & Wrapping */
     .leader-info {
         padding: 0.75rem 0.4rem 1rem !important;

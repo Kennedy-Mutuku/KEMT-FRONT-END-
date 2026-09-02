@@ -165,20 +165,20 @@ const Events = () => {
           <div className="section-header">
             <span className="section-subtitle">2025 – 2026</span>
             <h2 className="section-title">Completed Missions</h2>
-            <p className="section-description">A record of the outreach missions KEMT has carried out — each one a testimony of God's faithfulness.</p>
+            <p className="section-description">A record of the outreach missions KEMT has carried out, each one a testimony of God's faithfulness.</p>
           </div>
           <div className="past-events-list">
             {pastEvents.map((event, i) => (
               <div key={event.id} style={{ 
                 display: 'flex',
                 flexWrap: 'wrap',
-                gap: '2.5rem',
+                gap: '1.25rem',
                 borderBottom: i < pastEvents.length - 1 ? '1px solid #eaeaea' : 'none', 
-                padding: '3.5rem 0',
+                padding: '2rem 0',
                 alignItems: 'flex-start'
               }}>
                 {/* Left Column: Date & Impact */}
-                <div style={{ flex: '1 1 200px', borderLeft: '4px solid #f39c12', paddingLeft: '1.5rem' }}>
+                <div style={{ flex: '1 1 200px' }}>
                   <div style={{ color: '#f39c12', fontWeight: '700', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '1.5px', marginBottom: '1rem' }}>
                     {event.dates}
                   </div>
@@ -197,8 +197,8 @@ const Events = () => {
                 {/* Right Column: Details */}
                 <div style={{ flex: '3 1 400px' }}>
                   <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '2rem', color: '#1a1a1a', fontWeight: '800', letterSpacing: '-0.5px' }}>{event.name}</h3>
-                  <div style={{ color: '#666', fontSize: '1.05rem', marginBottom: '2rem', fontWeight: '500' }}>
-                    {event.location} &nbsp;—&nbsp; {event.type}
+                  <div style={{ color: '#666', fontSize: '1.05rem', marginBottom: '1.25rem', fontWeight: '500' }}>
+                    {event.location}, {event.type}
                   </div>
                   
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
