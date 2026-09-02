@@ -192,7 +192,7 @@ const Gallery = () => {
             ))}
           </div>
 
-          {filteredItems.length === 0 && (
+          {filteredAlbums.length === 0 && (
             <div className="gallery-empty-state">
               <i className="fas fa-images gallery-empty-icon" aria-hidden="true"></i>
               <p>No photos found in this category.</p>
