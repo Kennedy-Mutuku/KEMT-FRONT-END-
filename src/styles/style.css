@@ -6582,6 +6582,12 @@ p {
     .about-v2-pills {
         display: none !important;
     }
+    .about-section-v2 {
+        padding: 40px 0 40px !important;
+    }
+    .vision-mission-v2 {
+        padding: 50px 0 !important;
+    }
 }
 .about-v2-pill {
     display: inline-flex;
