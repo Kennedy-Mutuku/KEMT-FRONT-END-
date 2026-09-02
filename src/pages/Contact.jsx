@@ -54,63 +54,6 @@ const Contact = () => {
       <section className="section contact-section">
         <div className="container">
           <div className="contact-grid">
-            {/* Info */}
-            <div className="contact-info-col">
-              <h2 className="section-title">Get in Touch</h2>
-              <p className="lead">
-                Have a question, want to get involved, or need to reach our team? We are happy to connect with you.
-              </p>
-
-              <div className="contact-details">
-                <div className="contact-detail-item">
-                  <div className="contact-detail-icon">
-                    <i className="fas fa-phone"></i>
-                  </div>
-                  <div>
-                    <h4>Phone</h4>
-                    <a href="tel:+254714476295">+254 714 476 295</a>
-                  </div>
-                </div>
-                <div className="contact-detail-item">
-                  <div className="contact-detail-icon">
-                    <i className="fas fa-envelope"></i>
-                  </div>
-                  <div>
-                    <h4>Email</h4>
-                    <a href="mailto:info@kingdomenlightenment.org">info@kingdomenlightenment.org</a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="contact-social">
-                <h4>Follow Us</h4>
-                <div className="contact-social-links">
-                  <a
-                    href="https://www.youtube.com/@KingdomEnlightenmentMinistries"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="social-btn youtube"
-                  >
-                    <i className="fab fa-youtube"></i> YouTube
-                  </a>
-                  <a
-                    href="https://www.tiktok.com/@kingdom_enlightment"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="social-btn tiktok"
-                  >
-                    <i className="fab fa-tiktok"></i> TikTok
-                  </a>
-                  <a href="#" className="social-btn facebook">
-                    <i className="fab fa-facebook-f"></i> Facebook
-                  </a>
-                  <a href="#" className="social-btn instagram">
-                    <i className="fab fa-instagram"></i> Instagram
-                  </a>
-                </div>
-              </div>
-            </div>
-
             {/* Form */}
             <div className="contact-form-col">
               <div className="contact-form-card">
@@ -246,6 +189,63 @@ const Contact = () => {
                     </button>
                   </form>
                 )}
+              </div>
+            </div>
+
+            {/* Info */}
+            <div className="contact-info-col">
+              <h2 className="section-title">Get in Touch</h2>
+              <p className="lead">
+                Have a question, want to get involved, or need to reach our team? We are happy to connect with you.
+              </p>
+
+              <div className="contact-details">
+                <div className="contact-detail-item">
+                  <div className="contact-detail-icon">
+                    <i className="fas fa-phone"></i>
+                  </div>
+                  <div>
+                    <h4>Phone</h4>
+                    <a href="tel:+254714476295">+254 714 476 295</a>
+                  </div>
+                </div>
+                <div className="contact-detail-item">
+                  <div className="contact-detail-icon">
+                    <i className="fas fa-envelope"></i>
+                  </div>
+                  <div>
+                    <h4>Email</h4>
+                    <a href="mailto:info@kingdomenlightenment.org">info@kingdomenlightenment.org</a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="contact-social">
+                <h4>Follow Us</h4>
+                <div className="contact-social-links">
+                  <a
+                    href="https://www.youtube.com/@KingdomEnlightenmentMinistries"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-btn youtube"
+                  >
+                    <i className="fab fa-youtube"></i> YouTube
+                  </a>
+                  <a
+                    href="https://www.tiktok.com/@kingdom_enlightment"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-btn tiktok"
+                  >
+                    <i className="fab fa-tiktok"></i> TikTok
+                  </a>
+                  <a href="#" className="social-btn facebook">
+                    <i className="fab fa-facebook-f"></i> Facebook
+                  </a>
+                  <a href="#" className="social-btn instagram">
+                    <i className="fab fa-instagram"></i> Instagram
+                  </a>
+                </div>
               </div>
             </div>
           </div>
