@@ -3,6 +3,7 @@ import { CATEGORIES, galleryAlbums } from '../data/galleryData';
 
 const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState('All');
+  const [selectedAlbum, setSelectedAlbum] = useState(null);
   const [lightboxItem, setLightboxItem] = useState(null); // { item, index, set }
 
   // Filter items based on active category
@@ -20,15 +21,15 @@ const Gallery = () => {
     return counts;
   }, []);
 
-  // Open Lightbox with all photos for a specific album
-  const openLightbox = (album) => {
+  // Open Lightbox with all photos for a specific album, starting at a given index
+  const openLightbox = (album, startIndex = 0) => {
     const photosSet = album.photos.map(photoSrc => ({
       src: photoSrc,
       title: album.title,
       fullDescription: album.shortCaption,
       objectPosition: album.objectPosition || 'center'
     }));
-    setLightboxItem({ item: photosSet[0], index: 0, set: photosSet });
+    setLightboxItem({ item: photosSet[startIndex], index: startIndex, set: photosSet });
   };
 
   // Close Lightbox
@@ -121,81 +122,131 @@ const Gallery = () => {
       {/* Gallery Section */}
       <section className="gallery-grid-section">
         <div className="container">
-          {/* Header Count & Category Title */}
-          <div className="gallery-results-meta">
-            <h2 className="gallery-results-heading">
-              {activeCategory === 'All' ? 'All Missions & Events' : activeCategory}
-            </h2>
-            <span className="gallery-results-count">
-              Showing {filteredAlbums.length} {filteredAlbums.length === 1 ? 'event album' : 'event albums'}
-            </span>
-          </div>
+          {!selectedAlbum ? (
+            <>
+              {/* Header Count & Category Title */}
+              <div className="gallery-results-meta">
+                <h2 className="gallery-results-heading">
+                  {activeCategory === 'All' ? 'All Missions & Events' : activeCategory}
+                </h2>
+                <span className="gallery-results-count">
+                  Showing {filteredAlbums.length} {filteredAlbums.length === 1 ? 'event album' : 'event albums'}
+                </span>
+              </div>
 
-          {/* Responsive Uniform Image Grid */}
-          <div className="gallery-grid-uniform">
-            {filteredAlbums.map((album) => (
-              <article
-                key={album.id}
-                className="gallery-card"
-                onClick={() => openLightbox(album)}
-                tabIndex={0}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    openLightbox(album);
-                  }
-                }}
-              >
-                <div className="gallery-card__media">
-                  <img
-                    src={album.coverImage}
-                    alt={album.title}
-                    loading="lazy"
-                    className="gallery-card__img"
-                    style={{ objectPosition: album.objectPosition || 'center' }}
-                  />
-                  {/* Badge showing photo count */}
-                  <div style={{
-                    position: 'absolute',
-                    top: '10px',
-                    right: '10px',
-                    background: 'rgba(0,0,0,0.7)',
-                    color: '#fff',
-                    padding: '4px 10px',
-                    borderRadius: '20px',
-                    fontSize: '0.8rem',
-                    fontWeight: '600',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '5px',
-                    zIndex: 5
-                  }}>
-                    <i className="fas fa-camera"></i> {album.photos.length} Photos
-                  </div>
+              {/* Responsive Uniform Image Grid */}
+              <div className="gallery-grid-uniform">
+                {filteredAlbums.map((album) => (
+                  <article
+                    key={album.id}
+                    className="gallery-card"
+                    onClick={() => setSelectedAlbum(album)}
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        setSelectedAlbum(album);
+                      }
+                    }}
+                  >
+                    <div className="gallery-card__media">
+                      <img
+                        src={album.coverImage}
+                        alt={album.title}
+                        loading="lazy"
+                        className="gallery-card__img"
+                        style={{ objectPosition: album.objectPosition || 'center' }}
+                      />
+                      {/* Badge showing photo count */}
+                      <div style={{
+                        position: 'absolute',
+                        top: '10px',
+                        right: '10px',
+                        background: 'rgba(0,0,0,0.7)',
+                        color: '#fff',
+                        padding: '4px 10px',
+                        borderRadius: '20px',
+                        fontSize: '0.8rem',
+                        fontWeight: '600',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '5px',
+                        zIndex: 5
+                      }}>
+                        <i className="fas fa-camera"></i> {album.photos.length} Photos
+                      </div>
+                    </div>
+
+                    {/* Hover Gradient Overlay */}
+                    <div className="gallery-card__overlay">
+                      <div className="gallery-card__overlay-content">
+                        <span className="gallery-card__overlay-tag">{album.category}</span>
+                        <h3 className="gallery-card__title">{album.title}</h3>
+                        <p className="gallery-card__date" style={{ fontSize: '0.85rem', color: '#ffd700', marginBottom: '10px' }}>{album.date}</p>
+                        <p className="gallery-card__caption">{album.shortCaption}</p>
+                        <div className="gallery-card__action">
+                          <span className="gallery-card__view-btn">
+                            <i className="fas fa-images" aria-hidden="true"></i>
+                            <span>View All Photos</span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+
+              {filteredAlbums.length === 0 && (
+                <div className="gallery-empty-state">
+                  <i className="fas fa-images gallery-empty-icon" aria-hidden="true"></i>
+                  <p>No event albums found in this category.</p>
                 </div>
+              )}
+            </>
+          ) : (
+            <div className="album-detail-view">
+              <button 
+                className="album-back-btn" 
+                onClick={() => setSelectedAlbum(null)}
+                aria-label="Back to Albums"
+              >
+                <i className="fas fa-arrow-left"></i> Back to Albums
+              </button>
+              
+              <div className="album-detail-header">
+                <h2>{selectedAlbum.title}</h2>
+                <div className="album-meta">
+                  <span className="album-date"><i className="far fa-calendar-alt"></i> {selectedAlbum.date}</span>
+                  <span className="album-count"><i className="fas fa-camera"></i> {selectedAlbum.photos.length} Photos</span>
+                </div>
+                <p>{selectedAlbum.shortCaption}</p>
+              </div>
 
-                {/* Hover Gradient Overlay */}
-                <div className="gallery-card__overlay">
-                  <div className="gallery-card__overlay-content">
-                    <span className="gallery-card__overlay-tag">{album.category}</span>
-                    <h3 className="gallery-card__title">{album.title}</h3>
-                    <p className="gallery-card__caption">{album.shortCaption}</p>
-                    <div className="gallery-card__action">
-                      <span className="gallery-card__view-btn">
-                        <i className="fas fa-images" aria-hidden="true"></i>
-                        <span>View All Photos</span>
-                      </span>
+              <div className="album-photos-grid">
+                {selectedAlbum.photos.map((photo, index) => (
+                  <div 
+                    key={index} 
+                    className="album-photo-item"
+                    onClick={() => openLightbox(selectedAlbum, index)}
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openLightbox(selectedAlbum, index);
+                      }
+                    }}
+                  >
+                    <img 
+                      src={photo} 
+                      alt={`${selectedAlbum.title} - photo ${index + 1}`} 
+                      loading="lazy"
+                    />
+                    <div className="photo-item-overlay">
+                      <i className="fas fa-expand-alt"></i>
                     </div>
                   </div>
-                </div>
-              </article>
-            ))}
-          </div>
-
-          {filteredAlbums.length === 0 && (
-            <div className="gallery-empty-state">
-              <i className="fas fa-images gallery-empty-icon" aria-hidden="true"></i>
-              <p>No photos found in this category.</p>
+                ))}
+              </div>
             </div>
           )}
         </div>

@@ -115,6 +115,7 @@ export const galleryAlbums = [
     id: 'album-emali',
     coverImage: emali1,
     title: 'Emali Mission',
+    date: 'Oct 2023',
     category: 'Community Outreach',
     shortCaption: 'Spreading hope and unity through outdoor open-air fellowship.',
     photos: [emali1, emali2, emali3, emali4, emali5, emali6, emali7, emali8, emali9, emali10, emali11, emali12, emali13, emali14, emali15, emali16, emali17, emali18]
@@ -123,6 +124,7 @@ export const galleryAlbums = [
     id: 'album-gaukene',
     coverImage: gaukene1,
     title: 'Gaukene & Ntakira Circuit',
+    date: 'Aug 2023',
     category: 'Community Outreach',
     shortCaption: 'Engaging rural households with prayers and practical support.',
     photos: [gaukene1, gaukene2, gaukene3, gaukene4, gaukene5, gaukene6, gaukene7, gaukene8]
@@ -131,6 +133,7 @@ export const galleryAlbums = [
     id: 'album-tala',
     coverImage: tala1,
     title: 'Tala Mission',
+    date: 'Jun 2023',
     category: 'Community Outreach',
     shortCaption: 'Bringing transformed lives to the marketplace and homes of Tala.',
     photos: [tala1, tala2, tala3, tala4, tala5, tala6, tala7, tala8, tala9, tala10, tala11, tala12, tala13, tala14, tala15, tala16, tala17, tala18]
@@ -139,6 +142,7 @@ export const galleryAlbums = [
     id: 'album-ruanyage',
     coverImage: ruanyage1,
     title: 'Ruanyage Mission',
+    date: 'Apr 2023',
     category: 'Community Outreach',
     shortCaption: 'Worship and revival gathering in the Ruanyage countryside.',
     photos: [ruanyage1, ruanyage2, ruanyage3, ruanyage4, ruanyage5, ruanyage6, ruanyage7, ruanyage8, ruanyage9, ruanyage10, ruanyage11]
@@ -149,6 +153,7 @@ export const galleryAlbums = [
     id: 'album-rwanyange-sec',
     coverImage: rwanyangeSec1,
     title: 'Rwanyange Secondary',
+    date: 'Sep 2023',
     category: 'Youth & Schools',
     shortCaption: 'Inspiring high school students with mentorship and moral leadership.',
     photos: [rwanyangeSec1, rwanyangeSec2, rwanyangeSec3, rwanyangeSec4, rwanyangeSec5, rwanyangeSec6, rwanyangeSec7, rwanyangeSec8, rwanyangeSec9, rwanyangeSec10, rwanyangeSec11, rwanyangeSec12, rwanyangeSec13, rwanyangeSec14, rwanyangeSec15]
@@ -157,6 +162,7 @@ export const galleryAlbums = [
     id: 'album-kitheo',
     coverImage: kitheo1,
     title: 'Kitheo Senior School',
+    date: 'Jul 2023',
     category: 'Youth & Schools',
     shortCaption: 'Life skills and spiritual mentorship for graduating seniors.',
     photos: [kitheo1, kitheo2, kitheo3, kitheo4, kitheo5, kitheo6, kitheo7]
@@ -167,6 +173,7 @@ export const galleryAlbums = [
     id: 'album-hands',
     coverImage: handsTogether,
     title: 'Hands Together in Service',
+    date: 'Ongoing',
     category: 'Service & Action',
     shortCaption: 'Volunteers and leaders uniting hands for humanitarian impact.',
     photos: [handsTogether]
@@ -177,6 +184,7 @@ export const galleryAlbums = [
     id: 'album-leadership',
     coverImage: vincentImg,
     title: 'Leadership & Team',
+    date: 'Current',
     category: 'Leadership & Team',
     shortCaption: 'Guiding the organizational vision, strategic direction, and ministry partnerships.',
     photos: [vincentImg, moriceImg, mwanziaImg, kennedyImg, mukamiImg, rayImg, georgeImg, odinaImg]
