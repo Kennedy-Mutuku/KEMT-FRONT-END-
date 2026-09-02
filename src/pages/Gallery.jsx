@@ -30,13 +30,13 @@ const categorize = () => {
 const photos = categorize();
 
 const tabs = [
-  { key: 'all',               label: 'All Photos',             icon: 'fas fa-th' },
-  { key: 'rwanyange_mission', label: 'Rwanyange Mission',      icon: 'fas fa-globe-africa' },
-  { key: 'gikumene_ntakira',  label: 'Gikumene & Ntakira',    icon: 'fas fa-globe-africa' },
-  { key: 'tala',              label: 'Tala Mission',           icon: 'fas fa-globe-africa' },
-  { key: 'emali',             label: 'Emali Mission',          icon: 'fas fa-globe-africa' },
-  { key: 'rwanyange_school',  label: 'Rwanyange School',       icon: 'fas fa-graduation-cap' },
-  { key: 'kitheo',            label: 'St. Kitheo School',      icon: 'fas fa-graduation-cap' },
+  { key: 'all',               label: 'All Photos' },
+  { key: 'rwanyange_mission', label: 'Rwanyange Mission' },
+  { key: 'gikumene_ntakira',  label: 'Gikumene & Ntakira' },
+  { key: 'tala',              label: 'Tala Mission' },
+  { key: 'emali',             label: 'Emali Mission' },
+  { key: 'rwanyange_school',  label: 'Rwanyange School' },
+  { key: 'kitheo',            label: 'St. Kitheo School' },
 ];
 
 const Gallery = () => {
@@ -89,7 +89,6 @@ const Gallery = () => {
                 className={`gallery-tab ${active === tab.key ? 'gallery-tab--active' : ''}`}
                 onClick={() => setActive(tab.key)}
               >
-                <i className={tab.icon}></i>
                 <span>{tab.label}</span>
               </button>
             ))}
