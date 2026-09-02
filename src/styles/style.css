@@ -6883,6 +6883,25 @@ p {
     .about-v2-photo-main { height: 320px; }
 
     .ticker-label { display: none; }
+
+    .ministries-left {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .ministries-left .section-subtitle,
+    .ministries-left .section-title,
+    .ministries-left .section-description {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .ministries-left .section-title {
+        font-size: 2.8rem !important;
+        line-height: 1.2;
+    }
+    .ministries-left .section-subtitle {
+        font-size: 1.1rem !important;
+    }
 }
 @media (max-width: 540px) {
     .about-v2-photo-accent { width: 120px; height: 120px; }
