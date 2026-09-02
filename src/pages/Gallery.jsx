@@ -1,10 +1,40 @@
 import React, { useState, useMemo, useEffect, useCallback } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { CATEGORIES, galleryAlbums } from '../data/galleryData';
 
 const Gallery = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [activeCategory, setActiveCategory] = useState('All');
-  const [selectedAlbum, setSelectedAlbum] = useState(null);
-  const [lightboxItem, setLightboxItem] = useState(null); // { item, index, set }
+
+  const albumIdFromUrl = searchParams.get('album');
+  const photoIndexFromUrl = searchParams.get('photo');
+
+  // Selected Album derived from URL
+  const selectedAlbum = useMemo(() => {
+    if (!albumIdFromUrl) return null;
+    return galleryAlbums.find(album => album.id === albumIdFromUrl) || null;
+  }, [albumIdFromUrl]);
+
+  // Lightbox Item derived from active album & URL photo index
+  const lightboxItem = useMemo(() => {
+    if (!selectedAlbum || photoIndexFromUrl === null) return null;
+    const photoIdx = parseInt(photoIndexFromUrl, 10);
+    if (isNaN(photoIdx) || photoIdx < 0 || photoIdx >= selectedAlbum.photos.length) {
+      return null;
+    }
+    const photosSet = selectedAlbum.photos.map(photoSrc => ({
+      src: photoSrc,
+      title: selectedAlbum.title,
+      fullDescription: selectedAlbum.shortCaption,
+      category: selectedAlbum.category,
+      objectPosition: selectedAlbum.objectPosition || 'center'
+    }));
+    return {
+      item: photosSet[photoIdx],
+      index: photoIdx,
+      set: photosSet
+    };
+  }, [selectedAlbum, photoIndexFromUrl]);
 
   // Filter items based on active category
   const filteredAlbums = useMemo(() => {
@@ -21,45 +51,52 @@ const Gallery = () => {
     return counts;
   }, []);
 
-  // Open Lightbox with all photos for a specific album, starting at a given index
-  const openLightbox = (album, startIndex = 0) => {
-    const photosSet = album.photos.map(photoSrc => ({
-      src: photoSrc,
-      title: album.title,
-      fullDescription: album.shortCaption,
-      objectPosition: album.objectPosition || 'center'
-    }));
-    setLightboxItem({ item: photosSet[startIndex], index: startIndex, set: photosSet });
+  // Select Album (Pushes state to URL history)
+  const selectAlbum = (album) => {
+    setSearchParams({ album: album.id });
+    window.scrollTo({ top: 350, behavior: 'smooth' });
   };
 
-  // Close Lightbox
+  // Close Album (Steps back in browser history to All Albums view)
+  const closeAlbum = () => {
+    if (searchParams.has('album')) {
+      window.history.back();
+    } else {
+      setSearchParams({});
+    }
+  };
+
+  // Open Lightbox for a photo (Pushes state to URL history)
+  const openLightbox = (album, startIndex = 0) => {
+    setSearchParams({ album: album.id, photo: startIndex });
+  };
+
+  // Close Lightbox (Steps back in browser history to Album Detail view)
   const closeLightbox = () => {
-    setLightboxItem(null);
+    if (searchParams.has('photo')) {
+      window.history.back();
+    } else {
+      const newParams = new URLSearchParams(searchParams);
+      newParams.delete('photo');
+      setSearchParams(newParams);
+    }
   };
 
   // Next Lightbox Item
   const nextPhoto = useCallback(() => {
-    if (!lightboxItem) return;
+    if (!lightboxItem || !selectedAlbum) return;
     const nextIdx = (lightboxItem.index + 1) % lightboxItem.set.length;
-    setLightboxItem({
-      item: lightboxItem.set[nextIdx],
-      index: nextIdx,
-      set: lightboxItem.set,
-    });
-  }, [lightboxItem]);
+    setSearchParams({ album: selectedAlbum.id, photo: nextIdx }, { replace: true });
+  }, [lightboxItem, selectedAlbum, setSearchParams]);
 
   // Previous Lightbox Item
   const prevPhoto = useCallback(() => {
-    if (!lightboxItem) return;
+    if (!lightboxItem || !selectedAlbum) return;
     const prevIdx = (lightboxItem.index - 1 + lightboxItem.set.length) % lightboxItem.set.length;
-    setLightboxItem({
-      item: lightboxItem.set[prevIdx],
-      index: prevIdx,
-      set: lightboxItem.set,
-    });
-  }, [lightboxItem]);
+    setSearchParams({ album: selectedAlbum.id, photo: prevIdx }, { replace: true });
+  }, [lightboxItem, selectedAlbum, setSearchParams]);
 
-  // Keyboard navigation support
+  // Keyboard navigation & body scroll lock support
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (!lightboxItem) return;
@@ -140,12 +177,12 @@ const Gallery = () => {
                   <article
                     key={album.id}
                     className="gallery-card"
-                    onClick={() => setSelectedAlbum(album)}
+                    onClick={() => selectAlbum(album)}
                     tabIndex={0}
                     onKeyDown={(e) => {
                       if (e.key === 'Enter' || e.key === ' ') {
                         e.preventDefault();
-                        setSelectedAlbum(album);
+                        selectAlbum(album);
                       }
                     }}
                   >
@@ -207,7 +244,7 @@ const Gallery = () => {
             <div className="album-detail-view">
               <button 
                 className="album-back-btn" 
-                onClick={() => setSelectedAlbum(null)}
+                onClick={closeAlbum}
                 aria-label="Back to Albums"
               >
                 <i className="fas fa-arrow-left"></i> Back to Albums

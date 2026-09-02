@@ -8,6 +8,8 @@ import mwanziaImg from '../../assets/Mwanzia.jpg';
 import kennedyImg from '../../assets/Kennedy Mutuku.JPG';
 import mukamiImg from '../../assets/mukami.jpg';
 import rayImg from '../../assets/ray.jpg';
+import odinaImg from '../../assets/odina.jpg';
+import georgeImg from '../../assets/george.jpg';
 
 const leadershipMembers = [
   { id: 1, name: 'Vincent Mwendwa', role: 'Director', email: 'info@kingdomenlightenment.org', phone: '+254 714 476 295', initials: 'VM', color: '#e67e22', image: vincentImg, status: 'Active Leadership' },
@@ -15,8 +17,10 @@ const leadershipMembers = [
   { id: 3, name: 'Mwanzia David', role: 'Outreach Incharge', email: 'info@kingdomenlightenment.org', phone: '+254 714 476 295', initials: 'MD', color: '#27ae60', image: mwanziaImg, status: 'Active Leadership' },
   { id: 4, name: 'Kennedy Mutuku', role: 'Media Director', email: 'info@kingdomenlightenment.org', phone: '+254 714 476 295', initials: 'KM', color: '#8e44ad', image: kennedyImg, status: 'Active Leadership' },
   { id: 5, name: 'Evaline Mukami', role: 'Secretary', email: 'info@kingdomenlightenment.org', phone: '+254 714 476 295', initials: 'EM', color: '#16a085', image: mukamiImg, status: 'Active Leadership' },
-  { id: 6, name: 'Raymond Ewoi', role: 'Prayer Coordinator', email: 'info@kingdomenlightenment.org', phone: '+254 714 476 295', initials: 'RE', color: '#c0392b', image: rayImg, status: 'Active Leadership' },
-  { id: 7, name: 'Victor Muriungi', role: 'Worship Coordinator', email: 'info@kingdomenlightenment.org', phone: '+254 714 476 295', initials: 'VM', color: '#d4ac0d', status: 'Active Leadership' },
+  { id: 6, name: 'Grace Odina Kambaga', role: 'Treasurer', email: 'info@kingdomenlightenment.org', phone: '+254 714 476 295', initials: 'GK', color: '#e74c3c', image: odinaImg, status: 'Active Leadership' },
+  { id: 7, name: 'George William', role: 'Welfare Incharge', email: 'info@kingdomenlightenment.org', phone: '+254 714 476 295', initials: 'GW', color: '#2c3e50', image: georgeImg, status: 'Active Leadership' },
+  { id: 8, name: 'Raymond Ewoi', role: 'Prayer Coordinator', email: 'info@kingdomenlightenment.org', phone: '+254 714 476 295', initials: 'RE', color: '#c0392b', image: rayImg, status: 'Active Leadership' },
+  { id: 9, name: 'Victor Muriungi', role: 'Worship Coordinator', email: 'info@kingdomenlightenment.org', phone: '+254 714 476 295', initials: 'VM', color: '#d4ac0d', status: 'Active Leadership' },
 ];
 
 const AdminUsers = () => {

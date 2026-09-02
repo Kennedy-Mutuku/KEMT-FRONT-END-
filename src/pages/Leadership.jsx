@@ -7,6 +7,8 @@ import mwanziaImg from '../assets/Mwanzia.jpg';
 import kennedyImg from '../assets/Kennedy Mutuku.JPG';
 import mukamiImg from '../assets/mukami.jpg';
 import rayImg from '../assets/ray.jpg';
+import odinaImg from '../assets/odina.jpg';
+import georgeImg from '../assets/george.jpg';
 
 const leadership = [
   { name: 'Vincent Mwendwa',   role: 'Director',            initials: 'VM', color: '#e67e22', image: vincentImg },
@@ -14,6 +16,8 @@ const leadership = [
   { name: 'Mwanzia David',     role: 'Outreach Incharge',   initials: 'MD', color: '#27ae60', image: mwanziaImg },
   { name: 'Kennedy Mutuku',    role: 'Digital Infrastructure Director',      initials: 'KM', color: '#8e44ad', image: kennedyImg },
   { name: 'Evaline Mukami',    role: 'Secretary',           initials: 'EM', color: '#16a085', image: mukamiImg },
+  { name: 'Grace Odina Kambaga', role: 'Treasurer',          initials: 'GK', color: '#e74c3c', image: odinaImg },
+  { name: 'George William',    role: 'Welfare Incharge',    initials: 'GW', color: '#2c3e50', image: georgeImg },
   { name: 'Raymond Ewoi',      role: 'Prayer Coordinator',  initials: 'RE', color: '#c0392b', image: rayImg },
   { name: 'Victor Muriungi',   role: 'Worship Coordinator', initials: 'VM', color: '#d4ac0d' },
 ];
