@@ -377,55 +377,69 @@
 
 @media (max-width: 768px) {
   .creative-hero {
-    height: auto;
-    min-height: 580px;
+    height: 260px;
+    min-height: unset;
+    overflow: hidden;
   }
 
   .creative-container {
     flex-direction: column;
     justify-content: flex-start;
-    padding: 20px 15px 0;
-    height: auto;
-    gap: 10px;
+    padding: 10px 12px 0;
+    height: 100%;
+    gap: 0;
   }
   
   .creative-text-col {
     width: 100%;
-    margin-top: 10px;
-    order: 1; /* Text first */
+    margin-top: 0;
+    order: 1;
   }
   
   .text-wrapper {
     height: auto;
-    min-height: 200px;
+    min-height: unset;
   }
 
   .slide-title {
-    font-size: 2rem;
+    font-size: 1.55rem;
+    margin-bottom: 6px;
+  }
+
+  .slide-subtitle {
+    font-size: 0.75rem;
+    margin-bottom: 4px;
   }
 
   .slide-desc {
-    font-size: 0.95rem;
-    margin-bottom: 15px;
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+    max-width: 70%;
   }
 
   .slide-actions {
-    gap: 10px;
+    gap: 8px;
+    margin-bottom: 0;
   }
 
-  .creative-visual-col {
-    display: block;
-    order: 2; /* Fingers below */
-    width: 100%;
-    height: 220px;
-    position: relative;
+  .btn-modern-primary,
+  .btn-modern-outline {
+    padding: 7px 16px;
+    font-size: 0.8rem;
   }
 
+  /* Move nav bar up — stick it right below the buttons with no extra gap */
+  .slider-controls-modern {
+    margin-top: 6px;
+  }
+
+  /* Fingers: keep sizes, center them in the hero absolutely */
   .fingers-container {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%) rotate(25deg);
     gap: 10px;
+    z-index: 6;
   }
 
   .finger {
@@ -434,14 +448,24 @@
 
   .finger-1 {
     height: 240px;
-    transform: translateY(15px);
+    transform: translateY(20px);
   }
   .finger-2 {
     height: 300px;
-    transform: translateY(-20px);
+    transform: translateY(-30px);
   }
   .finger-3 {
     height: 240px;
-    transform: translateY(15px);
+    transform: translateY(20px);
+  }
+
+  /* Keep background images covering the hero */
+  .creative-bg-image {
+    width: 100%;
+    clip-path: none;
+  }
+
+  .creative-bg-right {
+    display: none;
   }
 }
