@@ -72,11 +72,13 @@ const Navbar = () => {
                                 <li className={`dropdown ${openDropdown === 'ministries' ? 'active' : ''}`}>
                                     <NavLink to="/ministries" onClick={() => toggleDropdown('ministries')}>Departments <i className="fas fa-chevron-down"></i></NavLink>
                                     <ul className="dropdown-menu">
-                                        <li><Link to="/ministries#evangelism" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>Evangelism &amp; Missions</Link></li>
-                                        <li><Link to="/ministries#prayer" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>Prayer Department</Link></li>
-                                        <li><Link to="/ministries#compassion" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>Compassion Ministry</Link></li>
-                                        <li><Link to="/ministries#highschool" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>High School Ministry</Link></li>
-                                        <li><Link to="/programs" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>Outreach</Link></li>
+                                        <li><Link to="/ministries#prayer" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>01 Prayer Department</Link></li>
+                                        <li><Link to="/ministries#worship" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>02 Praise and Worship</Link></li>
+                                        <li><Link to="/ministries#welfare" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>03 Welfare/Compassion</Link></li>
+                                        <li><Link to="/ministries#outreach" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>04 Outreach</Link></li>
+                                        <li><Link to="/ministries#discipleship" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>05 Discipleship</Link></li>
+                                        <li><Link to="/ministries#highschool" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>06 High School</Link></li>
+                                        <li><Link to="/ministries#digital" onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null); }}>07 Digital Infrastructure</Link></li>
                                     </ul>
                                 </li>
                                 <li><NavLink to="/leadership" onClick={() => setMobileMenuOpen(false)}>Leadership</NavLink></li>

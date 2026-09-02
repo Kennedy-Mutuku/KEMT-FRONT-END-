@@ -138,7 +138,7 @@ const scrollToHash = (hash) => {
 
 const Ministries = () => {
   const { hash } = useLocation();
-  const [activeSection, setActiveSection] = useState('evangelism');
+  const [activeSection, setActiveSection] = useState('prayer');
   const [lightbox, setLightbox] = useState(null);
 
   useEffect(() => {
@@ -153,7 +153,7 @@ const Ministries = () => {
   // ScrollSpy listener to highlight active navigation pill
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['evangelism', 'prayer', 'compassion', 'highschool'];
+      const sections = ['prayer', 'worship', 'welfare', 'outreach', 'discipleship', 'highschool', 'digital'];
       const scrollPosition = window.scrollY + 220;
 
       for (const sectionId of sections) {
@@ -211,11 +211,14 @@ const Ministries = () => {
         <div className="container">
           <div className="dept-nav__inner">
             {[
-              { id: 'evangelism', hash: '#evangelism', icon: 'fas fa-globe-africa', label: 'Evangelism & Missions' },
-              { id: 'prayer',     hash: '#prayer',     icon: 'fas fa-hands-praying', label: 'Prayer Department' },
-              { id: 'compassion', hash: '#compassion', icon: 'fas fa-hand-holding-heart', label: 'Compassion Ministry' },
-              { id: 'highschool', hash: '#highschool', icon: 'fas fa-graduation-cap', label: 'High School Ministry' },
-            ].map(({ id, hash: h, icon, label }) => (
+              { id: 'prayer',       hash: '#prayer',       label: 'Prayer Department' },
+              { id: 'worship',      hash: '#worship',      label: 'Praise and Worship' },
+              { id: 'welfare',      hash: '#welfare',      label: 'Welfare/Compassion' },
+              { id: 'outreach',     hash: '#outreach',     label: 'Outreach' },
+              { id: 'discipleship', hash: '#discipleship', label: 'Discipleship' },
+              { id: 'highschool',   hash: '#highschool',   label: 'High School' },
+              { id: 'digital',      hash: '#digital',      label: 'Digital Infrastructure' },
+            ].map(({ id, hash: h, label }) => (
               <button
                 key={h}
                 className={`dept-nav__pill ${activeSection === id ? 'dept-nav__pill--active' : ''}`}
@@ -224,338 +227,206 @@ const Ministries = () => {
                   scrollToHash(h);
                 }}
               >
-                <i className={icon}></i> {label}
+                {label}
               </button>
             ))}
           </div>
         </div>
       </div>
 
-      {/* 01 — Evangelism & Missions */}
-      <section id="evangelism" className="dept-section section">
+      {/* 01 — Prayer Department */}
+      <section id="prayer" className="dept-section section">
         <div className="container">
-
-          {/* Top Row: Photo collage & Header text at the same level */}
-          <div className="dept-intro-row">
-            <div className="dept-media">
-              <div
-                className="dept-photo-collage"
-                onClick={() => openLightbox([ev1, ev2, ev3], 0, 'Evangelism & Missions Outreach')}
-                title="Click to view full photos"
-              >
-                <img src={ev1} alt="Evangelism & Missions" className="collage-main" />
-                <div className="collage-side">
-                  <img src={ev2} alt="Street Evangelism" />
-                  <img src={ev3} alt="Crusades & Revivals" />
-                </div>
-                <div className="collage-zoom-badge">
-                  <i className="fas fa-expand"></i> View Photos
-                </div>
-              </div>
+          <div className="dept-unified-grid">
+            <div className="dept-media-sleek" onClick={() => openLightbox([pr1, pr2, pr3], 0, 'Prayer Department')} title="Click to view gallery">
+              <img src={pr1} alt="Prayer" />
+              <div className="dept-media-badge"><i className="fas fa-expand"></i> View Gallery</div>
             </div>
-
-            <div className="dept-content">
-              <span className="dept-number">01</span>
-              <span className="section-subtitle">Department</span>
-              <h2 className="section-title">Evangelism &amp; Missions</h2>
-              <p className="lead">
-                We are called to go — and go we do. KEMT's evangelism arm takes the Gospel to communities across
-                Kenya through strategic mission trips, street evangelism, one-on-one outreach and mass crusades.
-              </p>
-              <p>
-                From Meru to Machakos and from Makueni to Kajiado, our missioners carry the light of Christ into
-                every community they enter. Between 2025 and 2026, we have witnessed <strong>445+ souls</strong> come
-                to Christ across five major mission outreaches.
-              </p>
-            </div>
-          </div>
-
-          {/* Full-width Lower Section spanning the entire container */}
-          <div className="dept-lower-content">
-            <h4 className="dept-lower-heading">Core Outreach Methodologies</h4>
-            <div className="methodologies-grid">
-              {evangelismMethodologies.map((m, idx) => (
-                <div className="methodology-card" key={idx}>
-                  <div className="methodology-card__icon">
-                    <i className={m.icon}></i>
-                  </div>
-                  <h5>{m.title}</h5>
-                  <p>{m.desc}</p>
-                </div>
-              ))}
-            </div>
-
-            {/* Centered Actions */}
-            <div className="dept-actions dept-actions--center">
-              <Link to="/programs" className="btn btn-primary dept-cta">
-                Explore Mission Outreaches <i className="fas fa-arrow-right"></i>
-              </Link>
-              <Link to="/gallery" className="btn btn-secondary dept-cta">
-                <i className="fas fa-images"></i> Mission Gallery
-              </Link>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* 02 — Prayer Department */}
-      <section id="prayer" className="dept-section dept-section--alt section">
-        <div className="container">
-
-          {/* Top Row: Photo collage & Prayer Intro Header at the same level */}
-          <div className="dept-intro-row dept-intro-row--reverse">
-            <div className="dept-content">
-              <span className="dept-number">02</span>
-              <span className="section-subtitle">Department</span>
+            
+            <div className="dept-content-sleek">
               <h2 className="section-title">Prayer Department</h2>
               <p className="lead">
-                Prayer is the foundation of everything we do at Kingdom Enlightenment Missions Team.
+                Prayer is the foundation of everything we do. Our Prayer Department provides a strong spiritual foundation through a dedicated committee committed to seeking God.
               </p>
-              <p>
-                Our Prayer Department provides a strong spiritual foundation for the ministry through a dedicated
-                prayer committee committed to seeking God and standing in the gap for the work of the Kingdom.
-              </p>
-              <p>
-                Through prayer we seek God's direction, strength, wisdom and empowerment as we continue to
-                fulfil our mandate of reaching the unreached and advancing the Kingdom of God.
-              </p>
-            </div>
-
-            <div className="dept-media">
-              <div
-                className="dept-photo-collage"
-                onClick={() => openLightbox([pr1, pr2, pr3], 0, 'Prayer & Fasting Department')}
-                title="Click to view full photos"
-              >
-                <img src={pr1} alt="Prayer Department" className="collage-main" />
-                <div className="collage-side">
-                  <img src={pr2} alt="Intercession Sessions" />
-                  <img src={pr3} alt="Team Prayer Walks" />
-                </div>
-                <div className="collage-zoom-badge">
-                  <i className="fas fa-expand"></i> View Photos
-                </div>
+              
+              <div className="sleek-prayer-box">
+                <h5><i className="fas fa-fire"></i> Thursday Prayer &amp; Fasting</h5>
+                <p>Every Thursday, our team intercedes for our missions, communities, and schools (6:00 AM – 6:00 PM).</p>
+              </div>
+              
+              <div className="dept-actions">
+                <Link to="/contact" className="btn btn-primary">Submit Prayer Request</Link>
               </div>
             </div>
           </div>
-
-          {/* Full-width Lower Section: Thursday Fasting Spotlight, Quote & 6 Pillars Grid */}
-          <div className="dept-lower-content">
-
-            {/* Spotlight Thursday Prayer & Fasting Box covering full width */}
-            <div className="prayer-schedule-box">
-              <div className="prayer-schedule-box__header">
-                <div className="prayer-schedule-box__icon">
-                  <i className="fas fa-fire"></i>
-                </div>
-                <div>
-                  <h4>Every Thursday Prayer &amp; Fasting</h4>
-                  <span className="prayer-schedule-box__tag">Weekly Spiritual Foundation</span>
-                </div>
-              </div>
-              <p>
-                Every <strong>Thursday</strong>, our entire team comes together for a dedicated time of{' '}
-                <strong>prayer and fasting</strong>, interceding for our missions, missioners, communities,
-                churches, schools and the advancement of the Gospel.
-              </p>
-              <div className="prayer-schedule-box__footer">
-                <span><i className="fas fa-clock"></i> 6:00 AM – 6:00 PM (EAT)</span>
-                <span><i className="fas fa-users"></i> Dedicated Intercession Committee</span>
-                <span><i className="fas fa-hands-praying"></i> Standing in the Gap for Communities</span>
-              </div>
-            </div>
-
-            <blockquote className="dept-quote">
-              "We believe that before we go out to reach people we must first go before God in prayer."
-            </blockquote>
-
-            <div className="prayer-pillars-grid">
-              {prayerPillars.map((p, i) => (
-                <div className="prayer-pillar-card" key={i}>
-                  <div className="prayer-pillar-card__icon">
-                    <i className={p.icon}></i>
-                  </div>
-                  <div>
-                    <h5>{p.title}</h5>
-                    <p>{p.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Centered Actions */}
-            <div className="dept-actions dept-actions--center">
-              <Link to="/contact" className="btn btn-primary dept-cta">
-                <i className="fas fa-hands-praying"></i> Submit Prayer Request
-              </Link>
-            </div>
-          </div>
-
         </div>
       </section>
 
-      {/* 03 — Compassion Ministry */}
-      <section id="compassion" className="dept-section section">
+      {/* 02 — Praise and Worship */}
+      <section id="worship" className="dept-section dept-section--alt section">
         <div className="container">
-
-          {/* Top Row: Photo collage & Intro Header at the same level */}
-          <div className="dept-intro-row">
-            <div className="dept-media">
-              <div
-                className="dept-photo-collage"
-                onClick={() => openLightbox([co1, co2, co3], 0, 'Compassion Ministry Outreaches')}
-                title="Click to view full photos"
-              >
-                <img src={co1} alt="Compassion Ministry" className="collage-main" />
-                <div className="collage-side">
-                  <img src={co2} alt="Food and Clothing Outreach" />
-                  <img src={co3} alt="Youth Guidance & Counsel" />
-                </div>
-                <div className="collage-zoom-badge">
-                  <i className="fas fa-expand"></i> View Photos
-                </div>
+          <div className="dept-unified-grid dept-unified-grid--reverse">
+            <div className="dept-content-sleek">
+              <h2 className="section-title">Praise and Worship</h2>
+              <p className="lead">
+                Leading the congregation into the presence of God through spirit-filled worship and praise. We believe worship is a lifestyle that transforms hearts.
+              </p>
+              
+              <blockquote className="sleek-quote">
+                "God is spirit, and his worshipers must worship in the Spirit and in truth."
+              </blockquote>
+              
+              <div className="dept-actions">
+                <Link to="/contact" className="btn btn-primary">Join the Worship Team</Link>
               </div>
             </div>
 
-            <div className="dept-content">
-              <span className="dept-number">03</span>
-              <span className="section-subtitle">Department</span>
-              <h2 className="section-title">Compassion Ministry</h2>
-              <p className="lead">
-                At Kingdom Enlightenment Missions Team we believe that the Gospel must not only be preached with
-                our lips but also demonstrated through our actions.
-              </p>
-              <p>
-                Through our missions we engage communities with compassion, reaching people at their point of
-                need and reminding them that they are seen, valued and loved by God.
-              </p>
-              <p>
-                Our compassion ministry involves giving food and clothing, offering counsel, praying with people
-                and walking alongside those facing different challenges, with special attention to the young generation.
-                We create safe spaces where young people can find encouragement, hope, direction and spiritual nourishment.
-              </p>
+            <div className="dept-media-sleek" onClick={() => openLightbox([ev2], 0, 'Praise and Worship')} title="Click to view gallery">
+              <img src={ev2} alt="Worship" />
+              <div className="dept-media-badge"><i className="fas fa-expand"></i> View Image</div>
             </div>
           </div>
-
-          {/* Full-width Lower Section: Narrative, 4 Wings Grid & Quote */}
-          <div className="dept-lower-content">
-            <div className="compassion-overview-card">
-              <p>
-                For us compassion is more than meeting a physical need—it is an opportunity to reveal the heart
-                of Christ. Every meal shared, garment given, prayer offered and life encouraged becomes a bridge
-                through which the love of Jesus reaches the community.
-              </p>
-            </div>
-
-            {/* 4 Compassion Wings spanning across the full width */}
-            <div className="compassion-wings-grid">
-              {compassionWings.map((item, i) => (
-                <div className="compassion-wing-card" key={i}>
-                  <div className="compassion-wing-card__icon">
-                    <i className={item.icon}></i>
-                  </div>
-                  <div className="compassion-wing-card__text">
-                    <h4>{item.title}</h4>
-                    <p>{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <blockquote className="dept-quote">
-              "We serve because Christ first loved us. We care because every soul matters."
-            </blockquote>
-
-            {/* Centered Actions */}
-            <div className="dept-actions dept-actions--center">
-              <Link to="/donate" className="btn btn-primary dept-cta">
-                <i className="fas fa-heart"></i> Support Compassion Fund
-              </Link>
-              <Link to="/contact" className="btn btn-secondary dept-cta">
-                Partner in Giving
-              </Link>
-            </div>
-          </div>
-
         </div>
       </section>
 
-      {/* 04 — High School Ministry */}
+      {/* 03 — Welfare/Compassion */}
+      <section id="welfare" className="dept-section section">
+        <div className="container">
+          <div className="dept-unified-grid">
+            <div className="dept-media-sleek" onClick={() => openLightbox([co1, co2, co3], 0, 'Welfare & Compassion Ministry')} title="Click to view gallery">
+              <img src={co1} alt="Welfare" />
+              <div className="dept-media-badge"><i className="fas fa-expand"></i> View Gallery</div>
+            </div>
+            
+            <div className="dept-content-sleek">
+              <h2 className="section-title">Welfare/Compassion</h2>
+              <p className="lead">
+                Through our missions we engage communities with compassion, reaching people at their point of need and reminding them that they are seen, valued and loved by God.
+              </p>
+              
+              <blockquote className="sleek-quote">
+                "We serve because Christ first loved us. We care because every soul matters."
+              </blockquote>
+              
+              <div className="dept-actions">
+                <Link to="/donate" className="btn btn-primary">Support Compassion Fund</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 04 — Outreach */}
+      <section id="outreach" className="dept-section dept-section--alt section">
+        <div className="container">
+          <div className="dept-unified-grid dept-unified-grid--reverse">
+            <div className="dept-content-sleek">
+              <h2 className="section-title">Outreach</h2>
+              <p className="lead">
+                We are called to go — and go we do. KEMT's outreach arm takes the Gospel to communities across Kenya through strategic mission trips, street evangelism, and mass crusades.
+              </p>
+              
+              <div className="dept-actions">
+                <Link to="/programs" className="btn btn-primary">Explore Missions</Link>
+              </div>
+            </div>
+
+            <div className="dept-media-sleek" onClick={() => openLightbox([ev1, ev2, ev3], 0, 'Outreach & Missions')} title="Click to view gallery">
+              <img src={ev1} alt="Outreach" />
+              <div className="dept-media-badge"><i className="fas fa-expand"></i> View Gallery</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 05 — Discipleship */}
+      <section id="discipleship" className="dept-section section">
+        <div className="container">
+          <div className="dept-unified-grid">
+            <div className="dept-media-sleek" onClick={() => openLightbox([ks1], 0, 'Discipleship')} title="Click to view gallery">
+              <img src={ks1} alt="Discipleship" />
+              <div className="dept-media-badge"><i className="fas fa-expand"></i> View Image</div>
+            </div>
+            
+            <div className="dept-content-sleek">
+              <h2 className="section-title">Discipleship</h2>
+              <p className="lead">
+                Grounding believers in the Word of God to ensure long-term spiritual growth. We focus on teaching, mentorship, and building mature followers of Christ.
+              </p>
+              
+              <blockquote className="sleek-quote">
+                "Therefore go and make disciples of all nations, teaching them to obey everything I have commanded you."
+              </blockquote>
+              
+              <div className="dept-actions">
+                <Link to="/contact" className="btn btn-primary">Join a Study Group</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 06 — High School Ministry */}
       <section id="highschool" className="dept-section dept-section--alt section">
         <div className="container">
           <div className="section-header">
-            <span className="dept-number" style={{ textAlign: 'center', display: 'block' }}>04</span>
-            <span className="section-subtitle">Department</span>
             <h2 className="section-title">High School Ministry</h2>
             <p className="section-description">
-              Reaching the next generation where they are — in the classroom, the dormitory and the heart.
-              Empowering students through spiritual nourishment, academic motivation and life mentorship.
+              Reaching the next generation where they are — in the classroom, the dormitory and the heart. Empowering students through spiritual nourishment, academic motivation and life mentorship.
             </p>
           </div>
 
-          <div className="schools-grid">
+          <div className="schools-compact-grid">
             {schools.map((school, i) => (
-              <div className="school-card" key={i}>
-                {/* Photo header */}
-                <div
-                  className="school-card__img"
-                  onClick={() => openLightbox(school.photos, 0, `${school.name} - ${school.program}`)}
-                  title="Click to view photos"
-                >
-                  <img src={school.photos[0]} alt={school.name} className="school-main-photo" />
-                  <div className="school-photo-strip">
-                    <img src={school.photos[1]} alt="" />
-                    <img src={school.photos[2]} alt="" />
-                  </div>
-                  <div className="school-card__num">{school.number}</div>
-                  <div className="school-card__zoom-hint">
-                    <i className="fas fa-search-plus"></i>
-                  </div>
+              <div className="school-compact-card" key={i}>
+                <div className="scc-img" onClick={() => openLightbox(school.photos, 0, school.name)} title="View gallery">
+                  <img src={school.photos[0]} alt={school.name} />
+                  <i className="fas fa-search-plus scc-zoom"></i>
                 </div>
-
-                {/* Card body */}
-                <div className="school-card__body">
-                  <span className="school-badge">{school.badge}</span>
-                  <h3 className="school-card__name">{school.name}</h3>
-                  <p className="school-card__program">
-                    <i className={school.icon}></i> {school.program}
-                  </p>
-                  <p className="school-card__desc">{school.description}</p>
-
-                  <div className="school-pillars">
-                    {school.pillars.map((pillar, pIdx) => (
-                      <span className="school-pillar-tag" key={pIdx}>
-                        <i className="fas fa-check-circle"></i> {pillar}
-                      </span>
-                    ))}
-                  </div>
+                <div className="scc-body">
+                  <span className="scc-badge">{school.badge}</span>
+                  <h3>{school.name}</h3>
+                  <p className="scc-program"><i className={school.icon}></i> {school.program}</p>
+                  <p className="scc-desc">{school.description}</p>
                 </div>
               </div>
             ))}
           </div>
+          
+          <div className="school-invite-sleek">
+            <div className="sis-text">
+              <h4>Want KEMT at Your School?</h4>
+              <p>We partner with schools for Weekend Challenges &amp; Mentorship.</p>
+            </div>
+            <Link to="/contact" className="btn btn-primary">Invite Us <i className="fas fa-paper-plane"></i></Link>
+          </div>
+        </div>
+      </section>
 
-          {/* School Ministry Impact & Invitation Banner */}
-          <div className="school-invite-box">
-            <div className="school-invite-box__content">
-              <div className="school-invite-box__icon">
-                <i className="fas fa-graduation-cap"></i>
-              </div>
-              <div className="school-invite-box__text">
-                <h3>Would You Like KEMT To Visit Your School or Youth Fellowship?</h3>
-                <p>
-                  We partner with secondary schools, high schools and youth groups across Kenya to conduct
-                  Weekend Challenges, Academic Mentorship and Spiritual Nourishment sessions.
-                </p>
-              </div>
-              <div className="school-invite-box__action">
-                <Link to="/contact" className="btn btn-primary">
-                  Invite Us Today <i className="fas fa-paper-plane"></i>
-                </Link>
+      {/* 07 — Digital Infrastructure */}
+      <section id="digital" className="dept-section section">
+        <div className="container">
+          <div className="dept-unified-grid">
+            <div className="dept-media-sleek" onClick={() => openLightbox([gb2], 0, 'Digital Infrastructure')} title="Click to view gallery">
+              <img src={gb2} alt="Digital Infrastructure" />
+              <div className="dept-media-badge"><i className="fas fa-expand"></i> View Image</div>
+            </div>
+            
+            <div className="dept-content-sleek">
+              <h2 className="section-title">Digital Infrastructure</h2>
+              <p className="lead">
+                Leveraging modern technology to amplify the reach of the Gospel. Our Digital Infrastructure team manages online platforms, media production, and digital evangelism.
+              </p>
+              
+              <blockquote className="sleek-quote">
+                "Taking the timeless message of the Gospel into the modern digital frontier."
+              </blockquote>
+              
+              <div className="dept-actions">
+                <Link to="/contact" className="btn btn-primary">Volunteer in Tech</Link>
               </div>
             </div>
           </div>
-
         </div>
       </section>
 
