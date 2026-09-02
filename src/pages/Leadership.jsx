@@ -12,7 +12,7 @@ const leadership = [
   { name: 'Vincent Mwendwa',   role: 'Director',            initials: 'VM', color: '#e67e22', image: vincentImg },
   { name: 'Morice Mutharimi',  role: 'Chairperson',         initials: 'MM', color: '#2980b9', image: moriceImg },
   { name: 'Mwanzia David',     role: 'Outreach Incharge',   initials: 'MD', color: '#27ae60', image: mwanziaImg },
-  { name: 'Kennedy Mutuku',    role: 'Media Director',      initials: 'KM', color: '#8e44ad', image: kennedyImg },
+  { name: 'Kennedy Mutuku',    role: 'Digital Infrastructure Director',      initials: 'KM', color: '#8e44ad', image: kennedyImg },
   { name: 'Evaline Mukami',    role: 'Secretary',           initials: 'EM', color: '#16a085', image: mukamiImg },
   { name: 'Raymond Ewoi',      role: 'Prayer Coordinator',  initials: 'RE', color: '#c0392b', image: rayImg },
   { name: 'Victor Muriungi',   role: 'Worship Coordinator', initials: 'VM', color: '#d4ac0d' },

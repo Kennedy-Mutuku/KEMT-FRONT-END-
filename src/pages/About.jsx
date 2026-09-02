@@ -36,7 +36,7 @@ const timeline = [
     date: 'Early 2025',
     icon: 'fas fa-video',
     title: 'Humble Beginnings at Kisii University',
-    text: 'The foundational steps began while Vincent Mwenda (Founder and Director) and Kennedy Mutuku (Head of Digital Infrastructure) were students at Kisii University. They started by shooting evangelism clips in Kennedy\'s house, inviting fellow students to discuss different biblical topics, and uploading them to Kingdom Enlightenment platforms.',
+    text: 'The foundational steps began while Vincent Mwenda (Founder and Director) and Kennedy Mutuku (Digital Infrastructure Director) were students at Kisii University. They started by shooting evangelism clips in Kennedy\'s house, inviting fellow students to discuss different biblical topics, and uploading them to Kingdom Enlightenment platforms.',
   },
   {
     date: '15th March 2025',
