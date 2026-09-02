@@ -349,7 +349,8 @@ p {
 }
 
 .nav-menu > li > a:hover,
-.nav-menu > li.active > a {
+.nav-menu > li.active > a,
+.nav-menu > li > a.active {
     color: var(--secondary-color);
 }
 
@@ -366,7 +367,8 @@ p {
 }
 
 .nav-menu > li > a:hover::after,
-.nav-menu > li.active > a::after {
+.nav-menu > li.active > a::after,
+.nav-menu > li > a.active::after {
     width: 80%;
 }
 
