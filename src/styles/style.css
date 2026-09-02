@@ -4922,6 +4922,15 @@ p {
         padding-top: 1.5rem !important;
     }
 
+    .past-event-item {
+        padding: 1.5rem !important;
+        border-radius: 12px !important;
+    }
+
+    .pe-souls { font-size: 2.2rem !important; }
+    .pe-title { font-size: 1.5rem !important; }
+    .pe-location { font-size: 0.95rem !important; }
+
     /* Fix Leader Card Alignment & Wrapping */
     .leader-info {
         padding: 0.75rem 0.4rem 1rem !important;
@@ -6203,8 +6212,37 @@ p {
 .no-events-card p {
     color: var(--text-light);
     line-height: 1.75;
-    margin-bottom: 1.75rem;
 }
+
+/* Past Event Cards */
+.past-event-item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    padding: 2.5rem;
+    align-items: flex-start;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.past-event-item:nth-child(odd) {
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.past-event-item:nth-child(even) {
+    background-color: #fff5f5;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+.pe-left { flex: 1 1 200px; }
+.pe-dates { color: #f39c12; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 1rem; }
+.pe-souls { font-size: 3rem; font-weight: 800; color: #1a1a1a; line-height: 1; letter-spacing: -1px; }
+.pe-souls span { font-size: 0.95rem; font-weight: 600; color: #666; display: block; letter-spacing: 0; text-transform: uppercase; margin-top: 0.5rem; }
+.pe-ongoing { font-size: 1.2rem; font-weight: 500; color: #888; font-style: italic; margin-top: 1rem; }
+.pe-right { flex: 3 1 400px; }
+.pe-title { margin: 0 0 0.5rem 0; font-size: 2rem; color: #1a1a1a; font-weight: 800; letter-spacing: -0.5px; }
+.pe-location { color: #666; font-size: 1.05rem; margin-bottom: 1.25rem; font-weight: 500; }
 
 .subscribe-form {
     display: flex;

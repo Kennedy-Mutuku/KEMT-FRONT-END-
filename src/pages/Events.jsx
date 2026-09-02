@@ -169,35 +169,24 @@ const Events = () => {
           </div>
           <div className="past-events-list">
             {pastEvents.map((event, i) => (
-              <div key={event.id} style={{ 
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: '1.25rem',
-                borderBottom: i < pastEvents.length - 1 ? '1px solid #eaeaea' : 'none', 
-                padding: '2rem 0',
-                alignItems: 'flex-start'
-              }}>
+              <div key={event.id} className="past-event-item">
                 {/* Left Column: Date & Impact */}
-                <div style={{ flex: '1 1 200px' }}>
-                  <div style={{ color: '#f39c12', fontWeight: '700', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '1.5px', marginBottom: '1rem' }}>
-                    {event.dates}
-                  </div>
+                <div className="pe-left">
+                  <div className="pe-dates">{event.dates}</div>
                   {event.souls ? (
-                    <div style={{ fontSize: '3rem', fontWeight: '800', color: '#1a1a1a', lineHeight: '1', letterSpacing: '-1px' }}>
+                    <div className="pe-souls">
                       {event.souls}
-                      <span style={{ fontSize: '0.95rem', fontWeight: '600', color: '#666', display: 'block', letterSpacing: '0', textTransform: 'uppercase', marginTop: '0.5rem' }}>Souls Won</span>
+                      <span>Souls Won</span>
                     </div>
                   ) : (
-                    <div style={{ fontSize: '1.2rem', fontWeight: '500', color: '#888', fontStyle: 'italic', marginTop: '1rem' }}>
-                      Ongoing Impact
-                    </div>
+                    <div className="pe-ongoing">Ongoing Impact</div>
                   )}
                 </div>
                 
                 {/* Right Column: Details */}
-                <div style={{ flex: '3 1 400px' }}>
-                  <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '2rem', color: '#1a1a1a', fontWeight: '800', letterSpacing: '-0.5px' }}>{event.name}</h3>
-                  <div style={{ color: '#666', fontSize: '1.05rem', marginBottom: '1.25rem', fontWeight: '500' }}>
+                <div className="pe-right">
+                  <h3 className="pe-title">{event.name}</h3>
+                  <div className="pe-location">
                     {event.location}, {event.type}
                   </div>
                   
