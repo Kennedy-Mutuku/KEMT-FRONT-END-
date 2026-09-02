@@ -489,8 +489,8 @@
 }
 
 @keyframes wordAppear {
-  0%   { opacity: 0; transform: translate(-50%, -50%) rotate(155deg) scaleY(0.7); }
-  100% { opacity: 1; transform: translate(-50%, -50%) rotate(155deg) scaleY(1); }
+  0%   { opacity: 0; transform: translate(-50%, -50%) rotate(180deg) scaleY(0.7); }
+  100% { opacity: 1; transform: translate(-50%, -50%) rotate(180deg) scaleY(1); }
 }
 
 @media (max-width: 768px) {
@@ -500,11 +500,10 @@
     top: 50%;
     left: 50%;
     /*
-     * 180deg flips writing-mode direction (now reads bottom→top, i.e. upward)
-     * −25deg counters the parent fingers-container rotation
-     * Net: 180 − 25 = 155deg
+     * 180deg flips writing-mode direction so word reads upward (bottom→top)
+     * No counter-rotation — word inherits the finger's 25° slant naturally
      */
-    transform: translate(-50%, -50%) rotate(155deg);
+    transform: translate(-50%, -50%) rotate(180deg);
     writing-mode: vertical-rl;
     text-orientation: mixed;
     /* Large enough to fill the finger height */
