@@ -7683,10 +7683,31 @@ p {
 @media (max-width: 992px) {
     .dept-unified-grid, .dept-unified-grid--reverse {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1.5rem;
+    }
+    /* Force image to be below text for all department sections */
+    .dept-media-sleek {
+        order: 2;
     }
     .dept-unified-grid--reverse .dept-content-sleek {
-        order: -1;
+        order: 0; /* Reset this, the image order takes care of it */
+    }
+    .dept-content-sleek h2.section-title {
+        font-size: 1.7rem;
+        margin-bottom: 0.5rem;
+    }
+    .dept-content-sleek .lead {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    .sleek-prayer-box {
+        padding: 15px;
+    }
+    .sleek-prayer-box h5 {
+        font-size: 1rem;
+    }
+    .sleek-prayer-box p {
+        font-size: 0.9rem;
     }
     .schools-compact-grid {
         grid-template-columns: repeat(2, 1fr);
