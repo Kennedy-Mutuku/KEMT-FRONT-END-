@@ -1455,7 +1455,7 @@ p {
     }
 
     .header-content {
-        padding: 20px 0;
+        padding: 28px 0;
         position: relative;
         gap: 0;
         justify-content: flex-start;
@@ -1475,8 +1475,8 @@ p {
     }
 
     .logo-img {
-        height: 74px;
-        width: 74px;
+        height: 82px;
+        width: 82px;
         flex-shrink: 0;
     }
 
@@ -1487,7 +1487,7 @@ p {
     }
 
     .logo-name-top {
-        font-size: 1.25rem;
+        font-size: 1.4rem;
         letter-spacing: 2px;
         white-space: nowrap;
         line-height: 1.1;
@@ -1496,7 +1496,7 @@ p {
     }
 
     .logo-name-bottom {
-        font-size: 0.72rem;
+        font-size: 0.8rem;
         letter-spacing: 3px;
         white-space: nowrap;
         align-self: flex-start;
