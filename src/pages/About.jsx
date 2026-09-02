@@ -33,16 +33,16 @@ const timeline = [
     text: 'At the Commission 2024 Conference hosted by Focus Kenya at Kabarak University, the burden to reach the unreached and disciple nations was powerfully ignited in our hearts.',
   },
   {
-    date: '22nd January 2025',
-    icon: 'fas fa-cross',
-    title: 'KEMT is Founded',
-    text: 'Kingdom Enlightenment Missions Team was founded by Vincent Mwenda following a vision and divine command from the Lord to raise a generation dedicated to spreading the Gospel of Christ. The team began with fewer than 15 missionaries, united by faith and a shared passion for the Gospel.',
+    date: 'Early 2025',
+    icon: 'fas fa-video',
+    title: 'Humble Beginnings at Kisii University',
+    text: 'The foundational steps began while Vincent Mwenda (Founder and Director) and Kennedy Mutuku (Head of Digital Infrastructure) were students at Kisii University. They started by shooting evangelism clips in Kennedy\'s house, inviting fellow students to discuss different biblical topics, and uploading them to Kingdom Enlightenment platforms.',
   },
   {
     date: '15th March 2025',
     icon: 'fas fa-mountain',
-    title: 'Vision Confirmed on the Mountain',
-    text: 'During a time of mountain prayer, seeking God and dedicating together with Kennedy Mutuku, the vision was fully confirmed. This became a significant spiritual milestone as the team committed itself fully to the Lord and the fulfilment of the Great Commission.',
+    title: 'Vision Confirmed at Karlo Prayer Mountain',
+    text: 'Seeking clearer direction, Vincent and Kennedy dedicated time for prayer and fasting at Karlo Prayer Mountain. Following this profound spiritual encounter, the vision was fully confirmed and Kingdom Enlightenment Ministries was officially started to fulfill the Great Commission.',
   },
   {
     date: 'Ongoing from 2025',
@@ -54,7 +54,7 @@ const timeline = [
     date: '18–24 August 2025',
     icon: 'fas fa-globe-africa',
     title: 'First Mission — Rwanyange, Meru County',
-    text: 'The Lord opened the way for our first mission outreach at East Africa Pentecostal Church, Rwanyange. This mission confirmed God\'s call upon the team and marked a powerful beginning to our ministry.',
+    text: 'The team held its very first field mission outreach at East Africa Pentecostal Church in Rwanyange, the home church of our founder, Vincent Mwenda. This milestone confirmed God\'s call upon the team and marked a powerful beginning to our field ministry.',
     souls: '145 Souls Won',
   },
   {
@@ -159,23 +159,21 @@ const About = () => {
               <h2 className="section-title">Our History</h2>
             </div>
             <p>
-              From a divine calling at a university conference to mission fields across Kenya —
+              From a divine calling at a university conference to mission fields across Kenya, 
               this is the story of how God has led Kingdom Enlightenment Missions Team from humble
               beginnings to a growing movement for His glory.
             </p>
           </div>
 
-          <div className="history-timeline">
+          <div className="history-compact-list">
             {timeline.map((item, i) => (
-              <div className="tl-item" key={i}>
-                <div className="tl-card">
-                  <div className="tl-date-tag"><i className="fas fa-calendar-alt"></i>{item.date}</div>
+              <div className="history-compact-item" key={i}>
+                <div className="hc-date"><i className="fas fa-calendar-alt"></i> {item.date}</div>
+                <div className="hc-content">
                   <h4>{item.title}</h4>
                   <p>{item.text}</p>
-                  {item.souls && <div className="tl-souls"><i className="fas fa-heart"></i>{item.souls}</div>}
+                  {item.souls && <div className="hc-souls"><i className="fas fa-heart"></i> {item.souls}</div>}
                 </div>
-                <div className="tl-node"><i className={item.icon}></i></div>
-                <div className="tl-empty"></div>
               </div>
             ))}
           </div>
@@ -185,19 +183,16 @@ const About = () => {
       {/* Vision Mission Values */}
       <section id="vision-mission" className="vision-mission-section">
         <div className="container">
-          <div className="vm-cards">
-            <div className="vm-card vision-card">
-              <div className="vm-icon"><i className="fas fa-eye"></i></div>
+          <div className="vm-compact-list">
+            <div className="vm-compact-item">
               <h3>Our Vision</h3>
               <p>To see every person in Kenya and beyond encounter the transforming love of Jesus Christ and become a committed disciple who impacts their world for God's Kingdom.</p>
             </div>
-            <div className="vm-card mission-card">
-              <div className="vm-icon"><i className="fas fa-bullseye"></i></div>
+            <div className="vm-compact-item">
               <h3>Our Mission</h3>
               <p>To glorify God by evangelizing the lost, discipling believers, equipping leaders and establishing communities of faith that reproduce and multiply across nations.</p>
             </div>
-            <div className="vm-card values-card">
-              <div className="vm-icon"><i className="fas fa-heart"></i></div>
+            <div className="vm-compact-item">
               <h3>Our Mandate</h3>
               <p>The Great Commission — Go into all the world, preach the Gospel, make disciples of all nations, baptizing them and teaching them to observe all that Christ commanded. Matthew 28:19-20.</p>
             </div>
@@ -212,11 +207,10 @@ const About = () => {
             <span className="section-subtitle">What Drives Us</span>
             <h2 className="section-title">Our Core Values</h2>
           </div>
-          <div className="values-grid">
+          <div className="values-compact-list">
             {values.map((v, i) => (
-              <div className="value-card" key={i}>
-                <div className="value-icon"><i className={v.icon}></i></div>
-                <h4>{v.label}</h4>
+              <div className="value-compact-item" key={i}>
+                <h4><i className={v.icon}></i> {v.label}</h4>
                 <p>{v.desc}</p>
               </div>
             ))}
