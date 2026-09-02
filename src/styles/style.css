@@ -4958,6 +4958,10 @@ p {
     .banner-content {
         padding: 1rem !important;
     }
+    
+    .gallery-filter-bar {
+        display: none !important;
+    }
 
     .page-banner h1 {
         font-size: 1.65rem !important;
