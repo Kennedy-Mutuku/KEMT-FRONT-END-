@@ -170,9 +170,6 @@ const Contact = () => {
       <section className="section contact-section">
         <div className="container">
           <div className="contact-grid">
-<<<<<<< Updated upstream
-            {/* Form */}
-=======
             {/* Info Column */}
             <div className="contact-info-col">
               <h2 className="section-title">
@@ -249,7 +246,6 @@ const Contact = () => {
             </div>
 
             {/* Form Column */}
->>>>>>> Stashed changes
             <div className="contact-form-col">
               <div className="contact-form-card" style={{ background: '#ffffff', borderRadius: '14px', border: '1px solid #e2e8f0', padding: '32px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '18px' }}>

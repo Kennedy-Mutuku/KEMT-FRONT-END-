@@ -320,8 +320,8 @@
   border-radius: 100px;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 0 20px rgba(231, 76, 60, 0.3), -5px 10px 30px rgba(0,0,0,0.5);
-  border: 3px solid #e74c3c; /* Professional Red Border */
+  box-shadow: none; /* removed red shadow */
+  border: none; /* removed red border */
 }
 
 .finger-img {
@@ -352,14 +352,17 @@
 .finger-1 {
   height: 420px;
   transform: translateY(20px);
+  background: #ffdd00; /* bright neon yellow */
 }
 .finger-2 {
   height: 520px;
   transform: translateY(-30px);
+  background: #00bfff; /* bright cyan */
 }
 .finger-3 {
   height: 420px;
   transform: translateY(20px);
+  background: #ffdd00; /* bright neon yellow */
 }
 
 /* --- Responsive Design --- */
@@ -431,17 +434,17 @@
   .finger-1 {
     height: 240px;
     transform: translateY(20px);
-    background: #e67e22;
+    background: #ffdd00; /* bright neon yellow */
   }
   .finger-2 {
     height: 300px;
     transform: translateY(-30px);
-    background: #000000;
+    background: #00bfff; /* bright cyan */
   }
   .finger-3 {
     height: 240px;
     transform: translateY(20px);
-    background: #e67e22;
+    background: #ffdd00; /* bright neon yellow */
   }
 
   /* Hide the moving photos inside fingers on mobile — solid color fills instead */
@@ -513,7 +516,9 @@
     text-shadow: none;
     -webkit-text-stroke: 0;
     white-space: nowrap;
-    z-index: 10;
+  .finger-1 .finger-word { color: #000000; }
+  .finger-2 .finger-word { color: #000000; }
+  .finger-3 .finger-word { color: #000000; }
     /* No CSS animation — typing is driven by JS typewriter state */
     background: none;
     padding: 0;
