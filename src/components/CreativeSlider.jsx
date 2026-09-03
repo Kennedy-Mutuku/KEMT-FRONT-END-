@@ -2,15 +2,18 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './CreativeSlider.css';
 
-import hero1 from '../assets/Ruanyage1.jpg';
-import hero2 from '../assets/Tala mission1.jpg';
-import hero3 from '../assets/Emali mission3.jpg'; 
-import newsTala from '../assets/Tala mission2.jpg';
+import carousel1 from '../assets/carousel1.JPG';
+import carousel2 from '../assets/carousel2.JPG';
+import carousel3 from '../assets/carousel3.JPG'; 
+import carousel4 from '../assets/carousel4.JPG';
+import carousel5 from '../assets/carousel5.JPG';
+import carousel6 from '../assets/carousel6.jpg';
+import carousel7 from '../assets/carousel7.jpg';
 import handsTogether from '../assets/HANDS TOGETHER.jpg';
 
 const slides = [
   {
-    image: hero1,
+    image: carousel1,
     subtitle: "Welcome to",
     title: "KINGDOM ENLIGHTENMENT",
     text: "Spreading the Gospel & Transforming Lives",
@@ -18,7 +21,7 @@ const slides = [
     btn2: { text: "Join Us", link: "/contact" }
   },
   {
-    image: hero2,
+    image: carousel2,
     subtitle: "Mark 16:15",
     title: "GO INTO ALL THE WORLD",
     text: "Preaching the Gospel to Every Creature",
@@ -26,12 +29,44 @@ const slides = [
     btn2: { text: "Support Us", link: "/donate" }
   },
   {
-    image: newsTala,
+    image: carousel3,
     subtitle: "Community Focus",
     title: "TRANSFORMING REGIONS",
-    text: "Bringing Hope to Communities",
+    text: "Bringing Hope and Healing to Local Communities",
     btn1: { text: "Our Work", link: "/ministries" },
     btn2: { text: "Donate", link: "/donate" }
+  },
+  {
+    image: carousel4,
+    subtitle: "Our Passion",
+    title: "AUTHENTIC WORSHIP",
+    text: "Awakening a Generation to Worship in Spirit and Truth",
+    btn1: { text: "Events", link: "/events" },
+    btn2: { text: "Gallery", link: "/gallery" }
+  },
+  {
+    image: carousel5,
+    subtitle: "Equipping the Saints",
+    title: "DISCIPLESHIP",
+    text: "Raising Leaders Rooted Firmly in the Word of God",
+    btn1: { text: "Leadership", link: "/leadership" },
+    btn2: { text: "Join Us", link: "/contact" }
+  },
+  {
+    image: carousel6,
+    subtitle: "Student Impact (KESIP)",
+    title: "YOUTH OUTREACH",
+    text: "Inspiring High School Students with Moral Leadership",
+    btn1: { text: "Ministries", link: "/ministries" },
+    btn2: { text: "Gallery", link: "/gallery" }
+  },
+  {
+    image: carousel7,
+    subtitle: "Join the Vision",
+    title: "PARTNER WITH US",
+    text: "Together, We Can Effectively Reach the Unreached",
+    btn1: { text: "Support Us", link: "/donate" },
+    btn2: { text: "Contact Us", link: "/contact" }
   }
 ];
 
