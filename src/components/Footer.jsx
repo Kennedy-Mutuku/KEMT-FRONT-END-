@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import dominionLogo from '../assets/dominion softwares main logo.png';
 
 const Footer = () => {
     return (
@@ -13,10 +14,10 @@ const Footer = () => {
                             </div>
                             <p>Spreading the Gospel, Transforming Lives, Building God's Kingdom across Kenya and beyond.</p>
                             <div className="footer-social">
-                                <a href="#"><i className="fab fa-facebook-f"></i></a>
-                                <a href="#"><i className="fab fa-twitter"></i></a>
+                                <a href="https://www.facebook.com/share/1EXQmKx4QE/" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i></a>
+                                <a href="https://www.tiktok.com/@kingdom_enlightment" target="_blank" rel="noopener noreferrer"><i className="fab fa-tiktok"></i></a>
                                 <a href="https://www.youtube.com/@KingdomEnlightenmentMinistries" target="_blank" rel="noopener noreferrer"><i className="fab fa-youtube"></i></a>
-                                <a href="https://www.tiktok.com/@kingdom_enlightment?lang=en" target="_blank" rel="noopener noreferrer"><i className="fab fa-tiktok"></i></a>
+                                <a href="#"><i className="fa-brands fa-x-twitter"></i></a>
                                 <a href="#"><i className="fab fa-instagram"></i></a>
                             </div>
                         </div>
@@ -65,12 +66,21 @@ const Footer = () => {
             <div className="footer-bottom">
                 <div className="container">
                     <div className="footer-bottom-content">
-                        <p>&copy; 2024 Kingdom Enlightenment Missions Team. All Rights Reserved.</p>
+                        <p>&copy; {new Date().getFullYear()} Kingdom Enlightenment Missions Team. All Rights Reserved.</p>
                         <div className="footer-links">
                             <a href="#">Privacy Policy</a>
                             <a href="#">Terms of Service</a>
                             <Link to="/login">Admin</Link>
                         </div>
+                    </div>
+                    
+                    {/* Dominion Softwares Credit */}
+                    <div className="software-credit">
+                        <p>Software by</p>
+                        <a href="https://dominionsoftwares.org/" target="_blank" rel="noopener noreferrer" className="dominion-brand">
+                            <img src={dominionLogo} alt="Dominion Softwares" className="dominion-logo" />
+                            <strong>Dominion Softwares</strong>
+                        </a>
                     </div>
                 </div>
             </div>

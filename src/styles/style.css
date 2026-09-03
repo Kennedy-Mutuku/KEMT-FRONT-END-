@@ -1377,7 +1377,7 @@ p {
 
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 20px 0;
+    padding: 30px 0 80px; /* added bottom padding to prevent overlap with fixed back-to-top button */
 }
 
 .footer-bottom-content {
@@ -1404,6 +1404,45 @@ p {
 
 .footer-links a:hover {
     color: var(--secondary-color);
+}
+
+.software-credit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 25px; /* more breathing room to reduce congestion */
+}
+
+.software-credit p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+.dominion-brand {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.dominion-brand:hover {
+    opacity: 0.8;
+}
+
+.dominion-brand .dominion-logo {
+    height: 18px;
+    width: auto;
+}
+
+.dominion-brand strong {
+    color: #ff7b00; /* sharp bright orange */
+    font-size: 0.85rem;
+    font-weight: 800; /* extra bold */
+    letter-spacing: 0.5px;
+    /* removed text-shadow to ensure it looks perfectly crisp and sharp, not blurry */
 }
 
 /* ===================================
@@ -5145,7 +5184,7 @@ p {
     }
 
     .logo-name-top {
-        font-size: min(1.25rem, 5.5vw) !important;
+        font-size: min(1.1rem, 4.5vw) !important;
         letter-spacing: -0.5px !important;
         line-height: 1.15 !important;
         white-space: normal !important;
@@ -5157,12 +5196,12 @@ p {
 
     .logo-name-bottom {
         display: block !important;
-        font-size: min(0.75rem, 3.5vw) !important;
+        font-size: min(0.7rem, 3vw) !important;
         letter-spacing: 1px !important;
         color: #00bfff !important;
         font-weight: 900 !important;
         font-family: 'Arial Black', 'Impact', sans-serif !important;
-        align-self: center !important;
+        align-self: flex-start !important;
         white-space: nowrap !important;
         overflow: hidden !important;
         text-overflow: clip !important;

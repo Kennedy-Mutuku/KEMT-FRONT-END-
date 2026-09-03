@@ -235,7 +235,7 @@ const Contact = () => {
                   >
                     <i className="fab fa-tiktok"></i> TikTok
                   </a>
-                  <a href="#" className="social-btn facebook">
+                  <a href="https://www.facebook.com/share/1EXQmKx4QE/" target="_blank" rel="noopener noreferrer" className="social-btn facebook">
                     <i className="fab fa-facebook-f"></i> Facebook
                   </a>
                   <a href="#" className="social-btn instagram">
@@ -594,7 +594,7 @@ const Contact = () => {
                   >
                     <i className="fab fa-tiktok"></i> TikTok
                   </a>
-                  <a href="#" className="social-btn facebook">
+                  <a href="https://www.facebook.com/share/1EXQmKx4QE/" target="_blank" rel="noopener noreferrer" className="social-btn facebook">
                     <i className="fab fa-facebook-f"></i> Facebook
                   </a>
                   <a href="#" className="social-btn instagram">

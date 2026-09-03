@@ -88,6 +88,23 @@ import kitheo5 from '../assets/KitheoSiniourSchool5.jpg';
 import kitheo6 from '../assets/KitheoSiniourSchool6.jpg';
 import kitheo7 from '../assets/KitheoSiniourSchool7.jpg';
 
+// Youth & Schools - Githongo Boys
+import githongo1 from '../assets/Githongo Boys 1.jpg';
+import githongo2 from '../assets/githongo boys 2.jpg';
+import githongo3 from '../assets/Githongo Boys3.jpg';
+import githongo4 from '../assets/Githongo Boys4.jpg';
+import githongo5 from '../assets/Githongo Boys5.jpg';
+import githongo6 from '../assets/Githongo Boys6.jpg';
+import githongo7 from '../assets/Githongo Boys7.jpg';
+import githongo8 from '../assets/Githongo Boys8.jpg';
+import githongo9 from '../assets/Githongo Boys9.jpg';
+import githongo10 from '../assets/Githongo Boys10.jpg';
+import githongo11 from '../assets/Githongo Boys11.jpg';
+import githongo12 from '../assets/Githongo Boys12.jpg';
+import githongo13 from '../assets/Githongo Boys13.jpg';
+import githongo14 from '../assets/Githongo Boys14.jpg';
+import githongo15 from '../assets/Githongo Boys15.jpg';
+
 // Service & Action / Hands Together
 import handsTogether from '../assets/HANDS TOGETHER.jpg';
 
@@ -166,6 +183,15 @@ export const galleryAlbums = [
     category: 'Youth & Schools',
     shortCaption: 'Life skills and spiritual mentorship for graduating seniors.',
     photos: [kitheo1, kitheo2, kitheo3, kitheo4, kitheo5, kitheo6, kitheo7]
+  },
+  {
+    id: 'album-githongo',
+    coverImage: githongo1,
+    title: 'Githongo Boys High School',
+    date: 'Recent',
+    category: 'Youth & Schools',
+    shortCaption: 'Mentorship, discipleship, and spiritual empowerment for young men.',
+    photos: [githongo1, githongo2, githongo3, githongo4, githongo5, githongo6, githongo7, githongo8, githongo9, githongo10, githongo11, githongo12, githongo13, githongo14, githongo15]
   },
 
   // --- SERVICE & ACTION ---

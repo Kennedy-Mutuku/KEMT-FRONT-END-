@@ -49,6 +49,16 @@ const pastEvents = [
     souls: null,
     highlights: ['Street Evangelism', 'Crusades & Revivals', 'Youth Mentorship', 'Prayer'],
   },
+  {
+    id: 6,
+    name: 'DOXA IGNITE WORSHIP ENCOUNTER 2026',
+    dates: '10th July 2026',
+    location: 'KAG Meru Town',
+    type: 'Worship Encounter',
+    souls: null,
+    description: 'Kingdom Enlightenment Missions Team (KEMT) hosted Doxa Ignite Worship Encounter, a powerful night of worship, prayer, fellowship, and an encounter with the presence of God. Under the theme "Arise and Shine for His Glory," believers gathered to exalt Christ, experience spiritual renewal, and respond to the call to live a life of authentic worship. Doxa Ignite a generation awakened to worship, ignited by His presence, and committed to His glory. Isaiah 60:1 "Arise, shine, for your light has come."',
+    highlights: ['Worship & Prayer', 'Spiritual Renewal', 'Fellowship', 'Theme: Arise and Shine'],
+  },
 ];
 
 const Events = () => {
@@ -147,6 +157,12 @@ const Events = () => {
                   <div className="pe-location">
                     {event.location}, {event.type}
                   </div>
+                  
+                  {event.description && (
+                    <p className="pe-desc" style={{ fontSize: '0.9rem', color: '#5a5a6a', margin: '12px 0 16px', lineHeight: '1.6' }}>
+                      {event.description}
+                    </p>
+                  )}
                   
                   <div className="pe-highlights">
                     {event.highlights.map((h, j) => (
