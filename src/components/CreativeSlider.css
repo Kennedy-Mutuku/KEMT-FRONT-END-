@@ -63,10 +63,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  /* Use contain so the entire photo is fully visible without being chopped or stretched */
-  background-size: contain;
+  /* Use cover so the photo completely fills the background area without blank space */
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: left center;
+  background-position: center;
   transform: scale(1);
 }
 
@@ -187,7 +187,13 @@
 .btn-modern-primary {
   background-color: #e67e22;
   color: white;
-  padding: 12px 28px;
+  width: 150px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  line-height: 1.2;
   border-radius: 6px;
   font-weight: 700;
   font-size: 0.95rem;
@@ -195,6 +201,7 @@
   transition: all 0.3s ease;
   box-shadow: 0 4px 14px rgba(230, 126, 34, 0.35);
   border: 2px solid #e67e22;
+  box-sizing: border-box;
 }
 
 .btn-modern-primary:hover {
@@ -206,17 +213,23 @@
 }
 
 .btn-modern-outline {
-  display: inline-block;
+  width: 150px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  line-height: 1.2;
   background-color: rgba(0, 0, 0, 0.6);
   color: #ffffff;
   border: 2px solid #ffffff;
-  padding: 12px 28px;
   border-radius: 6px;
   font-weight: 700;
   font-size: 0.95rem;
   text-decoration: none;
   transition: all 0.3s ease;
   backdrop-filter: blur(6px);
+  box-sizing: border-box;
 }
 
 .btn-modern-outline:hover {
@@ -384,6 +397,15 @@
     overflow: hidden;
   }
 
+  .creative-bg-image {
+    width: 100%;
+    clip-path: none;
+  }
+
+  .creative-bg-right {
+    display: none;
+  }
+
   /* Hide the full text block on mobile — fingers carry the branding */
   .creative-container {
     position: absolute;
@@ -444,6 +466,15 @@
     height: 240px;
     transform: translateY(20px);
     background: #ffdd00; /* bright neon yellow */
+  }
+
+  .hero-fixed-bottom-actions {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    justify-content: center;
+    width: 100%;
+    margin-top: 15px;
   }
 }
 

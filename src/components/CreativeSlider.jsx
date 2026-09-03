@@ -26,14 +26,6 @@ const slides = [
     btn2: { text: "Support Us", link: "/donate" }
   },
   {
-    image: hero3,
-    subtitle: "Compassion Outreach",
-    title: "TOUCHING LIVES",
-    text: "Demonstrating Christ's Love in Action",
-    btn1: { text: "Our Impact", link: "/about" },
-    btn2: { text: "Get Involved", link: "/contact" }
-  },
-  {
     image: newsTala,
     subtitle: "Community Focus",
     title: "TRANSFORMING REGIONS",
@@ -103,9 +95,10 @@ const CreativeSlider = () => {
     }
   };
 
-  const finger1Img = slides[currentSlide].image;
-  const finger2Img = slides[(currentSlide + 1) % slides.length].image;
-  const finger3Img = slides[(currentSlide + 2) % slides.length].image;
+  const safeSlide = currentSlide >= slides.length ? 0 : currentSlide;
+  const finger1Img = slides[safeSlide]?.image;
+  const finger2Img = slides[(safeSlide + 1) % slides.length]?.image;
+  const finger3Img = slides[(safeSlide + 2) % slides.length]?.image;
 
   // Compute which word goes on which finger for this slide
   const wordOffset = currentSlide % 3;
@@ -171,7 +164,7 @@ const CreativeSlider = () => {
       {slides.map((slide, index) => (
         <div 
           key={index} 
-          className={`creative-bg-image ${index === currentSlide ? 'active' : ''}`}
+          className={`creative-bg-image ${index === safeSlide ? 'active' : ''}`}
         >
           <div 
             className="ken-burns-img"
@@ -197,7 +190,7 @@ const CreativeSlider = () => {
             {slides.map((slide, index) => (
               <div 
                 key={index} 
-                className={`text-slide ${index === currentSlide ? 'active' : ''}`}
+                className={`text-slide ${index === safeSlide ? 'active' : ''}`}
               >
                 <div className="text-content-clean">
                   <h1 className="slide-title">{slide.title}</h1>
@@ -209,9 +202,9 @@ const CreativeSlider = () => {
 
           {/* Action Buttons: Fixed at the very bottom of the hero carousel, right above the KEMT Impact bar */}
           <div className="hero-fixed-bottom-actions">
-            <Link to={slides[currentSlide].btn1.link} className="btn-modern-primary">{slides[currentSlide].btn1.text}</Link>
-            <Link to={slides[currentSlide].btn2.link} className="btn-modern-outline">
-              {slides[currentSlide].btn2.text}
+            <Link to={slides[safeSlide]?.btn1?.link} className="btn-modern-primary">{slides[safeSlide]?.btn1?.text}</Link>
+            <Link to={slides[safeSlide]?.btn2?.link} className="btn-modern-outline">
+              {slides[safeSlide]?.btn2?.text}
             </Link>
           </div>
 
@@ -223,7 +216,7 @@ const CreativeSlider = () => {
               {slides.map((_, i) => (
                 <div 
                   key={i} 
-                  className={`dot-m ${i === currentSlide ? 'active' : ''}`}
+                  className={`dot-m ${i === safeSlide ? 'active' : ''}`}
                   onClick={() => {
                     if (!isTransitioning) {
                       setCurrentSlide(i);
