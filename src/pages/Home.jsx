@@ -96,6 +96,25 @@ const Home = () => {
                 </div>
             </div>
 
+            {/* Ministry Structure - Tree Diagram */}
+            <section className="ministry-structure-tree">
+                <div className="container org-tree-container">
+                    <div className="org-tree">
+                        <ul>
+                            <li>
+                                <div className="org-node org-node-root">Kingdom Enlightenment Ministries</div>
+                                <ul>
+                                    <li><div className="org-node">Sanctuary</div></li>
+                                    <li><div className="org-node org-node-highlight">Missions Team (KEMT)</div></li>
+                                    <li><div className="org-node">Student Impact (KESIP)</div></li>
+                                    <li><div className="org-node">Others</div></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
             {/* About Section — Redesigned */}
             <section className="about-section-v2">
                 <div className="container">

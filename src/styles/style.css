@@ -8140,3 +8140,343 @@ p {
     background: #800020;
     color: #fff;
 }
+
+/* ===================================
+   Ministry Structure Flowchart
+   =================================== */
+.ministry-structure-section {
+    padding: 25px 0 15px;
+    background: linear-gradient(to bottom, #ffffff, #f4f8fb);
+    text-align: center;
+}
+
+.modern-flowchart {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+}
+
+.flow-root {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(32, 58, 67, 0.25);
+    border: 2px solid #14252b;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 2;
+}
+
+.flow-connector {
+    color: var(--secondary-color);
+    font-size: 1.4rem;
+    margin: -5px 0;
+    z-index: 1;
+    opacity: 0.8;
+}
+
+.flow-branches {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 5px;
+}
+
+.flow-branch {
+    background: #fff;
+    color: #444;
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.flow-branch i {
+    color: var(--primary-color);
+    font-size: 0.95rem;
+}
+
+.flow-branch.highlight {
+    background: var(--secondary-color);
+    color: #fff;
+    border-color: var(--secondary-color);
+    box-shadow: 0 4px 12px rgba(230, 126, 34, 0.3);
+}
+
+.flow-branch.highlight i {
+    color: #fff;
+}
+
+.flow-branch:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    border-color: var(--primary-color);
+}
+
+/* ===================================
+   Ministry Structure - Minimal Inline
+   =================================== */
+.ministry-structure-minimal {
+    padding: 12px 0;
+    background: transparent;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.minimal-flow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px 15px;
+    font-size: 0.88rem;
+    color: #666;
+}
+.minimal-root {
+    font-weight: 700;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+}
+.minimal-arrow {
+    color: #ccc;
+    font-size: 0.8rem;
+}
+.minimal-branches {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+}
+.minimal-branch {
+    font-weight: 500;
+}
+.minimal-branch.highlight {
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+.minimal-dot {
+    color: #ddd;
+    font-size: 1.2rem;
+    line-height: 0;
+}
+
+/* ===================================
+   Ministry Structure - Tree Diagram
+   =================================== */
+.ministry-structure-tree {
+    padding: 15px 0 25px 0;
+    text-align: center;
+    background: transparent;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.org-tree {
+    display: inline-block;
+    padding: 10px;
+}
+
+.org-tree ul {
+    padding-top: 20px; 
+    position: relative;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+.org-tree li {
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 20px 8px 0 8px;
+}
+
+/* Connectors */
+.org-tree li::before, .org-tree li::after {
+    content: '';
+    position: absolute; 
+    top: 0; 
+    right: 50%;
+    border-top: 1px solid #aaa;
+    width: 50%; 
+    height: 20px;
+}
+.org-tree li::after {
+    right: auto; 
+    left: 50%;
+    border-left: 1px solid #aaa;
+}
+
+/* Remove connectors for root / single children */
+.org-tree li:only-child::after, .org-tree li:only-child::before {
+    display: none;
+}
+.org-tree li:only-child {
+    padding-top: 0;
+}
+
+/* First and last child adjustments */
+.org-tree li:first-child::before, .org-tree li:last-child::after {
+    border: 0 none;
+}
+.org-tree li:first-child::after {
+    border-radius: 5px 0 0 0;
+}
+.org-tree li:last-child::before {
+    border-right: 1px solid #aaa;
+    border-radius: 0 5px 0 0;
+}
+
+/* Downward line from parent */
+.org-tree ul ul::before {
+    content: '';
+    position: absolute; 
+    top: 0; 
+    left: 50%;
+    border-left: 1px solid #aaa;
+    width: 0; 
+    height: 20px;
+    transform: translateX(-50%);
+}
+
+.org-node {
+    border: 1px solid #ccc;
+    padding: 8px 18px;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.org-node-root {
+    background: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+    padding: 12px 25px;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 10px rgba(32, 58, 67, 0.2);
+}
+
+.org-node-highlight {
+    background: var(--secondary-color);
+    color: #fff;
+    border-color: var(--secondary-color);
+}
+
+/* Flowchart Mobile Centering */
+.org-tree-container {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 15px; /* space for scrollbar if needed */
+}
+.org-tree {
+    margin: 0 auto;
+}
+@media (max-width: 768px) {
+    .org-node {
+        padding: 6px 10px;
+        font-size: 0.75rem;
+        white-space: nowrap; /* prevent awkward text wrapping */
+    }
+    .org-node-root {
+        padding: 8px 15px;
+        font-size: 0.85rem;
+        white-space: nowrap;
+    }
+    .org-tree li {
+        padding: 15px 4px 0 4px;
+    }
+    /* Scale down slightly to fit on small screens without scrolling */
+    .org-tree ul {
+        padding-top: 15px;
+    }
+    .org-tree li::before, .org-tree li::after, .org-tree ul ul::before {
+        height: 15px;
+    }
+}
+
+.org-tree-container {
+    display: flex;
+    justify-content: center;
+    overflow: hidden; /* Force no scrolling */
+    width: 100%;
+}
+.org-tree {
+    margin: 0 auto;
+    transform-origin: top center;
+}
+@media (max-width: 768px) {
+    .org-tree {
+        transform: scale(0.75);
+    }
+}
+@media (max-width: 480px) {
+    .org-tree {
+        transform: scale(0.55);
+        margin-bottom: -50px; /* Offset the scaled whitespace */
+    }
+    .ministry-structure-tree {
+        padding-bottom: 5px;
+    }
+}
+
+/* ===================================
+   Flowchart Mobile Dynamic Fit
+   =================================== */
+.org-tree-container {
+    width: 100%;
+    overflow: hidden;
+    padding: 0 5px;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 800px) {
+    /* Reset scale and use dynamic width */
+    .org-tree {
+        width: 100%;
+        transform: none !important;
+        margin-bottom: 0 !important;
+        padding: 5px;
+    }
+    .org-tree ul {
+        width: 100%;
+        padding-left: 0;
+        margin: 0;
+    }
+    .org-tree li {
+        flex: 1; /* Stretch to fill space evenly */
+        padding: 15px 2px 0 2px !important;
+    }
+    .org-node {
+        width: 100%; /* Fill the li */
+        padding: 6px 2px !important;
+        font-size: 0.65rem !important;
+        white-space: normal !important; /* Allow text to wrap naturally */
+        word-wrap: break-word;
+        line-height: 1.2;
+        box-sizing: border-box;
+    }
+    .org-node-root {
+        width: auto;
+        display: inline-block;
+        padding: 8px 15px !important;
+        font-size: 0.85rem !important;
+    }
+}
