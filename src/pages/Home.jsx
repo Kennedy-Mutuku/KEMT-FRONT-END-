@@ -15,6 +15,7 @@ import aboutThumb2 from '../assets/Ruanyage5.jpg';
 import newsNtakira from '../assets/Gaukene ntakira circuit mission1.jpg';
 import newsEmali from '../assets/Emali mission2.jpg';
 import newsTala from '../assets/Tala mission2.jpg';
+import newsGikumene from '../assets/gikumene meru6.JPG';
 
 const Home = () => {
     // Testimonials Slider State
@@ -140,8 +141,8 @@ const Home = () => {
                         <div className="about-v2-photo-side">
                             <div className="about-v2-photo-wrap">
                                 <div className="about-v2-badge"><strong>445+</strong>Souls<br />Saved</div>
-                                <img src={aboutMain} alt="KEMT in the field" className="about-v2-photo-main" />
-                                <img src={aboutThumb1} alt="Mission outreach" className="about-v2-photo-accent" />
+                                <img src={aboutMain} alt="KEMT in the field" className="about-v2-photo-main" loading="lazy" />
+                                <img src={aboutThumb1} alt="Mission outreach" className="about-v2-photo-accent" loading="lazy" />
                                 <div className="about-v2-deco-ring"></div>
                                 <div className="about-v2-deco-dot"></div>
                             </div>
@@ -325,7 +326,7 @@ const Home = () => {
                     <div className="news-grid">
                         <div className="news-card">
                             <div className="news-image">
-                                <img src={newsNtakira} alt="Ntakira Mission" />
+                                <img src={newsNtakira} alt="Ntakira Mission" loading="lazy" />
                                 <div className="news-category">Missions</div>
                             </div>
                             <div className="news-content">
@@ -337,7 +338,7 @@ const Home = () => {
                         </div>
                         <div className="news-card">
                             <div className="news-image">
-                                <img src={newsEmali} alt="Emali Mission" />
+                                <img src={newsEmali} alt="Emali Mission" loading="lazy" />
                                 <div className="news-category">Outreach</div>
                             </div>
                             <div className="news-content">
@@ -349,13 +350,25 @@ const Home = () => {
                         </div>
                         <div className="news-card">
                             <div className="news-image">
-                                <img src={newsTala} alt="Tala Mission" />
+                                <img src={newsTala} alt="Tala Mission" loading="lazy" />
                                 <div className="news-category">Missions</div>
                             </div>
                             <div className="news-content">
                                 <div className="news-date">April 2026 — Machakos</div>
                                 <h3>Tala Mission: 170 Souls Saved in Machakos</h3>
                                 <p>Liberty Church, Tala hosted a powerful week-long outreach that saw 170 people come to Christ through street evangelism, prayer walks, crusades and youth workshops.</p>
+                                <Link to="/programs" className="news-link">Read More <i className="fas fa-arrow-right"></i></Link>
+                            </div>
+                        </div>
+                        <div className="news-card">
+                            <div className="news-image">
+                                <img src={newsGikumene} alt="Gikumene Mission" loading="lazy" />
+                                <div className="news-category">Missions</div>
+                            </div>
+                            <div className="news-content">
+                                <div className="news-date">Dec 2025 - Jan 2026 — Meru</div>
+                                <h3>Gikumene Mission: Reaching Meru for Christ</h3>
+                                <p>Impactful moments from the Gikumene mission, featuring community outreach, dynamic youth engagements, and open-air crusades.</p>
                                 <Link to="/programs" className="news-link">Read More <i className="fas fa-arrow-right"></i></Link>
                             </div>
                         </div>

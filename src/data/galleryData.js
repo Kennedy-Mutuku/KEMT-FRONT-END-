@@ -118,6 +118,18 @@ import rayImg from '../assets/ray.jpg';
 import georgeImg from '../assets/george.jpg';
 import odinaImg from '../assets/odina.jpg';
 
+// Gikumene Mission
+import gikumene1 from '../assets/gikumene meru1.JPG';
+import gikumene2 from '../assets/gikumene meru2.JPG';
+import gikumene3 from '../assets/gikumene meru3.JPG';
+import gikumene4 from '../assets/gikumene meru4.JPG';
+import gikumene5 from '../assets/gikumene meru5.JPG';
+import gikumene6 from '../assets/gikumene meru6.JPG';
+import gikumene7 from '../assets/gikumene meru7.JPG';
+import gikumene8 from '../assets/gikumene meru8.JPG';
+import gikumene9 from '../assets/gikumene meru9.JPG';
+import gikumene14 from '../assets/gikumene meru14.JPG';
+
 export const CATEGORIES = [
   'All',
   'Community Outreach',
@@ -128,6 +140,15 @@ export const CATEGORIES = [
 
 export const galleryAlbums = [
   // --- COMMUNITY OUTREACH ---
+  {
+    id: 'album-gikumene',
+    coverImage: gikumene14,
+    title: 'Gikumene Mission',
+    date: '28th Dec 2025 - 5th Jan 2026',
+    category: 'Community Outreach',
+    shortCaption: 'Impactful mission moments and community engagement in Gikumene, Meru.',
+    photos: [gikumene1, gikumene2, gikumene3, gikumene4, gikumene5, gikumene6, gikumene7, gikumene8, gikumene9, gikumene14]
+  },
   {
     id: 'album-emali',
     coverImage: emali1,

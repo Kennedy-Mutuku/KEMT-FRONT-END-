@@ -1,4 +1,4 @@
-/* ===================================
+﻿/* ===================================
    Kingdom Enlightenment Missions Team
    Main Stylesheet
    =================================== */
@@ -682,7 +682,7 @@ p {
 }
 
 .vm-compact-item h3::before {
-    content: "•";
+    content: "â€¢";
     color: var(--secondary-color);
     font-size: 1.8rem;
     line-height: 1;
@@ -3230,7 +3230,7 @@ p {
 
 
 /* ===================================================
-   PROGRAMS PAGE — Mission Outreaches & Filtering
+   PROGRAMS PAGE â€” Mission Outreaches & Filtering
    =================================================== */
 .outreach-intro-section .section-description {
     max-width: 800px;
@@ -4130,7 +4130,7 @@ p {
 
 
 /* ===================================================
-   MINISTRIES PAGE — Dept Nav + Sections + Rich Modules
+   MINISTRIES PAGE â€” Dept Nav + Sections + Rich Modules
    =================================================== */
 .dept-nav {
     background: #fff;
@@ -5286,7 +5286,7 @@ p {
 
 
 /* ===================================================
-   HOME — About Section Photo Collage
+   HOME â€” About Section Photo Collage
    =================================================== */
 .about-photo-collage {
     display: grid;
@@ -5337,7 +5337,7 @@ p {
 }
 
 /* ===================================================
-   MISSION ENTRY — Photo Panel
+   MISSION ENTRY â€” Photo Panel
    =================================================== */
 .mission-entry__image {
     display: flex;
@@ -5395,7 +5395,7 @@ p {
 
 
 /* ===================================================
-   MINISTRIES PAGE — Photo Collage
+   MINISTRIES PAGE â€” Photo Collage
    =================================================== */
 .dept-photo-collage {
     display: grid;
@@ -5441,7 +5441,7 @@ p {
 
 
 /* ===================================================
-   SCHOOL CARDS — Photo Header
+   SCHOOL CARDS â€” Photo Header
    =================================================== */
 .school-card {
     padding: 0;
@@ -5569,7 +5569,7 @@ p {
 
 
 /* ===================================================
-   NEWS CARDS — Real Photos
+   NEWS CARDS â€” Real Photos
    =================================================== */
 .news-image img {
     width: 100%;
@@ -6747,7 +6747,7 @@ p {
     box-shadow: var(--shadow-lg);
 }
 
-/* Photo area — replace background with an <img> when photos arrive */
+/* Photo area â€” replace background with an <img> when photos arrive */
 .leader-photo {
     width: 100%;
     aspect-ratio: 3 / 4;
@@ -6810,7 +6810,7 @@ p {
    DONATE PAGE
    ===================================================== */
 /* =====================================================
-   DONATE PAGE — COMPACT & PREMIUM
+   DONATE PAGE â€” COMPACT & PREMIUM
    ===================================================== */
 .donate-page {
     min-height: calc(100vh - 120px);
@@ -7101,7 +7101,7 @@ p {
 
 
 /* =====================================================
-   ABOUT PAGE — Our History Timeline
+   ABOUT PAGE â€” Our History Timeline
    ===================================================== */
 .history-section {
     background: #fff;
@@ -7176,7 +7176,7 @@ p {
 }
 
 /* =====================================================
-   HOME REDESIGN — Impact Ticker
+   HOME REDESIGN â€” Impact Ticker
    ===================================================== */
 .impact-ticker {
     background: #0d1b2a;
@@ -7239,7 +7239,7 @@ p {
 }
 
 /* =====================================================
-   HOME REDESIGN — About Section v2
+   HOME REDESIGN â€” About Section v2
    ===================================================== */
 .about-section-v2 {
     padding: 40px 0 100px;
@@ -7432,7 +7432,7 @@ p {
 }
 
 /* =====================================================
-   HOME REDESIGN — Vision / Mission v2
+   HOME REDESIGN â€” Vision / Mission v2
    ===================================================== */
 .vision-mission-v2 {
     background: #0d1b2a;
@@ -7507,7 +7507,7 @@ p {
 }
 
 /* =====================================================
-   HOME REDESIGN — Ministries v2
+   HOME REDESIGN â€” Ministries v2
    ===================================================== */
 .ministries-v2 {
     background: #fff;
@@ -7612,7 +7612,7 @@ p {
 }
 
 /* =====================================================
-   HOME REDESIGN — Responsive
+   HOME REDESIGN â€” Responsive
    ===================================================== */
 @media (max-width: 1024px) {
     .about-v2-grid { gap: 50px; }
@@ -7658,7 +7658,7 @@ p {
 }
 
 /* =====================================================
-   Responsive — New Pages
+   Responsive â€” New Pages
    ===================================================== */
 @media (max-width: 1100px) {
     .leadership-grid { grid-template-columns: repeat(3, 1fr); }
@@ -7725,7 +7725,7 @@ p {
 }
 
 /* =====================================================
-   TABLET (768px – 1024px) — Hybrid layout
+   TABLET (768px â€“ 1024px) â€” Hybrid layout
    ===================================================== */
 @media (min-width: 768px) and (max-width: 1024px) {
     /* Logo: visible & balanced */
@@ -7779,7 +7779,7 @@ p {
 }
 
 /* =====================================================
-   LAPTOP (1025px – 1440px) — Standard desktop
+   LAPTOP (1025px â€“ 1440px) â€” Standard desktop
    ===================================================== */
 @media (min-width: 1025px) and (max-width: 1440px) {
     .container { max-width: 1180px; }
@@ -7789,7 +7789,7 @@ p {
 }
 
 /* =====================================================
-   LARGE SCREENS (> 1440px) — Dynamic centering
+   LARGE SCREENS (> 1440px) â€” Dynamic centering
    ===================================================== */
 @media (min-width: 1441px) {
     .container { max-width: 1340px; }
@@ -8479,4 +8479,282 @@ p {
         padding: 8px 15px !important;
         font-size: 0.85rem !important;
     }
+}
+/* Gallery Branches - Professional Separation */
+.gallery-branches-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.gallery-branch-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.gallery-branch-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    position: relative;
+    padding-bottom: 0.75rem;
+    display: inline-block;
+    align-self: flex-start;
+}
+
+.gallery-branch-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+    border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+    .gallery-branch-title {
+        font-size: 1.4rem;
+    }
+    .gallery-branches-container {
+        gap: 3rem;
+    }
+}
+/* Gallery Branches - Professional Separation */
+.gallery-branches-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    width: 100%;
+}
+
+.gallery-branch-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.gallery-branch-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    position: relative;
+    padding-bottom: 0.75rem;
+    display: inline-block;
+    align-self: flex-start;
+}
+
+.gallery-branch-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+    border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+    .gallery-branch-title {
+        font-size: 1.4rem;
+    }
+    .gallery-branches-container {
+        gap: 3rem;
+    }
+}
+/* Lightbox Download Button */
+.gallery-lightbox__download {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-left: auto;
+}
+
+.gallery-lightbox__download:hover {
+    background: var(--accent-color);
+    color: white;
+    transform: translateY(-2px);
+}
+/* Branch Shortcut Tabs */
+.gallery-branch-shortcuts {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.branch-shortcut-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: var(--light-bg);
+    color: var(--primary-color);
+    border: 1px solid var(--border-color);
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.branch-shortcut-btn i {
+    color: var(--accent-color);
+}
+
+.branch-shortcut-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+/* Compact Gallery Header with Search */
+.gallery-results-header-compact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.gallery-results-meta-compact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.gallery-header-controls {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.gallery-search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.gallery-search-icon {
+    position: absolute;
+    left: 1rem;
+    color: var(--text-light);
+}
+
+.gallery-search-input {
+    padding: 0.6rem 1rem 0.6rem 2.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 30px;
+    font-size: 0.95rem;
+    width: 280px;
+    transition: all 0.3s ease;
+}
+
+.gallery-search-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.1);
+}
+
+.gallery-search-clear {
+    position: absolute;
+    right: 0.75rem;
+    background: none;
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.gallery-search-clear:hover {
+    color: var(--primary-color);
+}
+
+.gallery-branch-shortcuts-compact {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.branch-shortcut-btn-compact {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
+    background: var(--light-bg);
+    color: var(--primary-color);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.branch-shortcut-btn-compact i {
+    color: var(--accent-color);
+}
+
+.branch-shortcut-btn-compact:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .gallery-results-header-compact {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .gallery-search-input {
+        width: 100%;
+    }
+    .gallery-header-controls {
+        width: 100%;
+    }
+    .gallery-search-bar {
+        width: 100%;
+    }
+}
+
+.gallery-results-header-compact {
+    margin-bottom: 1.5rem !important;
+    padding-bottom: 0.5rem !important;
+    justify-content: center !important;
+}
+.gallery-header-controls {
+    justify-content: center !important;
+    width: 100%;
+}
+.gallery-results-meta-compact {
+    align-items: center !important;
+    width: 100%;
+    text-align: center !important;
+}
+.gallery-search-input {
+    border-radius: 4px !important;
+}
+.branch-shortcut-btn-compact {
+    border-radius: 4px !important;
+}
+.branch-shortcut-btn-compact.active-shortcut {
+    background: var(--primary-color) !important;
+    color: white !important;
+    border-color: var(--primary-color) !important;
+}
+.branch-shortcut-btn-compact.active-shortcut i {
+    color: white !important;
 }

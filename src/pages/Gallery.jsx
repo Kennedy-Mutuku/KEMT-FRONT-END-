@@ -5,6 +5,8 @@ import { CATEGORIES, galleryAlbums } from '../data/galleryData';
 const Gallery = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [activeCategory, setActiveCategory] = useState('All');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [activeShortcut, setActiveShortcut] = useState('');
 
   const albumIdFromUrl = searchParams.get('album');
   const photoIndexFromUrl = searchParams.get('photo');
@@ -36,11 +38,21 @@ const Gallery = () => {
     };
   }, [selectedAlbum, photoIndexFromUrl]);
 
-  // Filter items based on active category
+  // Filter items based on active category and search query
   const filteredAlbums = useMemo(() => {
-    if (activeCategory === 'All') return galleryAlbums;
-    return galleryAlbums.filter(album => album.category === activeCategory);
-  }, [activeCategory]);
+    let result = galleryAlbums;
+    if (activeCategory !== 'All') {
+      result = result.filter(album => album.category === activeCategory);
+    }
+    if (searchQuery.trim() !== '') {
+      const q = searchQuery.toLowerCase();
+      result = result.filter(album => 
+        album.title.toLowerCase().includes(q) || 
+        album.date.toLowerCase().includes(q)
+      );
+    }
+    return result;
+  }, [activeCategory, searchQuery]);
 
   // Calculate category counts
   const categoryCounts = useMemo(() => {
@@ -118,6 +130,46 @@ const Gallery = () => {
     };
   }, [lightboxItem, nextPhoto, prevPhoto]);
 
+  const scrollToSection = (id) => {
+    setActiveShortcut(id);
+    const element = document.getElementById(id);
+    if (element) {
+      const yOffset = -100; // Account for fixed navbar if any
+      const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  };
+
+  const renderAlbumCard = (album) => (
+    <article
+      key={album.id}
+      className="gallery-card-v2"
+      onClick={() => selectAlbum(album)}
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          selectAlbum(album);
+        }
+      }}
+    >
+      <div className="gallery-card-v2__media">
+        <img
+          src={album.coverImage}
+          alt={album.title}
+          loading="lazy"
+          className="gallery-card-v2__img"
+          style={{ objectPosition: album.objectPosition || 'center' }}
+        />
+      </div>
+      <div className="gallery-card-v2__content">
+        <h3 className="gallery-card-v2__title">{album.title.toUpperCase()}</h3>
+        <p className="gallery-card-v2__date">{album.date}</p>
+        <button className="gallery-card-v2__btn">View Photos</button>
+      </div>
+    </article>
+  );
+
   return (
     <main className="gallery-page">
       {/* Page Banner */}
@@ -161,48 +213,75 @@ const Gallery = () => {
         <div className="container">
           {!selectedAlbum ? (
             <>
-              {/* Header Count & Category Title */}
-              <div className="gallery-results-meta">
-                <h2 className="gallery-results-heading">
-                  {activeCategory === 'All' ? 'All Missions & Events' : activeCategory}
-                </h2>
-                <span className="gallery-results-count">
-                  Showing {filteredAlbums.length} {filteredAlbums.length === 1 ? 'event album' : 'event albums'}
-                </span>
+              {/* Compact Header: Search, Count, & Shortcuts */}
+              <div className="gallery-results-header-compact">
+                <div className="gallery-results-meta-compact">
+                  <h2 className="gallery-results-heading">
+                    {activeCategory === 'All' ? 'All Missions & Events' : activeCategory}
+                  </h2>
+                  <span className="gallery-results-count">
+                    Showing {filteredAlbums.length} {filteredAlbums.length === 1 ? 'event album' : 'event albums'}
+                  </span>
+                </div>
+
+                <div className="gallery-header-controls">
+                  <div className="gallery-search-bar">
+                    <i className="fas fa-search gallery-search-icon"></i>
+                    <input 
+                      type="text" 
+                      placeholder="Search by name or date..." 
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="gallery-search-input"
+                    />
+                    {searchQuery && (
+                      <button className="gallery-search-clear" onClick={() => setSearchQuery('')}>
+                        <i className="fas fa-times"></i>
+                      </button>
+                    )}
+                  </div>
+
+                  {activeCategory === 'All' && !searchQuery && (
+                    <div className="gallery-branch-shortcuts-compact">
+                      <button 
+                        onClick={() => scrollToSection('kemt-section')} 
+                        className={`branch-shortcut-btn-compact ${activeShortcut === 'kemt-section' ? 'active-shortcut' : ''}`}
+                      >
+                        <i className="fas fa-globe-africa"></i> KEMT
+                      </button>
+                      <button 
+                        onClick={() => scrollToSection('kesip-section')} 
+                        className={`branch-shortcut-btn-compact ${activeShortcut === 'kesip-section' ? 'active-shortcut' : ''}`}
+                      >
+                        <i className="fas fa-user-graduate"></i> Students (KESIP)
+                      </button>
+                    </div>
+                  )}
+                </div>
               </div>
 
-              {/* Responsive Uniform Image Grid */}
-              <div className="gallery-grid-uniform">
-                {filteredAlbums.map((album) => (
-                  <article
-                    key={album.id}
-                    className="gallery-card-v2"
-                    onClick={() => selectAlbum(album)}
-                    tabIndex={0}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        selectAlbum(album);
-                      }
-                    }}
-                  >
-                    <div className="gallery-card-v2__media">
-                      <img
-                        src={album.coverImage}
-                        alt={album.title}
-                        loading="lazy"
-                        className="gallery-card-v2__img"
-                        style={{ objectPosition: album.objectPosition || 'center' }}
-                      />
+              {/* Responsive Uniform Image Grid with KEMT vs KESIP Branching */}
+              {activeCategory === 'All' && !searchQuery ? (
+                <div className="gallery-branches-container">
+                  <div className="gallery-branch-section" id="kemt-section">
+                    <h3 className="gallery-branch-title">Kingdom Enlightenment Missions Team (KEMT)</h3>
+                    <div className="gallery-grid-uniform">
+                      {filteredAlbums.filter(a => a.category !== 'Youth & Schools').map(renderAlbumCard)}
                     </div>
-                    <div className="gallery-card-v2__content">
-                      <h3 className="gallery-card-v2__title">{album.title.toUpperCase()}</h3>
-                      <p className="gallery-card-v2__date">{album.date}</p>
-                      <button className="gallery-card-v2__btn">View Photos</button>
+                  </div>
+
+                  <div className="gallery-branch-section" id="kesip-section">
+                    <h3 className="gallery-branch-title">Kingdom Enlightenment Student Impact Program (KESIP)</h3>
+                    <div className="gallery-grid-uniform">
+                      {filteredAlbums.filter(a => a.category === 'Youth & Schools').map(renderAlbumCard)}
                     </div>
-                  </article>
-                ))}
-              </div>
+                  </div>
+                </div>
+              ) : (
+                <div className="gallery-grid-uniform">
+                  {filteredAlbums.map(renderAlbumCard)}
+                </div>
+              )}
 
               {filteredAlbums.length === 0 && (
                 <div className="gallery-empty-state">
@@ -314,6 +393,14 @@ const Gallery = () => {
                 <span className="gallery-lightbox__counter">
                   {lightboxItem.index + 1} of {lightboxItem.set.length}
                 </span>
+                <a 
+                  href={lightboxItem.item.src} 
+                  download={`kemt-photo-${lightboxItem.index + 1}.jpg`}
+                  className="gallery-lightbox__download"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <i className="fas fa-download"></i> Download
+                </a>
               </div>
               <h3 className="gallery-lightbox__title">{lightboxItem.item.title}</h3>
               <p className="gallery-lightbox__description">

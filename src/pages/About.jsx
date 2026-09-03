@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-import bannerPhoto from '../assets/Ruanyage2.jpg';
+import bannerPhoto from '../assets/gikumene meru14.JPG';
 import storyPhoto1 from '../assets/Tala mission6.jpg';
 import storyPhoto2 from '../assets/Emali mission6.jpg';
-import storyPhoto3 from '../assets/Ruanyage7.jpg';
+import storyPhoto3 from '../assets/gikumene meru1.JPG';
 
 const values = [
   { icon: 'fas fa-bible',          label: 'Biblical Authority',  desc: 'Everything we do is rooted in and guided by the Word of God.' },
