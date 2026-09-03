@@ -1,4 +1,4 @@
-﻿/* ===================================
+/* ===================================
    Kingdom Enlightenment Missions Team
    Main Stylesheet
    =================================== */
@@ -774,7 +774,7 @@ p {
    =================================== */
 .stats-section {
     position: relative;
-    background: url('/images/stats-bg.jpg') center/cover no-repeat;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
     background-color: #1a2a3a;
     padding: 60px 0;
 }
@@ -2937,7 +2937,7 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('../images/pattern.png') center/cover;
+    background: var(--light-bg);
     opacity: 0.1;
 }
 
