@@ -106,7 +106,7 @@ const Home = () => {
                                 Carrying the <em>Light of Christ</em><br />Across Kenya &amp; Beyond
                             </h2>
                             <p className="about-v2-desc">
-                                Kingdom Enlightenment Missions Team is a Christ-centered missions organization dedicated to spreading the Gospel of Jesus Christ. Founded on the Great Commission, we reach the unreached, disciple believers and establish vibrant Christian communities.
+                                Kingdom Enlightenment Ministries is a global Christian ministry advancing the Great Commission through missions, evangelism, discipleship, and youth outreach. Our ministry includes Kingdom Enlightenment Missions Team, Kingdom Enlightenment Student Impact Program, and other initiatives dedicated to reaching, equipping, and transforming lives for Christ, compassion, and integral mission.
                             </p>
                             <p className="about-v2-desc">
                                 Our team comprises passionate men and women who have answered God's call, bringing hope, healing and the light of Christ to every corner of the land through crusades, prayer walks, school missions and compassion outreach.

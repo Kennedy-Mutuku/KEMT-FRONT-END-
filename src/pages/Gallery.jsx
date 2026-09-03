@@ -176,7 +176,7 @@ const Gallery = () => {
                 {filteredAlbums.map((album) => (
                   <article
                     key={album.id}
-                    className="gallery-card"
+                    className="gallery-card-v2"
                     onClick={() => selectAlbum(album)}
                     tabIndex={0}
                     onKeyDown={(e) => {
@@ -186,48 +186,19 @@ const Gallery = () => {
                       }
                     }}
                   >
-                    <div className="gallery-card__media">
+                    <div className="gallery-card-v2__media">
                       <img
                         src={album.coverImage}
                         alt={album.title}
                         loading="lazy"
-                        className="gallery-card__img"
+                        className="gallery-card-v2__img"
                         style={{ objectPosition: album.objectPosition || 'center' }}
                       />
-                      {/* Badge showing photo count */}
-                      <div style={{
-                        position: 'absolute',
-                        top: '10px',
-                        right: '10px',
-                        background: 'rgba(0,0,0,0.7)',
-                        color: '#fff',
-                        padding: '4px 10px',
-                        borderRadius: '20px',
-                        fontSize: '0.8rem',
-                        fontWeight: '600',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '5px',
-                        zIndex: 5
-                      }}>
-                        <i className="fas fa-camera"></i> {album.photos.length} Photos
-                      </div>
                     </div>
-
-                    {/* Hover Gradient Overlay */}
-                    <div className="gallery-card__overlay">
-                      <div className="gallery-card__overlay-content">
-                        <span className="gallery-card__overlay-tag">{album.category}</span>
-                        <h3 className="gallery-card__title">{album.title}</h3>
-                        <p className="gallery-card__date" style={{ fontSize: '0.85rem', color: '#ffd700', marginBottom: '10px' }}>{album.date}</p>
-                        <p className="gallery-card__caption">{album.shortCaption}</p>
-                        <div className="gallery-card__action">
-                          <span className="gallery-card__view-btn">
-                            <i className="fas fa-images" aria-hidden="true"></i>
-                            <span>View All Photos</span>
-                          </span>
-                        </div>
-                      </div>
+                    <div className="gallery-card-v2__content">
+                      <h3 className="gallery-card-v2__title">{album.title.toUpperCase()}</h3>
+                      <p className="gallery-card-v2__date">{album.date}</p>
+                      <button className="gallery-card-v2__btn">View Photos</button>
                     </div>
                   </article>
                 ))}
